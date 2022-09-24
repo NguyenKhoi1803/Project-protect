@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import { Input } from "antd";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user";
-import ProductItem from "./ProuductItem";
+import { fetchTour } from "../../../store/user/fetchTour";
 
-function ProductList(props) {
+import TourItem from "../tourItem";
+
+function TourList() {
   const dispatch = useDispatch();
-  const newTourArr = useSelector((state) => state.tour.tour);
+  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+
   console.log("newTourArr", newTourArr);
   useEffect(() => {
     dispatch(fetchTour());
@@ -15,7 +18,7 @@ function ProductList(props) {
     return newTourArr?.map((item) => {
       return (
         <div key={item?.id}>
-          <ProductItem item={item} />
+          <TourItem item={item} />
         </div>
       );
     });
@@ -27,4 +30,4 @@ function ProductList(props) {
   );
 }
 
-export default ProductList;
+export default TourList;

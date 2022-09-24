@@ -253,49 +253,506 @@
       "name": "Đồng Tháp"
     }
   ],
-  "tour": [
+  "payment": [],
+  "cart": [
     {
       "price": {
-        "gia1": 12312312,
-        "gia2": 12312,
-        "gia3": 31231231
+        "gia1": 11111,
+        "gia2": 22222,
+        "gia3": 444444
       },
       "from": "Hà Nội",
       "range-picker": {
-        "startDate": "2022-09-30",
-        "endDate": "2022-10-13"
+        "startDate": "2022-09-23",
+        "endDate": "2022-10-21"
       },
-      "nameTour": "qweqweqweqweqwe",
+      "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "address": {
-        "province": "Jiangsu",
-        "street": "wqeqweqwe"
+        "province": "Zhejiang",
+        "street": "dsadsfsdfds"
       },
       "vehicle": [
-        "oto"
+        "oto",
+        "xe-buyt"
       ],
-      "number": 10,
-      "details": "2312312312",
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
       "id": 1
     },
     {
       "price": {
-        "gia1": 13213123
+        "gia1": 11111,
+        "gia2": 22222,
+        "gia3": 444444
+      },
+      "from": "HCM",
+      "range-picker": {
+        "startDate": "2022-09-26",
+        "endDate": "2022-10-18"
+      },
+      "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+      "address": {
+        "province": "Jiangsu",
+        "street": "dsadsfsdfds"
+      },
+      "vehicle": [
+        "oto",
+        "xe-buyt"
+      ],
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+      "id": 3
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "Hà Nội",
+        "range-picker": {
+          "startDate": "2022-09-23",
+          "endDate": "2022-10-21"
+        },
+        "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 1
+      },
+      "id": 4
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+        "address": {
+          "province": "Jiangsu",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 3
+      },
+      "id": 5
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+        "address": {
+          "province": "Jiangsu",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 3
+      },
+      "id": 6
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+        "address": {
+          "province": "Jiangsu",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 3
+      },
+      "id": 7
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+        "address": {
+          "province": "Jiangsu",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 3
+      },
+      "id": 8
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 2
+      },
+      "id": 9
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 2
+      },
+      "id": 10
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "Hà Nội",
+        "range-picker": {
+          "startDate": "2022-09-23",
+          "endDate": "2022-10-21"
+        },
+        "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 1
+      },
+      "id": 11
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "HCM",
+        "range-picker": {
+          "startDate": "2022-09-26",
+          "endDate": "2022-10-18"
+        },
+        "nameTour": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 2
+      },
+      "id": 12
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "Hà Nội",
+        "range-picker": {
+          "startDate": "2022-09-23",
+          "endDate": "2022-10-21"
+        },
+        "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 1
+      },
+      "id": 13
+    },
+    {
+      "item": {
+        "price": {
+          "gia1": 11111,
+          "gia2": 22222,
+          "gia3": 444444
+        },
+        "from": "Hà Nội",
+        "range-picker": {
+          "startDate": "2022-09-23",
+          "endDate": "2022-10-21"
+        },
+        "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "address": {
+          "province": "Zhejiang",
+          "street": "dsadsfsdfds"
+        },
+        "vehicle": [
+          "oto",
+          "xe-buyt"
+        ],
+        "number": 6,
+        "service": [
+          "A",
+          "E",
+          "C"
+        ],
+        "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+        "id": 1
+      },
+      "id": 14
+    }
+  ],
+  "tour": [
+    {
+      "price": {
+        "gia1": 11111,
+        "gia2": 22222,
+        "gia3": 444444
       },
       "from": "Hà Nội",
       "range-picker": {
-        "startDate": "2022-09-24",
-        "endDate": "2022-10-13"
+        "startDate": "2022-09-23",
+        "endDate": "2022-10-21"
       },
-      "nameTour": "asdasd",
+      "nameTour": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "address": {
-        "province": "Jiangsu",
-        "street": "132123"
+        "province": "Zhejiang",
+        "street": "dsadsfsdfds"
       },
       "vehicle": [
+        "oto",
         "xe-buyt"
       ],
-      "details": "12312123",
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+      "id": 1
+    },
+    {
+      "price": {
+        "gia1": 11111,
+        "gia2": 22222,
+        "gia3": 444444
+      },
+      "from": "HCM",
+      "range-picker": {
+        "startDate": "2022-09-26",
+        "endDate": "2022-10-18"
+      },
+      "nameTour": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "address": {
+        "province": "Zhejiang",
+        "street": "dsadsfsdfds"
+      },
+      "vehicle": [
+        "oto",
+        "xe-buyt"
+      ],
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
       "id": 2
+    },
+    {
+      "price": {
+        "gia1": 11111,
+        "gia2": 22222,
+        "gia3": 444444
+      },
+      "from": "HCM",
+      "range-picker": {
+        "startDate": "2022-09-26",
+        "endDate": "2022-10-18"
+      },
+      "nameTour": "cccccccccccccccccccccccccccccccccccccc",
+      "address": {
+        "province": "Jiangsu",
+        "street": "dsadsfsdfds"
+      },
+      "vehicle": [
+        "oto",
+        "xe-buyt"
+      ],
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+      "id": 3
     }
   ]
 }

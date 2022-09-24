@@ -67,7 +67,7 @@ const data = [
   },
 ];
 
-const CustomerManagement = () => {
+const ProducUser = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
@@ -202,4 +202,4 @@ const CustomerManagement = () => {
   return <Table columns={columns} dataSource={data} />;
 };
 
-export default CustomerManagement;
+export default ProducUser;
