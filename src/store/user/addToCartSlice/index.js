@@ -16,6 +16,18 @@ export const addToCart = createAsyncThunk(
     return res;
   }
 );
+export const fetchCart = createAsyncThunk("carts/fetchCart", async () => {
+  const res = await axios
+    .get(URL_CART)
+    .then((result) => {
+      console.log("get ~ result", result);
+      return result.data;
+    })
+    .catch((error) => {
+      console.log("get ~ error", error);
+    });
+  return res;
+});
 
 const addToCartSlice = createSlice({
   name: "carts",
@@ -34,6 +46,17 @@ const addToCartSlice = createSlice({
       })
       .addCase(addToCart.rejected, (state, action) => {
         console.log("addToCart.rejected", { state, action });
+      })
+      .addCase(fetchCart.pending, (state, action) => {
+        console.log("fetchCart.pending", { state, action });
+      })
+
+      .addCase(fetchCart.fulfilled, (state, action) => {
+        console.log("fetchCart.fulfilled ", { state, action });
+        state.carts = action.payload;
+      })
+      .addCase(fetchCart.rejected, (state, action) => {
+        console.log("fetchCart.rejected", { state, action });
       });
   },
 });

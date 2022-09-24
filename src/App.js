@@ -11,6 +11,8 @@ import store from "./store";
 import TourList from "./components/User/tourList";
 
 import theme from "./styles/theme";
+import CartList from "./components/User/cart/cartList";
+
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
         {/* <CustomerManagement /> */}
         {/* <PaymentMethods /> */}
         {/* <AddTour /> */}
-
+        
         <TourList />
+        <CartList/>
         <GlobalStyle />
       </ThemeProvider>
     </Provider>

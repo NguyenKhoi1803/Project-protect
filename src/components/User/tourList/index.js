@@ -1,7 +1,7 @@
-import { Input } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user/fetchTour";
+import { fetchTour } from "../../../store/user/fetchTour"; 
+
 
 import TourItem from "../tourItem";
 
