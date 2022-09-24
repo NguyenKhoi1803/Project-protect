@@ -1,22 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { URL } from "../constans";
+import { URL } from "../constants";
 
 export const fetchTour = createAsyncThunk("tour/fetchTour", async () => {
   const res = await axios
     .get(URL)
     .then((result) => {
-      console.log("await-axios.get ~ result", result);
+      console.log("get ~ result", result);
       return result.data;
     })
     .catch((error) => {
-      console.log("await-axios.get ~ error", error);
+      console.log("get ~ error", error);
     });
   return res;
 });
+
 const tourSlice = createSlice({
   name: "tour",
-  initialState: { tours: [] },
+  initialState: { tour: [] },
   reducers: {},
 
   extraReducers(builder) {
@@ -24,9 +25,10 @@ const tourSlice = createSlice({
       .addCase(fetchTour.pending, (state, action) => {
         console.log("fetchTour.pending", { state, action });
       })
+
       .addCase(fetchTour.fulfilled, (state, action) => {
-        console.log("fetchTour.fulfilled", { state, action });
-        state.tours = action.payload;
+        console.log("fetchTour.fulfilled ", { state, action });
+        state.tour = action.payload;
       })
       .addCase(fetchTour.rejected, (state, action) => {
         console.log("fetchTour.rejected", { state, action });

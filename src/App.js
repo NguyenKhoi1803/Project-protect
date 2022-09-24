@@ -1,6 +1,5 @@
 import "./App.css";
 import Product from "./components/products";
-import ProductItem from "./components/products/productsItem";
 
 function App() {
   return (

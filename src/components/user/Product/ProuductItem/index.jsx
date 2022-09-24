@@ -1,9 +1,11 @@
 import React from "react";
 
-function ProductItem({item}) {
+function ProductItem({ item }) {
   return (
     <div>
-      <div>{item.content}</div>
+      <div>
+        <p>{item.nameTour}</p>
+      </div>
     </div>
   );
 }

@@ -1,13 +1,12 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../slices/tourSlice";
-import ProductItem from "./productsItem";
+import { fetchTour } from "../../../store/user";
+import ProductItem from "./ProuductItem";
 
-function Product() {
+function ProductList(props) {
   const dispatch = useDispatch();
-  const newTourArr = useSelector((state) => state.tour.tours);
-  console.log("asdasd", newTourArr);
+  const newTourArr = useSelector((state) => state.tour.tour);
+  console.log("newTourArr", newTourArr);
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
@@ -24,9 +23,8 @@ function Product() {
   return (
     <div>
       <div>{renderItem()}</div>
-      <h1>asdasdas</h1>
     </div>
   );
 }
 
-export default Product;
+export default ProductList;
