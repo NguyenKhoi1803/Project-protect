@@ -6,9 +6,9 @@ import CartItem from "./cartItem";
 
 function CartList() {
   const dispatch = useDispatch();
-  const newCartArr = useSelector((state) => state.fetchTourReducer.tours);
-
+  const newCartArr = useSelector((state) => state.addToCartReducer.carts);
   console.log("newCartArr", newCartArr);
+
   useEffect(() => {
     dispatch(fetchCart());
   }, [dispatch]);

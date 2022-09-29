@@ -1,18 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-
-// import LayoutAdmin from "./components/LayoutAdmin";
-import CustomerManagement from "./components/CustomerManagement";
-// import PaymentMethods from "./components/PaymentMethods";
-import AddTour from "./components/AddTour";
 import GlobalStyle from "./styles/globalStyle";
 import store from "./store";
-import TourList from "./components/User/tourList";
-
 import theme from "./styles/theme";
-import CartList from "./components/User/cart/cartList";
-
+import Header from "./layout/Header";
+import TourItem from "../src/components/User/tourItem/index";
+import TourList from "./components/User/tourList";
 
 function App() {
   return (
@@ -22,9 +16,10 @@ function App() {
         {/* <CustomerManagement /> */}
         {/* <PaymentMethods /> */}
         {/* <AddTour /> */}
-        
-        <TourList />
-        <CartList/>
+        {/* <TourList /> */}
+        {/* <CartList /> */}
+        <Header />
+        {/* <TourItem /> */}
         <GlobalStyle />
       </ThemeProvider>
     </Provider>

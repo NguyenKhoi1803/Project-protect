@@ -8,10 +8,10 @@ export const addToCart = createAsyncThunk(
     const res = await axios
       .post(URL_CART, payload)
       .then((result) => {
-        console.log("get ~ result", result);
+        console.log("get ~ result ~ cart", result);
       })
       .catch((error) => {
-        console.log("get ~ error", error);
+        console.log("get ~ result ~ cart", error);
       });
     return res;
   }

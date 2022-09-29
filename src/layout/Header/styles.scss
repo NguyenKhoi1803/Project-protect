@@ -1,0 +1,17 @@
+.container__Header {
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: calc(100% - 70%);
+        vertical-align: middle;
+    }
+
+    & .container__Header--Space {
+        width: calc(100% - 70%)
+    }
+
+}

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user/fetchTour"; 
-
+import { fetchTour } from "../../../store/user/fetchTour";
 
 import TourItem from "../tourItem";
+import "../tourList/styles.scss"
 
 function TourList() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function TourList() {
   const renderItem = () => {
     return newTourArr?.map((item) => {
       return (
-        <div key={item?.id}>
+        <div className="TourList" key={item?.id}>
           <TourItem item={item} />
         </div>
       );
