@@ -1,12 +1,15 @@
 import React from "react";
-import "../searchTour/styles.scss"
-function SearchForm() {
-  return (
-    <form className="container__Search">
-      <input placeholder="Search"></input>
-      <button type="submit">Search</button>
-    </form>
-  );
-}
+import "antd/dist/antd.css";
+
+import { Input, Space } from "antd";
+const { Search } = Input;
+
+const onSearch = (value) => console.log(value);
+
+const SearchForm = () => (
+  <Space direction="vertical">
+    <Search placeholder="input search text" onSearch={onSearch} enterButton />
+  </Space>
+);
 
 export default SearchForm;

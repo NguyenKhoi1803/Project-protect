@@ -4,6 +4,7 @@ import { fetchTour } from "../../../store/user/fetchTour";
 
 import TourItem from "../tourItem";
 import "../tourList/styles.scss"
+import { Carousel } from "antd";
 
 function TourList() {
   const dispatch = useDispatch();
@@ -17,17 +18,14 @@ function TourList() {
   const renderItem = () => {
     return newTourArr?.map((item) => {
       return (
-        <div className="TourList" key={item?.id}>
+        <div className="renderItem" key={item?.id}>
           <TourItem item={item} />
         </div>
       );
     });
   };
-  return (
-    <div>
-      <div>{renderItem()}</div>
-    </div>
-  );
+
+  return <div className="TourList">{renderItem()}</div>;
 }
 
 export default TourList;

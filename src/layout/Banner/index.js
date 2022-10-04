@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap';
+} from "reactstrap";
 
 const items = [
   {
-    src: 'https://picsum.photos/id/123/1200/400',
-    
+    src: "https://www.saigontourist.net/uploads/destination/NuocNgoai/singapore/Landscape-of-the-Singapore-financial-district_491060245.jpg",
+
     key: 1,
   },
   {
-    src: 'https://picsum.photos/id/456/1200/400',
-    
+    src: "https://www.saigontourist.net/uploads/destination/NuocNgoai/brazil/TuongChuaCuuThe_1445533301.jpg",
+
     key: 2,
-  },
-  {
-    src: 'https://picsum.photos/id/678/1200/400',
-   
-    key: 3,
   },
 ];
 
@@ -53,7 +48,7 @@ function Banner(args) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img src={item.src} alt={item.altText} width="100%" height="400" />
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}
