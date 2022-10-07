@@ -18,17 +18,17 @@
 
 .card {
   border: 1px solid #fff;
-  background: black;
+  background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 40%);
   height: 400px;
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 
-.card-top h1 {
-  font-size: 0.9rem;
+.card-top h2 {
+  font-size: 1.5rem;
   margin: 20px;
 }
 
@@ -57,6 +57,10 @@
 }
 
 .renderItem123 {
-  text-align: center;
+  text-align: start;
   margin-top: 50px;
+
+  & h1 { 
+    text-align: center;
+  }
 }

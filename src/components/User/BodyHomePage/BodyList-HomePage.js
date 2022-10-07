@@ -47,45 +47,32 @@ function BodyList() {
     }
   };
   const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
   return (
     <div>
       <div className="renderItem123">
-        <h1>Tour Da Nang</h1>
+        <h1>Đà Nẵng</h1>
         <Slider className="Carousel" {...settings}>
           {renderItem(1)}
+        </Slider>
+      </div>
+      <div className="renderItem123">
+        <h1>Hồ Chí Minh</h1>
+        <Slider className="Carousel" {...settings}>
+          {renderItem(2)}
+        </Slider>
+      </div>
+      <div className="renderItem123">
+        <h1>Hà Nội</h1>
+        <Slider className="Carousel" {...settings}>
+          {renderItem(3)}
         </Slider>
       </div>
     </div>

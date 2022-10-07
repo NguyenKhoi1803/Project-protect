@@ -4,14 +4,10 @@ import { fetchTour } from "../../../store/user/fetchTour";
 
 import TourItem from "../tourItem";
 import "../tourList/styles.scss";
-import { Carousel } from "antd";
 
 function TourList() {
   const dispatch = useDispatch();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-  const searchedTour = useSelector((state) => state.searchChangeReducer.search);
-
-  console.log("searchedTour", searchedTour);
 
   console.log("newTourArr", newTourArr);
   useEffect(() => {

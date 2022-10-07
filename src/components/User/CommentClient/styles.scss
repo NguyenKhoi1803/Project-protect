@@ -1,0 +1,38 @@
+.NguyenKhoi {
+
+
+    & img {
+        border-radius: 117px;
+        height: 120%;
+        margin: auto;
+    }
+}
+
+
+.renderComment123 {
+
+
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    line-height: 25px;
+}
+
+.container__comment {
+    margin-top: 5%;
+    width: 100%;
+    padding: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url("https://c.wallhere.com/photos/53/49/1920x1080_px_clouds_field_forest_Hill_landscape_mountain_nature-789211.jpg!d");
+
+
+    & h1 {
+        font-style: oblique;
+        font-weight: 700;
+        font-family: cursive;
+        color: tomato;
+    }
+}

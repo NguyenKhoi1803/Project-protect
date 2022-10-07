@@ -17,13 +17,12 @@ function BodyItem({ item }) {
       <div className="card">
         <div className="card-top">
           <img src={item.img} />
-          <h1>{item.nameTour}</h1>
+          <h2>{item.nameTour}</h2>
         </div>
         <div className="card-bottom">
           <h3>{item.price.children}</h3>
           <span className="category">{item.details}</span>
         </div>
-        <button onClick={handleDetails}>Chi Tiết</button>
       </div>
     </div>
   );

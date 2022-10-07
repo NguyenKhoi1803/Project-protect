@@ -1,6 +1,6 @@
 import React from "react";
-import SortBy from "../../components/User/SortBy";
-import TourList from "../../components/User/tourList"
+
+import TourList from "../../components/User/tourList";
 import Header from "../Header";
 
 function ListPage(props) {
@@ -8,8 +8,7 @@ function ListPage(props) {
     <div className="ListPage">
       <Header />
       <div className="ListPage__Body">
-      <SortBy/>
-      <TourList/>
+        <TourList />
       </div>
     </div>
   );

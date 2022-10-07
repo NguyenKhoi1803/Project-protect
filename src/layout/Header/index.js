@@ -1,5 +1,5 @@
 import React from "react";
-import SearchForm from "../../components/User/searchTour";
+
 
 import "../Header/styles.scss";
 
@@ -11,7 +11,7 @@ function Header(props) {
         alt=""
       />
 
-      <SearchForm />
+      
     </div>
   );
 }
