@@ -18,6 +18,7 @@
 
 .card {
   border: 1px solid #fff;
+  width: 300px;
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -59,8 +60,20 @@
 .renderItem123 {
   text-align: start;
   margin-top: 50px;
+  width: 100%;
+}
 
-  & h1 { 
+.renderItem123__heading {
+  display: flex;
+  width: 80%;
+  margin: auto;
+
+  & h1 {
     text-align: center;
+    width: 80%;
+    text-align: start;
+  }
+  & .renderItem123__heading--button {
+    width: 20%;
   }
 }

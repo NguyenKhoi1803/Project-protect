@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BodyItem from "./BodyItem-HomePage";
 import "../BodyHomePage/styles.scss";
+import { Button } from "reactstrap";
 
 function BodyList() {
   const dispatch = useDispatch();
@@ -58,19 +59,34 @@ function BodyList() {
   return (
     <div>
       <div className="renderItem123">
-        <h1>Đà Nẵng</h1>
+        <div className="renderItem123__heading">
+          <h1>Đà Nẵng</h1>
+          <Button color="success" className="renderItem123__heading--button">
+            Xem Tất Cả
+          </Button>
+        </div>
         <Slider className="Carousel" {...settings}>
           {renderItem(1)}
         </Slider>
       </div>
       <div className="renderItem123">
-        <h1>Hồ Chí Minh</h1>
+        <div className="renderItem123__heading">
+          <h1>Hồ Chí Minh</h1>
+          <Button color="success" className="renderItem123__heading--button">
+            Xem Tất Cả
+          </Button>
+        </div>
         <Slider className="Carousel" {...settings}>
           {renderItem(2)}
         </Slider>
       </div>
       <div className="renderItem123">
-        <h1>Hà Nội</h1>
+        <div className="renderItem123__heading">
+          <h1>Hà Nội</h1>
+          <Button color="success" className="renderItem123__heading--button">
+            Xem Tất Cả
+          </Button>
+        </div>
         <Slider className="Carousel" {...settings}>
           {renderItem(3)}
         </Slider>

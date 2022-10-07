@@ -20,8 +20,9 @@ function BodyItem({ item }) {
           <h2>{item.nameTour}</h2>
         </div>
         <div className="card-bottom">
-          <h3>{item.price.children}</h3>
-          <span className="category">{item.details}</span>
+          <p> Mã Tour {item.id}</p>
+          <p> Ngày Khởi Hành : {item.rangepicker.startDate}</p>
+          <p> Số Chỗ Còn Nhận : {item.number} </p>
         </div>
       </div>
     </div>
