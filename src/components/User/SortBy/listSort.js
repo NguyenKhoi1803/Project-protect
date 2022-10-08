@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
 import "./styles.scss";
 
-import { DatePicker, Form, TreeSelect } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user/fetchTour";
-import { selectFilterChange } from "../../../store/user/sortSlice";
-// import selectFilterChange from "../../../store/user/sortSlice/index";
+
+import selectFilterChange from "../../../store/user/sortSlice/index";
 import { Select } from "antd";
 
 const { Option } = Select;
@@ -14,19 +12,6 @@ const SortBy = () => {
   const dispatch = useDispatch();
 
   const sortTour = useSelector((state) => state.fetchTourReducer.tours);
-  const aaaa = useSelector((state) => state.filterReducer.select);
-
-  console.log("aaa", aaaa);
-
-  // useEffect(() => {
-  //   dispatch(fetchTour());
-  // }, [dispatch]);
-
-  console.log("sortTour", sortTour);
-  useEffect(() => {
-    dispatch(fetchTour());
-  }, [dispatch]);
-
   let listPost = [];
   if (sortTour?.length > 0) {
     listPost = sortTour?.map((item) => item?.to);
@@ -47,7 +32,7 @@ const SortBy = () => {
 
   const onChange = (value) => {
     console.log(`selected ${value}`);
-    // dispatch(filterSlice.actions.selectFilterChange(value));
+    dispatch(selectFilterChange(value));
   };
 
   const onSearch = (value) => {

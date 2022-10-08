@@ -307,10 +307,8 @@
       },
       "from": "Hồ Chí Minh",
       "to": "Hà Nội",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",

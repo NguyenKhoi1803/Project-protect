@@ -8,15 +8,22 @@ import "../tourList/styles.scss";
 function TourList() {
   const dispatch = useDispatch();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+  const filterList = useSelector((state) => state.filterReducer.select);
 
+  console.log("fiterList", filterList);
   console.log("newTourArr", newTourArr);
+
+  const arr = newTourArr?.filter((item) => item.to === filterList);
+
+  console.log("arr", arr);
+
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
 
   return (
     <div className="TourList">
-      {newTourArr?.map((item) => (
+      {arr?.map((item) => (
         <TourItem key={item.id} item={item} />
       ))}
     </div>

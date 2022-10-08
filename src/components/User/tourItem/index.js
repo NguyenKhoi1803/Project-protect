@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Button } from "reactstrap";
@@ -16,11 +15,7 @@ function TourItem({ item }) {
 
   return (
     <div className="container__tourItem">
-      <img
-        className="container__tourItem--img"
-        src={item.img}
-        
-      />
+      <img className="container__tourItem--img" src={item.img} />
       <div className="container__tourItem-details">
         <div className="container__tourItem-details1">
           <h4>{item.nameTour}</h4>
@@ -29,8 +24,8 @@ function TourItem({ item }) {
           </p>
 
           <p>Phương tiện di chuyển : {item.vehicle}</p>
-          <p>Ngày Khởi Hành : {item.rangepicker.startDate}</p>
-          <p>Ngày Về : {item.rangepicker.endDate}</p>
+          <p>Ngày Khởi Hành : {item.startDate}</p>
+          <p>Ngày Về : {item.endDate}</p>
         </div>
         <div className="container__tourItem-details2">
           <p>Gía Người Lớn : {item.price.adults}</p>
