@@ -4,7 +4,7 @@ import "./styles.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import selectFilterChange from "../../../store/user/sortSlice/index";
+import { selectFilterChange } from "../../../store/user/sortSlice/index";
 import { Select } from "antd";
 
 const { Option } = Select;
@@ -46,7 +46,7 @@ const SortBy = () => {
       placeholder="Select a person"
       optionFilterProp="children"
       onChange={onChange}
-      onSearch={dispatch(onSearch)}
+      onSearch={onSearch}
       filterOption={(input, option) =>
         option.children.toLowerCase().includes(input.toLowerCase())
       }
