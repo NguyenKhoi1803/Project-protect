@@ -18,6 +18,7 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async () => {
 const tourSlice = createSlice({
   name: "tour",
   initialState: { tours: [] },
+
   reducers: {},
 
   extraReducers(builder) {

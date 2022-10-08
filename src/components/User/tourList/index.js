@@ -14,17 +14,13 @@ function TourList() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const renderItem = () => {
-    return newTourArr?.map((item) => {
-      return (
-        <div className="renderItem" key={item?.id}>
-          <TourItem item={item} />
-        </div>
-      );
-    });
-  };
-
-  return <div className="TourList">{renderItem()}</div>;
+  return (
+    <div className="TourList">
+      {newTourArr?.map((item) => (
+        <TourItem key={item.id} item={item} />
+      ))}
+    </div>
+  );
 }
 
 export default TourList;

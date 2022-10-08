@@ -13,9 +13,9 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <HomePage />
-        {/* <ListPage/> */}
-        <CommentList/>
+        {/* <HomePage /> */}
+        <ListPage/>
+        {/* <CommentList/> */}
       </ThemeProvider>
     </Provider>
   );
