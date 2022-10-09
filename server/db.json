@@ -1,4 +1,39 @@
 {
+  "account": [
+    {
+      "fullname": "đasadads",
+      "email": "aaa@gmail.com",
+      "password": "111111",
+      "confirm": "111111",
+      "prefix": "84",
+      "phone": "5346546456",
+      "gender": "male",
+      "agreement": true,
+      "id": 1
+    },
+    {
+      "fullname": "Thao Ngan",
+      "email": "ngandu123@gmail.com",
+      "password": "Ngan123a",
+      "confirm": "Ngan123a",
+      "prefix": "84",
+      "phone": "0906557709",
+      "gender": "female",
+      "agreement": true,
+      "id": 2
+    },
+    {
+      "fullname": "Nguyen Khoi",
+      "email": "nguyenkhoi123@gmail.com",
+      "password": "khoi123a",
+      "confirm": "khoi123a",
+      "prefix": "84",
+      "phone": "eqweqwweqwe",
+      "gender": "male",
+      "agreement": true,
+      "id": 3
+    }
+  ],
   "cart": [
     {
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
