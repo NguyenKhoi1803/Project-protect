@@ -6,17 +6,17 @@ const items = [
     src: "https://brillianthotel.vn/upload/hinhanh/banner-cs-0074.png",
     caption: "Đà Nẵng Đáng Sống",
     descrip:
-      "Thành phố Đà Nẵng nằm bên dòng sông Hàn; phía Đông vươn ra biển Đông với những bãi biển dài tăm tắp và bán đảo Sơn Trà còn rất hoang sơ; phía Bắc và phía Tây được bao bọc bởi đèo núi cao. Đèo Hải Vân cheo leo hiểm trở là ranh giới tự nhiên giữa thành phố và tỉnh Thừa Thiên-Huế.",
+      "Đà Nẵng, thành phố của Cửu Long Vượt Vũ Môn",
   },
   {
     src: "https://saigon.fusion-suites.com/wp-content/uploads/sites/7/2020/08/3-1-e1608794653928.jpg",
     caption: "Sài Gòn Hoa Lệ",
-    descrip: "asjdhajkshjdkahsjkd",
+    descrip: "Sài Gòn Hoa Lệ, Hoa cho người giàu, Lệ cho người nghèo",
   },
   {
-    src: "https://vietnam.travel/sites/default/files/styles/top_banner/public/2017-06/vietnam-travel-5.jpg?itok=XVnHP3ty",
+    src: "https://thgzurs.com/wp-content/uploads/2021/07/thgzurs.com-tim-hieu-ve-quang-truong-ba-dinh-giua-long-ha-noi-6-1536x1024.jpg",
     caption: "Hà Nội Bình Yên",
-    descrip: "asdasgdhjagsjdasd",
+    descrip: "Hà Nội...Thủ Đô ngàn năm Văn Hiến",
   },
 ];
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
 import Slider from "react-slick";
@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import BodyItem from "./BodyItem-HomePage";
 import "../BodyHomePage/styles.scss";
 import { Button } from "reactstrap";
+import { Carousel, Radio } from 'antd';
 
 function BodyList() {
   const dispatch = useDispatch();
@@ -47,46 +48,33 @@ function BodyList() {
       default:
     }
   };
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-  };
   return (
-    <div>
-      <div className="renderItem123">
-        <div className="renderItem123__heading">
+    <div className="container__renderItem">
+      <div className="container__renderItem--List">
+        <div className="container__renderItem--card">
           <h1>Đà Nẵng</h1>
-          <Button color="warning">warning</Button>
+          <Carousel dotPosition="left" autoplay>
+            {renderItem(1)}
+          </Carousel>
+          <button>see details</button>
         </div>
-        <Slider className="Carousel" {...settings}>
-          {renderItem(1)}
-        </Slider>
-      </div>
-      <div className="renderItem123">
-        <div className="renderItem123__heading">
+        <div className="container__renderItem--card">
           <h1>Hồ Chí Minh</h1>
-          <Button color="warning">warning</Button>
+          <Carousel dotPosition="left" autoplay>
+            {renderItem(2)}
+          </Carousel>
+          <button>see details</button>
         </div>
-        <Slider className="Carousel" {...settings}>
-          {renderItem(2)}
-        </Slider>
-      </div>
-      <div className="renderItem123">
-        <div className="renderItem123__heading">
+        <div className="container__renderItem--card">
           <h1>Hà Nội</h1>
-          <Button color="warning">warning</Button>
+          <Carousel dotPosition="left" autoplay>
+            {renderItem(3)}
+          </Carousel>
+          <button>see details</button>
         </div>
-        <Slider className="Carousel" {...settings}>
-          {renderItem(3)}
-        </Slider>
       </div>
+
     </div>
   );
 }
-
 export default BodyList;

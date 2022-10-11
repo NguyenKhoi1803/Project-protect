@@ -58,7 +58,7 @@ const Login = () => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Open Modal
+        Login
       </Button>
       <Modal
         title="Basic Modal"
