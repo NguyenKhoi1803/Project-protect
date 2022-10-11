@@ -34,22 +34,21 @@ const Login = () => {
   const onFinish = (values) => {
     console.log("Success:", values);
 
-    const aaa = loginArr.map((item) => ({
+    const succeed = loginArr.map((item) => ({
       username: item.email,
       password: item.password,
     }));
 
-    const asd = aaa.find(
+    const isSucceed = succeed.find(
       (item) =>
         item.username === values.username && item.password === values.password
     );
-    if (asd) {
-      alert("danwg nhap thanh cong");
+    if (isSucceed) {
+      localStorage.setItem("account", JSON.stringify(values));
+      alert("dangnhap thanh cong");
     } else {
-      alert("saitai khoan");
+      alert("ten dang nhap hoac mat khau sai")
     }
-
-
   };
 
   const onFinishFailed = (errorInfo) => {

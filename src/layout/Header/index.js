@@ -1,18 +1,18 @@
 import React from "react";
 import Login from "../../components/User/Login";
 import Register from "../../components/User/Register";
+import Banner from "../Banner";
 
 import "../Header/styles.scss";
 
 function Header(props) {
   return (
-    <div className="container__Header">
-      <img
-        src="https://www.tsttourist.com/vnt_upload/weblink/Logo-TST-tourist.png"
-        alt=""
-      />
-      <Register />
-      <Login />
+    <div>
+      <div className="container__Header">
+        <Register />
+        <Login />
+      </div>
+      <Banner />
     </div>
   );
 }

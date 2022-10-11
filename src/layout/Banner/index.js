@@ -1,87 +1,44 @@
-import React, { useState } from "react";
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption,
-} from "reactstrap";
+import "./styles.scss";
+import Carousel from "react-bootstrap/Carousel";
 
 const items = [
   {
-    src: "https://www.saigontourist.net/uploads/destination/NuocNgoai/singapore/Landscape-of-the-Singapore-financial-district_491060245.jpg",
-
-    key: 1,
+    src: "https://brillianthotel.vn/upload/hinhanh/banner-cs-0074.png",
+    caption: "Đà Nẵng Đáng Sống",
+    descrip:
+      "Thành phố Đà Nẵng nằm bên dòng sông Hàn; phía Đông vươn ra biển Đông với những bãi biển dài tăm tắp và bán đảo Sơn Trà còn rất hoang sơ; phía Bắc và phía Tây được bao bọc bởi đèo núi cao. Đèo Hải Vân cheo leo hiểm trở là ranh giới tự nhiên giữa thành phố và tỉnh Thừa Thiên-Huế.",
   },
   {
-    src: "https://www.saigontourist.net/uploads/destination/NuocNgoai/brazil/TuongChuaCuuThe_1445533301.jpg",
-
-    key: 2,
+    src: "https://saigon.fusion-suites.com/wp-content/uploads/sites/7/2020/08/3-1-e1608794653928.jpg",
+    caption: "Sài Gòn Hoa Lệ",
+    descrip: "asjdhajkshjdkahsjkd",
+  },
+  {
+    src: "https://vietnam.travel/sites/default/files/styles/top_banner/public/2017-06/vietnam-travel-5.jpg?itok=XVnHP3ty",
+    caption: "Hà Nội Bình Yên",
+    descrip: "asdasgdhjagsjdasd",
   },
 ];
 
-function Banner(args) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
-
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
-
-  const slides = items.map((item) => {
-    return (
-      <CarouselItem
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-        key={item.src}
-      >
-        <img src={item.src} alt={item.altText} width="100%" height="400" />
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
-      </CarouselItem>
-    );
-  });
-
+const slides = items?.map((item) => {
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      {...args}
-    >
-      <CarouselIndicators
-        items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
+    <Carousel.Item>
+      <img
+        className="d-block w-100"
+        src={item.src}
+        alt=""
+        className="banner__img"
       />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
+      <Carousel.Caption className="banner__infor">
+        <h3>{item.caption}</h3>
+        <p>{item.descrip}</p>
+      </Carousel.Caption>
+    </Carousel.Item>
   );
+});
+
+function Banner() {
+  return <Carousel fade>{slides}</Carousel>;
 }
 
 export default Banner;

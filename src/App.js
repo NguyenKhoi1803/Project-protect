@@ -5,19 +5,21 @@ import { ThemeProvider } from "styled-components";
 import store from "./store";
 import theme from "./styles/theme";
 
-import HomePage from "./layout/HomePage";
-import ListPage from "./layout/ListPage";
-import CommentList from "./components/User/CommentClient/commentList";
-import BodyDetailsPage from "./components/User/BodyDetailsPage";
+import Header from "./layout/Header";
+import { Route, Routes } from "react-router-dom";
+import BodyList from "./components/User/BodyHomePage/BodyList-HomePage";
+import TourList from "./components/User/tourList";
 
 function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <HomePage />
-        {/* <ListPage /> */}
+        <Header />
 
-        {/* <BodyDetailsPage /> */}
+        <Routes>
+          <Route path="/" element={<BodyList />}></Route>
+          <Route path="/product" element={<TourList />}></Route>
+        </Routes>
       </ThemeProvider>
     </Provider>
   );

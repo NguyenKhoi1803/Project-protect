@@ -4,11 +4,12 @@ import { URL_ACCOUNT } from "../../../constants";
 
 export const addAccount = createAsyncThunk(
   "account/addAccount",
-  async (payload) => {
+  async (payload, store) => {
     const res = await axios
       .post(URL_ACCOUNT, payload)
       .then((result) => {
         console.log("get ~ result ~ cart", result);
+        store.dispatch(fetchAccount());
       })
       .catch((error) => {
         console.log("get ~ result ~ cart", error);

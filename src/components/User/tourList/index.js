@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
+import SortBy from "../SortBy/listSort";
 
 import TourItem from "../tourItem";
 import "../tourList/styles.scss";
@@ -23,6 +24,7 @@ function TourList() {
 
   return (
     <div className="TourList">
+      <SortBy />
       {arr?.map((item) => (
         <TourItem key={item.id} item={item} />
       ))}

@@ -32,6 +32,28 @@
       "gender": "male",
       "agreement": true,
       "id": 3
+    },
+    {
+      "fullname": "Ngan",
+      "email": "ngan123@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "prefix": "84",
+      "phone": "12837912",
+      "gender": "female",
+      "agreement": true,
+      "id": 4
+    },
+    {
+      "fullname": "KHOI",
+      "email": "khoi123a@gmail.com",
+      "password": "khoi123a",
+      "confirm": "khoi123a",
+      "prefix": "84",
+      "phone": "qưeqwe",
+      "gender": "male",
+      "agreement": true,
+      "id": 5
     }
   ],
   "cart": [
