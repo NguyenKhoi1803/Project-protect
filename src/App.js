@@ -9,17 +9,18 @@ import Header from "./layout/Header";
 import { Route, Routes } from "react-router-dom";
 import BodyList from "./components/User/BodyHomePage/BodyList-HomePage";
 import TourList from "./components/User/tourList";
+import Footer from "./layout/Footer";
 
 function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Header />
-
         <Routes>
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
         </Routes>
+        <Footer/>
       </ThemeProvider>
     </Provider>
   );

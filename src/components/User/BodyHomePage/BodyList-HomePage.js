@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BodyItem from "./BodyItem-HomePage";
 import "../BodyHomePage/styles.scss";
-import { Button } from "reactstrap";
-import { Carousel, Radio } from 'antd';
+import { Carousel, Radio } from "antd";
+import Button from "react-bootstrap/Button";
 
 function BodyList() {
   const dispatch = useDispatch();
@@ -52,28 +51,33 @@ function BodyList() {
     <div className="container__renderItem">
       <div className="container__renderItem--List">
         <div className="container__renderItem--card">
-          <h1>Đà Nẵng</h1>
+          <div className="container__renderItem--header">
+            <h1>Đà Nẵng</h1>
+            <Button variant="warning">Chi Tiết</Button>
+          </div>
           <Carousel dotPosition="left" autoplay>
             {renderItem(1)}
           </Carousel>
-          <button>see details</button>
         </div>
         <div className="container__renderItem--card">
-          <h1>Hồ Chí Minh</h1>
+          <div className="container__renderItem--header">
+            <h1>Hồ Chí Minh</h1>
+            <Button variant="warning">Chi Tiết</Button>
+          </div>
           <Carousel dotPosition="left" autoplay>
             {renderItem(2)}
           </Carousel>
-          <button>see details</button>
         </div>
         <div className="container__renderItem--card">
-          <h1>Hà Nội</h1>
+          <div className="container__renderItem--header">
+            <h1>Hà Nội</h1>
+            <Button variant="warning">Chi Tiết</Button>
+          </div>
           <Carousel dotPosition="left" autoplay>
             {renderItem(3)}
           </Carousel>
-          <button>see details</button>
         </div>
       </div>
-
     </div>
   );
 }

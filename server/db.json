@@ -92,12 +92,10 @@
         "adults": 11111,
         "children": 22222
       },
-      "from": "Hà Nội",
+      "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",
@@ -121,10 +119,8 @@
       },
       "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",
@@ -148,10 +144,8 @@
       },
       "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",
@@ -174,11 +168,9 @@
         "children": 22222
       },
       "from": "Hồ Chí Minh",
-      "to": "Đà Nẵng",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "to": "Hồ Chí Minh",
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",
@@ -201,11 +193,9 @@
         "children": 22222
       },
       "from": "Hồ Chí Minh",
-      "to": "Đà Nẵng",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
+      "to": "Hồ Chí Minh",
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
       "nameTour": "Tour Du Lich Ha Noi",
       "address": {
         "province": "Zhejiang",
@@ -220,141 +210,6 @@
       ],
       "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
       "id": 5
-    },
-    {
-      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
-      "from": "Hồ Chí Minh",
-      "to": "Hồ Chí Minh",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
-      "nameTour": "Tour Du Lich Ha Noi",
-      "address": {
-        "province": "Zhejiang",
-        "street": "dsadsfsdfds"
-      },
-      "vehicle": "oto",
-      "number": 6,
-      "service": [
-        "A",
-        "E",
-        "C"
-      ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 6
-    },
-    {
-      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
-      "from": "Hồ Chí Minh",
-      "to": "Hồ Chí Minh",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
-      "nameTour": "Tour Du Lich Ha Noi",
-      "address": {
-        "province": "Zhejiang",
-        "street": "dsadsfsdfds"
-      },
-      "vehicle": "oto",
-      "number": 6,
-      "service": [
-        "A",
-        "E",
-        "C"
-      ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 7
-    },
-    {
-      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
-      "from": "Hồ Chí Minh",
-      "to": "Hồ Chí Minh",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
-      "nameTour": "Tour Du Lich Ha Noi",
-      "address": {
-        "province": "Zhejiang",
-        "street": "dsadsfsdfds"
-      },
-      "vehicle": "oto",
-      "number": 6,
-      "service": [
-        "A",
-        "E",
-        "C"
-      ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 8
-    },
-    {
-      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
-      "from": "Hồ Chí Minh",
-      "to": "Hà Nội",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
-      "nameTour": "Tour Du Lich Ha Noi",
-      "address": {
-        "province": "Zhejiang",
-        "street": "dsadsfsdfds"
-      },
-      "vehicle": "oto",
-      "number": 6,
-      "service": [
-        "A",
-        "E",
-        "C"
-      ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 9
-    },
-    {
-      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
-      "from": "Hồ Chí Minh",
-      "to": "Hà Nội",
-      "rangepicker": {
-        "startDate": "2022-09-23",
-        "endDate": "2022-10-21"
-      },
-      "nameTour": "Tour Du Lich Ha Noi",
-      "address": {
-        "province": "Zhejiang",
-        "street": "dsadsfsdfds"
-      },
-      "vehicle": "oto",
-      "number": 6,
-      "service": [
-        "A",
-        "E",
-        "C"
-      ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 10
     },
     {
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
@@ -379,7 +234,32 @@
         "C"
       ],
       "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      "id": 11
+      "id": 6
+    },
+    {
+      "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
+      "price": {
+        "adults": 11111,
+        "children": 22222
+      },
+      "from": "Hồ Chí Minh",
+      "to": "Hà Nội",
+      "startDate": "2022-09-23",
+      "endDate": "2022-10-21",
+      "nameTour": "Tour Du Lich Ha Noi",
+      "address": {
+        "province": "Zhejiang",
+        "street": "dsadsfsdfds"
+      },
+      "vehicle": "oto",
+      "number": 6,
+      "service": [
+        "A",
+        "E",
+        "C"
+      ],
+      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+      "id": 7
     }
   ],
   "commentClient": [
