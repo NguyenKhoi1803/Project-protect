@@ -7,6 +7,7 @@ import BodyItem from "./BodyItem-HomePage";
 import "../BodyHomePage/styles.scss";
 import { Carousel, Radio } from "antd";
 import Button from "react-bootstrap/Button";
+import Slider from "react-slick";
 
 function BodyList() {
   const dispatch = useDispatch();
@@ -47,35 +48,68 @@ function BodyList() {
       default:
     }
   };
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="container__renderItem">
-      <div className="container__renderItem--List">
-        <div className="container__renderItem--card">
-          <div className="container__renderItem--header">
+    <div className="container__body">
+      <div className="container__body--List">
+        <div className="container__body--Card">
+          <div className="container__body--Header">
             <h1>Đà Nẵng</h1>
-            <Button variant="warning">Chi Tiết</Button>
+            <p className="space"></p>
+            <button class="button button2">Chi Tiết</button>
           </div>
-          <Carousel dotPosition="left" autoplay>
-            {renderItem(1)}
-          </Carousel>
+          <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
-        <div className="container__renderItem--card">
-          <div className="container__renderItem--header">
+        <div className="container__body--Card">
+          <div className="container__body--Header">
             <h1>Hồ Chí Minh</h1>
-            <Button variant="warning">Chi Tiết</Button>
+            <p className="space"></p>
+            <button class="button button2">Chi Tiết</button>
           </div>
-          <Carousel dotPosition="left" autoplay>
-            {renderItem(2)}
-          </Carousel>
+          <Slider {...settings}>{renderItem(2)}</Slider>
         </div>
-        <div className="container__renderItem--card">
-          <div className="container__renderItem--header">
+        <div className="container__body--Card">
+          <div className="container__body--Header">
             <h1>Hà Nội</h1>
-            <Button variant="warning">Chi Tiết</Button>
+            <p className="space"></p>
+            <button class="button button2">Chi Tiết</button>
           </div>
-          <Carousel dotPosition="left" autoplay>
-            {renderItem(3)}
-          </Carousel>
+          <Slider {...settings}>{renderItem(3)}</Slider>
         </div>
       </div>
     </div>

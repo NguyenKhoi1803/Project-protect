@@ -6,52 +6,39 @@ import "../BodyHomePage/styles.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
+  BarcodeOutlined,
   CalendarOutlined,
   DollarCircleOutlined,
   QrcodeOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { Card } from "antd";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function BodyItem({ item }) {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const handleDetails = () => {
-    navigate("/ListPage");
-  };
-
   return (
-    <div className="container__BodyItem">
-      <img src={item.img} />
-      <div className="container__BodyItem--info">
-        <p>
-          <QrcodeOutlined
-            style={{
-              fontSize: "22px",
-              verticalAlign: "unset",
-            }}
-          />
-          Mã Tour : {item.id}
-        </p>
-
-        <p>
-          <CalendarOutlined
-            style={{
-              fontSize: "22px",
-              verticalAlign: "unset",
-            }}
-          />
-          Ngày Khởi Hành : {item.startDate}
-        </p>
-        <p>
-          {" "}
-          <UserOutlined /> Số Chố Còn Nhận : {item.number}
-        </p>
-
-        <h3 className="price">
-          {" "}
-          <DollarCircleOutlined /> {item.price.adults}{" "}
-        </h3>
+    <div className="CardItem">
+      <div className="card">
+        <div className="card-top">
+          <img src={item.img} />
+        </div>
+        <div className="card-bottom">
+          <h3>{item.nameTour}</h3>
+          <p>
+            {" "}
+            <BarcodeOutlined /> Mã Tour : {item.id}
+          </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> Ngày Khời Hành : {item.startDate}{" "}
+          </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
+          </p>
+        </div>
       </div>
     </div>
   );
