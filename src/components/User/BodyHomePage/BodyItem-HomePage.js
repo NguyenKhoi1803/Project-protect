@@ -16,6 +16,7 @@ import { Card } from "antd";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Meta from "antd/lib/card/Meta";
 
 function BodyItem({ item }) {
   return (

@@ -8,8 +8,10 @@ import theme from "./styles/theme";
 import Header from "./layout/Header";
 import { Route, Routes } from "react-router-dom";
 import BodyList from "./components/User/BodyHomePage/BodyList-HomePage";
-import TourList from "./components/User/tourList";
+
 import Footer from "./layout/Footer";
+import TourList from "./components/User/TourProduct/tourList";
+import DetailsPage from "./components/User/DetailsPage";
 
 function App() {
   return (
@@ -19,8 +21,9 @@ function App() {
         <Routes>
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
+          <Route path="/cart" element={<DetailsPage />}></Route>
         </Routes>
-        <Footer/>
+        <Footer />
       </ThemeProvider>
     </Provider>
   );
