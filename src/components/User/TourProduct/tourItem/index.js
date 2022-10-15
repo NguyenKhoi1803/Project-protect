@@ -6,18 +6,23 @@ import {
 } from "@ant-design/icons";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Button } from "reactstrap";
-import { addToCart } from "../../../../store/user/addToCartSlice";
+import { useNavigate } from "react-router-dom";
+import { details } from "../../../../store/user/fetchTour";
+
 
 import "../tourItem/styles.scss";
 
 function TourItem({ item }) {
-  const dispatch = useDispatch();
 
-  const id = new Date().getTime();
+  const navigate = useNavigate()
+
+  const dispatch = useDispatch()
+
+
   const handleAddToCart = () => {
-    dispatch(addToCart({ ...item, id: id }));
     console.log("item", item);
+    dispatch(details(item))
+    navigate('/cart')
   };
 
   return (
@@ -54,12 +59,12 @@ function TourItem({ item }) {
             <DollarCircleOutlined /> <span>Gía 1 Người</span> :{" "}
             {item.price.adults}
           </p>
-          <button class="addToCart" onChange={handleAddToCart}>
+          <button className="addToCart" onClick={handleAddToCart}>
             Đặt Ngay
           </button>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

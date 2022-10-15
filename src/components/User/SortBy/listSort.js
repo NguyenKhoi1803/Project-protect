@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "antd/dist/antd.css";
 import "./styles.scss";
 
@@ -28,7 +28,7 @@ const SortBy = () => {
     }
     return accumulator;
   },
-  []);
+    []);
 
   const onChange = (value) => {
     console.log(`selected ${value}`);

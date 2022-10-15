@@ -6,7 +6,7 @@ import store from "./store";
 import theme from "./styles/theme";
 
 import Header from "./layout/Header";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, } from "react-router-dom";
 import BodyList from "./components/User/BodyHomePage/BodyList-HomePage";
 
 import Footer from "./layout/Footer";
@@ -14,6 +14,7 @@ import TourList from "./components/User/TourProduct/tourList";
 import DetailsPage from "./components/User/DetailsPage";
 
 function App() {
+
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
           <Route path="/cart" element={<DetailsPage />}></Route>
+
         </Routes>
         <Footer />
       </ThemeProvider>

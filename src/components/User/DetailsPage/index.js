@@ -1,36 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import BodyList from "../BodyHomePage/BodyList-HomePage";
 
 import "./styles.scss";
 
-function DetailsPage(props) {
-  const data = [
-    {
-      img: "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      price: {
-        adults: 11111,
-        children: 22222,
-      },
-      from: "Hồ Chí Minh",
-      to: "Đà Nẵng",
-      startDate: "2022-09-23",
-      endDate: "2022-10-21",
-      nameTour: "Tour Du Lich Ha Noi",
-      address: {
-        province: "Zhejiang",
-        street: "dsadsfsdfds",
-      },
-      vehicle: "oto",
-      number: 6,
-      service: ["A", "E", "C"],
-      details: "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
-      id: 1665692029896,
-    },
-  ];
+function DetailsPage() {
+
+
+  const newTourArr = useSelector((state) => state.fetchTourReducer.details);
+
+  console.log("ngk", newTourArr)
+
+
+
+
 
   return (
     <div className="container__DetailsCard">
-      {data?.map((item) => (
+      {/* {newTourArr?.map((item) => (
         <div className="container__DetailsCard--all">
           <h1>{item.nameTour}</h1>
           <div className="container__DetailsCard--title">
@@ -66,10 +54,17 @@ function DetailsPage(props) {
             </ul>
           </div>
         </div>
-      ))}
+      ))} */}
 
-      <BodyList />
+      <div><h1>{newTourArr.nameTour}</h1></div>
+
+      {/* <BodyList /> */}
     </div>
+
+    // <div>
+    //   <h2>{id}</h2>
+    //   <p>asdasjhdasjd</p>
+    // </div>
   );
 }
 

@@ -17,9 +17,14 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async () => {
 
 const tourSlice = createSlice({
   name: "tour",
-  initialState: { tours: [] },
+  initialState: { tours: [], details: {} },
 
-  reducers: {},
+  reducers: {
+    details: (state, action) => {
+      state.details = action.payload;
+      console.log("aaaa", { state, action });
+    },
+  },
 
   extraReducers(builder) {
     builder
@@ -36,6 +41,9 @@ const tourSlice = createSlice({
       });
   },
 });
+
+export const { details } = tourSlice.actions;
+
 
 const { reducer: fetchTourReducer } = tourSlice;
 
