@@ -31,6 +31,8 @@ function TourItem({ item }) {
       <div className="container__tourItem-details">
         <div className="container__tourItem-details1">
           <h4>{item.nameTour}</h4>
+
+          <p>Mã Tour : {item.id}</p>
           <p>
             {" "}
             <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
