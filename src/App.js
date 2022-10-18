@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
-          <Route path="/cart" element={<DetailsPage />}></Route>
+          <Route path="/cart/:id" element={<DetailsPage />}></Route>
 
         </Routes>
         <Footer />
