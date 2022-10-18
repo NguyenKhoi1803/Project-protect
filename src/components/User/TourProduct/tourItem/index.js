@@ -23,7 +23,7 @@ function TourItem({ item }) {
     console.log("item", item);
     dispatch(cart(item))
     navigate(
-      generatePath("/cart/:id", {
+      generatePath("/product/cart/:id", {
         id: item.id
       })
 
