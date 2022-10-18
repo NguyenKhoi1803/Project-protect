@@ -16,12 +16,12 @@ function TourItem({ item }) {
 
   const navigate = useNavigate()
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
 
   const handleAddToCart = () => {
     console.log("item", item);
-    dispatch(cart(item))
+    // dispatch(cart(item))
     navigate(
       generatePath("/product/cart/:id", {
         id: item.id

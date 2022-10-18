@@ -7,6 +7,7 @@ import { fetchTour } from "../../../store/user/fetchTour";
 import "./styles.scss";
 
 function DetailsPage() {
+  const { id } = useParams();
 
   const dispatch = useDispatch()
 
@@ -16,7 +17,6 @@ function DetailsPage() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const { id } = useParams();
 
   const arr = newTourArr?.filter((item) => item.id == id)[0]
   console.log("ids ", id)
