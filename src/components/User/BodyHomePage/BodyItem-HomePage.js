@@ -1,29 +1,22 @@
 import React from "react";
-
-
 import "../BodyHomePage/styles.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  BarcodeOutlined,
-  CalendarOutlined,
-
-} from "@ant-design/icons";
-
-
+import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 function BodyItem({ item }) {
   return (
     <div className="CardItem">
       <div className="card">
-        <div className="card-top">
+        <a href="/" className="card-top">
           <img src={item.img} />
-        </div>
+        </a>
         <div className="card-bottom">
-          <h3>{item.nameTour}</h3>
+          <a href="">
+            <h3>{item.nameTour}</h3>
+          </a>
           <p>
             {" "}
             <BarcodeOutlined /> Mã Tour : {item.id}

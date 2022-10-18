@@ -2,11 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { URL_TOUR } from "../../../constants/index";
 
-export const fetchTour = createAsyncThunk("tour/fetchTour", async () => {
+export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
   const res = await axios
     .get(URL_TOUR)
     .then((result) => {
       console.log("get ~ result", result);
+      // store.dispatch(fetchTour());
       return result.data;
     })
     .catch((error) => {
@@ -43,7 +44,6 @@ const tourSlice = createSlice({
 });
 
 export const { cart } = tourSlice.actions;
-
 
 const { reducer: fetchTourReducer } = tourSlice;
 
