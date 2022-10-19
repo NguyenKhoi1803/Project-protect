@@ -24,6 +24,7 @@ function SearchForm() {
         onSearch={onSearch}
         enterButton
         size="large"
+        
       />
     </div>
   );
