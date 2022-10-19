@@ -4,6 +4,7 @@ import SearchForm from "../../components/User/SearchForm";
 import NavBar from "../NavBar";
 import "./styles.scss";
 
+
 function Header() {
   return (
     <div className="container__Header">

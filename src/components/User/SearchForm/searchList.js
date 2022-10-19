@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
 import TourItem from "../TourProduct/tourItem";
+import "./styles.scss"
 
 function SearchList() {
   const dispatch = useDispatch();

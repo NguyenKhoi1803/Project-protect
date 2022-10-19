@@ -7,13 +7,12 @@ import "./styles.scss";
 const { Search } = Input;
 
 function SearchForm() {
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSearch = (value) => {
     console.log("val", value);
-
     dispatch(searchFilterChange(value));
     navigate("/searchlist");
   };

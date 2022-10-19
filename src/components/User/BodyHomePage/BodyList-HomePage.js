@@ -84,6 +84,8 @@ function BodyList() {
     ],
   };
 
+  const handleToDetails = ((val) => console.log("aaaaa", val))
+
   return (
     <div className="container__body">
       <div className="container__body--List">
@@ -91,7 +93,7 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Đà Nẵng</h1>
             <p className="space"></p>
-            <button class="button button2">Chi Tiết</button>
+            <button class="button button2" onClick={() => handleToDetails("Đà Nẵng")}>Chi Tiết</button>
           </div>
           <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
@@ -99,7 +101,7 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Hồ Chí Minh</h1>
             <p className="space"></p>
-            <button class="button button2">Chi Tiết</button>
+            <button class="button button2" onClick={() => handleToDetails("Hồ Chí Minh")}>Chi Tiết</button>
           </div>
           <Slider {...settings}>{renderItem(2)}</Slider>
         </div>
@@ -107,7 +109,7 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Hà Nội</h1>
             <p className="space"></p>
-            <button class="button button2">Chi Tiết</button>
+            <button class="button button2" onClick={() => handleToDetails("Hà Nội")}>Chi Tiết</button>
           </div>
           <Slider {...settings}>{renderItem(3)}</Slider>
         </div>
