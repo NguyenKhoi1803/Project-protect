@@ -8,8 +8,9 @@ function SearchList() {
   const dispatch = useDispatch();
   const newTour = useSelector((state) => state.fetchTourReducer.tours);
   const filterList = useSelector((state) => state.filterReducer.search);
-
+  const btnFilterList = useSelector((state) => state.filterReducer.button)
   const arr = newTour?.filter((item) => item.to === filterList);
+  const newArr = newTour?.filter((item) => item.to === btnFilterList)
 
   useEffect(() => {
     dispatch(fetchTour());
@@ -20,6 +21,10 @@ function SearchList() {
   return (
     <div className="TourList">
       {arr?.map((item) => (
+        <TourItem key={item.id} item={item} />
+      ))}
+
+      {newArr?.map((item) => (
         <TourItem key={item.id} item={item} />
       ))}
     </div>

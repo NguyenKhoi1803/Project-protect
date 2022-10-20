@@ -19,14 +19,12 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        asdasdasdasdasd
         <Header />
         <Routes>
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
           <Route path="/product/cart/:id" element={<DetailsPage />}></Route>
           <Route path="/searchlist" element={<SearchList />}></Route>
-
         </Routes>
         <Footer />
       </ThemeProvider>

@@ -8,9 +8,12 @@ import "../BodyHomePage/styles.scss";
 import { Carousel, Radio } from "antd";
 import Button from "react-bootstrap/Button";
 import Slider from "react-slick";
+import { buttonFilterChange } from "../../../store/user/sortSlice";
+import { useNavigate } from "react-router-dom";
 
 function BodyList() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const newArr123 = useSelector((state) => state.fetchTourReducer.tours);
 
   console.log("123", newArr123);
@@ -84,7 +87,10 @@ function BodyList() {
     ],
   };
 
-  const handleToDetails = ((val) => console.log("aaaaa", val))
+  const handleToDetails = (val) => {
+    dispatch(buttonFilterChange(val))
+    navigate("/searchlist");
+  }
 
   return (
     <div className="container__body">
