@@ -14,6 +14,8 @@ import TourList from "./components/User/TourProduct/tourList";
 import DetailsPage from "./components/User/DetailsPage";
 import SearchList from "./components/User/SearchForm/searchList";
 import Payments from "./components/User/Payments";
+import Login from "./components/User/Login";
+import Register from "./components/User/Register";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/searchlist" element={<SearchList />}></Route>
           <Route path="/cart" element={<DetailsPage />}></Route>
           <Route path="/payments" element={<Payments />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
         </Routes>
         <Footer />
       </ThemeProvider>

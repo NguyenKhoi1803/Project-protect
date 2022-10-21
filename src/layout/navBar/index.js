@@ -1,6 +1,4 @@
 import React from "react";
-import Login from "../../components/User/Login";
-import Register from "../../components/User/Register";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -28,8 +26,8 @@ function NavBar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="/product">Tour List</Nav.Link>
-                  <Nav.Link href="#">{<Login />}</Nav.Link>
-                  <Nav.Link href="#">{<Register />}</Nav.Link>
+                  <Nav.Link href="/login">Login</Nav.Link>
+                  <Nav.Link href="/register">Register</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

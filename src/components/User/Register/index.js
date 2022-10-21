@@ -1,15 +1,8 @@
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Select,
-  Modal,
-} from "antd";
+import { Button, Checkbox, Form, Input, Select, Modal } from "antd";
 import React, { useState } from "react";
 import { useDispatch /* , useSelector */ } from "react-redux";
 import { addAccount } from "../../../store/user/register";
-
+import "./styles.scss"
 const { Option } = Select;
 
 const formItemLayout = {
@@ -44,20 +37,6 @@ const tailFormItemLayout = {
 };
 
 const Register = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
   const [form] = Form.useForm();
 
   const dispatch = useDispatch();
@@ -80,16 +59,8 @@ const Register = () => {
   );
 
   return (
-    <>
-      <Button type="primary" onClick={showModal}>
-        Register
-      </Button>
-      <Modal
-        title="Basic Modal"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
+    <div className="form__register">
+      <div className="form__register--details">
         <Form
           {...formItemLayout}
           form={form}
@@ -235,8 +206,8 @@ const Register = () => {
             </Button>
           </Form.Item>
         </Form>
-      </Modal>
-    </>
+      </div>
+    </div>
   );
 };
 

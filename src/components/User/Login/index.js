@@ -1,35 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Button, Checkbox, Form, Input, Modal } from "antd";
-
+import { Button, Checkbox, Form, Input } from "antd";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAccount } from "../../../store/user/register";
-
+import "./styles.scss";
 const Login = () => {
   const dispatch = useDispatch();
 
   const loginArr = useSelector((state) => state.accountReducer.accounts);
   console.log("loginArr", loginArr);
 
-  // const username = loginArr?.map((item) => item.email);
-  // const password = loginArr?.map((item) => item.password);
-
   useEffect(() => {
     dispatch(fetchAccount());
   }, [dispatch]);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -47,7 +29,7 @@ const Login = () => {
       localStorage.setItem("account", JSON.stringify(values));
       alert("dangnhap thanh cong");
     } else {
-      alert("ten dang nhap hoac mat khau sai")
+      alert("ten dang nhap hoac mat khau sai");
     }
   };
 
@@ -56,16 +38,8 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Button type="primary" onClick={showModal}>
-        Login
-      </Button>
-      <Modal
-        title="Basic Modal"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
+    <div className="form__login">
+      <div className="form__login--details">
         <Form
           name="basic"
           labelCol={{
@@ -129,9 +103,8 @@ const Login = () => {
             </Button>
           </Form.Item>
         </Form>
-      </Modal>
-    </>
+      </div>
+    </div>
   );
 };
-
 export default Login;
