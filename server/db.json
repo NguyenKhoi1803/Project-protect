@@ -60,10 +60,7 @@
   "tour": [
     {
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
-      "price": {
-        "adults": 11111,
-        "children": 22222
-      },
+      "price": 2000000,
       "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
       "startDate": "2022-09-23",
@@ -77,7 +74,11 @@
         "E",
         "C"
       ],
-      "details": "dasfsdfsdfdsfdsffs\nsfsdf\nsdf\nsdf\nsd\nfsd\nfs\ndf\nsdf",
+      "descriptions": {
+        "des1": "Buổi sáng, tham quan Công viên Suối khoáng nóng Núi Thần Tài: tắm khoáng thư giãn tại các hồ tự nhiên ngoài trời, thư giãn với xông hơi khô - ướt, vui chơi tại Công viên nước, tham quan và ngâm chân trực tiếp tại một trong những điểm phát lộ tại mỏ khoáng. ",
+        "des2": "Đây là một trong những lăng tẩm có kiến trúc đẹp nhất của các vua chúa nhà Nguyễn. Ra sân bay Phú Bài để về TP. HCM trên chuyến bay VN1379 lúc 19:00 hoặc VN1369 lúc 17:25. Kết thúc chương trình. Quý khách tự túc phương tiện từ sân bay TSN về nhà",
+        "des3": "Đây là một trong những lăng tẩm có kiến trúc đẹp nhất của các vua chúa nhà Nguyễn. Ra sân bay Phú Bài để về TP. HCM trên chuyến bay VN1379 lúc 19:00 hoặc VN1369 lúc 17:25. Kết thúc chương trình. Quý khách tự túc phương tiện từ sân bay TSN về nhà"
+      },
       "id": 1
     },
     {

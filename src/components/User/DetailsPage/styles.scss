@@ -1,5 +1,6 @@
 .container__DetailsCard {
     width: 100%;
+    margin-top: 3%;
 }
 
 .container__DetailsCard--all {
@@ -46,7 +47,7 @@
                 width: 60%;
                 overflow: hidden;
                 font-size: 20px;
-                
+
             }
         }
     }
@@ -72,4 +73,20 @@
 
 .container__DetailsCard--button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.container__DetailsCard--schedule {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    & h3 {
+        width: 30%;
+    }
+
+    & h4 {
+        width: 70%;
+        overflow: hidden;
+    }
 }

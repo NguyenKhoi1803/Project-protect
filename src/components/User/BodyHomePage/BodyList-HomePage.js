@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BodyItem from "./BodyItem-HomePage";
 import "../BodyHomePage/styles.scss";
-import { Carousel, Radio } from "antd";
-import Button from "react-bootstrap/Button";
 import Slider from "react-slick";
+import { buttonFilterChange } from "../../../store/user/sortSlice";
+import { useNavigate } from "react-router-dom";
 
 function BodyList() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const newArr123 = useSelector((state) => state.fetchTourReducer.tours);
 
   console.log("123", newArr123);
@@ -84,7 +85,10 @@ function BodyList() {
     ],
   };
 
-  const handleToDetails = ((val) => console.log("aaaaa", val))
+  const handleToDetails = (val) => {
+    dispatch(buttonFilterChange(val));
+    navigate("/searchlist");
+  };
 
   return (
     <div className="container__body">
@@ -93,7 +97,12 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Đà Nẵng</h1>
             <p className="space"></p>
-            <button class="button button2" onClick={() => handleToDetails("Đà Nẵng")}>Chi Tiết</button>
+            <button
+              class="button button2"
+              onClick={() => handleToDetails("Đà Nẵng")}
+            >
+              Chi Tiết
+            </button>
           </div>
           <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
@@ -101,7 +110,12 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Hồ Chí Minh</h1>
             <p className="space"></p>
-            <button class="button button2" onClick={() => handleToDetails("Hồ Chí Minh")}>Chi Tiết</button>
+            <button
+              class="button button2"
+              onClick={() => handleToDetails("Hồ Chí Minh")}
+            >
+              Chi Tiết
+            </button>
           </div>
           <Slider {...settings}>{renderItem(2)}</Slider>
         </div>
@@ -109,7 +123,12 @@ function BodyList() {
           <div className="container__body--Header">
             <h1>Hà Nội</h1>
             <p className="space"></p>
-            <button class="button button2" onClick={() => handleToDetails("Hà Nội")}>Chi Tiết</button>
+            <button
+              class="button button2"
+              onClick={() => handleToDetails("Hà Nội")}
+            >
+              Chi Tiết
+            </button>
           </div>
           <Slider {...settings}>{renderItem(3)}</Slider>
         </div>
