@@ -1,11 +1,11 @@
 .TourList {
   width: 80%;
   margin: auto;
-  margin-bottom: 5%;
+  padding: 3%;
+
 }
-.renderItem123__heading {
-  display: flex;
-  width: 80%;
-  margin: auto;
-  justify-content: space-between;
+
+.container__TourList {
+  width: 100%;
+  background-image: linear-gradient(to right, #ECECEC, #D7D7D7, #C2C2C2);
 }

@@ -9,25 +9,20 @@ import "./styles.scss";
 function TourList() {
   const dispatch = useDispatch();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-  // const filterList = useSelector((state) => state.filterReducer.select);
-
-  // console.log("fiterList", filterList);
   console.log("newTourArr", newTourArr);
-
-  // const arr = newTourArr?.filter((item) => item.to === filterList);
-
-  // console.log("arr", arr);
 
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
 
   return (
-    <div className="TourList">
-      <SortBy />
-      {newTourArr?.map((item) => (
-        <TourItem key={item.id} item={item} />
-      ))}
+    <div className="container__TourList">
+      <div className="TourList">
+        
+        {newTourArr?.map((item) => (
+          <TourItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }

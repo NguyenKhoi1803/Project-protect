@@ -21,14 +21,16 @@ function SearchList() {
   console.log("filterList", filterList);
 
   return (
-    <div className="TourList">
-      {arr?.map((item) => (
-        <TourItem key={item.id} item={item} />
-      ))}
+    <div className="container_SearchList">
+      <div className="SearchList">
+        {arr?.map((item) => (
+          <TourItem key={item.id} item={item} />
+        ))}
 
-      {newArr?.map((item) => (
-        <TourItem key={item.id} item={item} />
-      ))}
+        {newArr?.map((item) => (
+          <TourItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }

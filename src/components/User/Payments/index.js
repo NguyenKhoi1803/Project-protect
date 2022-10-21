@@ -47,7 +47,7 @@ function Payments() {
   };
 
   return (
-    <div>
+    <div className="container__payments">
       <div className="payments">
         <div className="payments__form">
           <form onSubmit={submit}>

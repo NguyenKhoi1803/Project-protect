@@ -7,7 +7,6 @@ import "./styles.scss";
 const { Search } = Input;
 
 function SearchForm() {
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -18,14 +17,15 @@ function SearchForm() {
   };
 
   return (
-    <div className="searchForm">
-      <Search
-        placeholder="input search text"
-        onSearch={onSearch}
-        enterButton
-        size="large"
-        
-      />
+    <div className="container__searchForm">
+      <div className="searchForm">
+        <Search
+          placeholder="input search text"
+          onSearch={onSearch}
+          enterButton
+          size="large"
+        />
+      </div>
     </div>
   );
 }

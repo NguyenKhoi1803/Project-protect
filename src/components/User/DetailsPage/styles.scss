@@ -1,6 +1,8 @@
 .container__DetailsCard {
     width: 100%;
-    margin-top: 3%;
+    padding: 5%;
+    background-image: linear-gradient(to right, #ECECEC, #D7D7D7, #C2C2C2);
+
 }
 
 .container__DetailsCard--all {
@@ -17,7 +19,7 @@
 .container__DetailsCard--title {
     display: flex;
     border: 1px solid black;
-    margin-bottom: 2%;
+    
 
     & img {
         width: 40%;
@@ -28,7 +30,7 @@
         width: 60%;
         padding: 30px;
         background-color: #f6f6f6;
-        margin-bottom: 0%;
+        
 
 
         & li {
@@ -79,7 +81,7 @@
 
 .container__DetailsCard--schedule {
     margin-top: 2%;
-    margin-bottom: 2%;
+    
     display: flex;
     & h3 {
         width: 30%;

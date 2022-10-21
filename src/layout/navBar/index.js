@@ -24,8 +24,14 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/product">Tour List</Nav.Link>
+                  <Nav.Link href="/">Trang Chủ</Nav.Link>
+                  <Nav.Link href="/product">Danh sách Tour</Nav.Link>
+                  <Nav.Link href="https://www.vietnamairlines.com/vn/vi">
+                    VitenamAirlines
+                  </Nav.Link>
+                  <Nav.Link href="http://www.dulichvn.org.vn/">
+                    Báo Du Lịch
+                  </Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
                   <Nav.Link href="/register">Register</Nav.Link>
                 </Nav>
