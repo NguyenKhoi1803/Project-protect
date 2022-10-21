@@ -4,6 +4,7 @@ import { fetchComment } from "../../../store/user/commentSlice";
 import "./styles.scss";
 import CommentItem from "./commentItem";
 import { Carousel } from "antd";
+import Slider from "react-slick";
 
 function CommentList() {
   const dispatch = useDispatch();
@@ -18,19 +19,15 @@ function CommentList() {
 
   const renderItem = () => {
     return newCommentArr?.map((item) => {
-      return (
-        <div className="renderComment" key={item?.id}>
-          <CommentItem item={item} />
-        </div>
-      );
+      return <CommentItem item={item} key={item?.id} />;
     });
   };
 
   return (
     <div className="container__comment">
-      <div className="renderComment123">
-        <h1>KHÁCH HÀNG NÓI GÌ VỀ TOUR </h1>
-        <Carousel autoplay>{renderItem()}</Carousel>
+      <div className="container__comment--list">
+        <h2>KHÁCH HÀNG NÓI GÌ VỀ TOUR </h2>
+        <Slider autoplay>{renderItem()}</Slider>
       </div>
     </div>
   );
