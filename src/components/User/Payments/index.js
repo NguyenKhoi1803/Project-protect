@@ -5,7 +5,9 @@ function Payments() {
   const paymentsArr = useSelector((state) => state.fetchTourReducer.cart);
 
   console.log("paymentsArr", paymentsArr);
-  return <div></div>;
+  return <div>
+    {paymentsArr.nameTour}
+  </div>;
 }
 
 export default Payments;
