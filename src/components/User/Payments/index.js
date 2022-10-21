@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import "./styles.scss";
 
 function Payments() {
   const paymentsArr = useSelector((state) => state.fetchTourReducer.cart);
@@ -45,48 +46,65 @@ function Payments() {
   };
 
   return (
-    <div className="payments__form">
-      <form onSubmit={submit}>
-        {formFields.map((form, index) => {
-          return (
-            <div key={index}>
-              <input
-                name="name"
-                placeholder="Name"
-                onChange={(event) => handleFormChange(event, index)}
-                value={form.name}
-              />
-              <input
-                name="phone"
-                placeholder="Phone"
-                onChange={(event) => handleFormChange(event, index)}
-                value={form.phone}
-              />
-              <input
-                name="address"
-                placeholder="Address"
-                onChange={(event) => handleFormChange(event, index)}
-                value={form.address}
-              />
-              <input
-                name="idCard"
-                placeholder="ID Card"
-                onChange={(event) => handleFormChange(event, index)}
-                value={form.idCard}
-              />
-              <input
-                name="age"
-                placeholder="Age"
-                onChange={(event) => handleFormChange(event, index)}
-                value={form.age}
-              />
-              <button onClick={() => removeFields(index)}> Remove</button>
-            </div>
-          );
-        })}
-      </form>
-      <button onClick={addFields}> Thêm Người </button>
-      <button onClick={submit}> Hoàn Thành </button>
+    <div className="payments">
+      <div className="payments__form">
+        <form onSubmit={submit}>
+          {formFields.map((form, index) => {
+            return (
+              <div key={index} className="payments__formFields">
+                <p>Thông tin khách hàng</p>
+                <input
+                  name="name"
+                  placeholder="Đầy Đủ Họ Tên"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.name}
+                />
+                <input
+                  name="phone"
+                  placeholder="Số Điện Thoại"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.phone}
+                />
+                <input
+                  name="sex"
+                  placeholder="Giới tính"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.sex}
+                />
+                <input
+                  name="address"
+                  placeholder="Địa Chỉ"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.address}
+                />
+                <input
+                  name="idCard"
+                  placeholder="CMND"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.idCard}
+                />
+                <input
+                  name="age"
+                  placeholder="Tuổi"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.age}
+                />
+                <button className="btn-1" onClick={() => removeFields(index)}>
+                  {" "}
+                  Remove
+                </button>
+              </div>
+            );
+          })}
+        </form>
+        <div className="payments__btn">
+          <button onClick={addFields}> Thêm Người </button>
+        </div>
+      </div>
+      <div className="payments__details">
+        <h1>Details</h1>
+        <button onClick={submit}> Hoàn Thành </button>
+      </div>
     </div>
   );
 }
