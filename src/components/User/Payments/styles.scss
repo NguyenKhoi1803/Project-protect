@@ -2,6 +2,7 @@
     width: 80%;
     display: flex;
     margin: auto;
+    
 
 }
 
@@ -21,7 +22,8 @@
 
     & .payments__formFields {
         margin-top: 5%;
-        border: 2px solid black;
+        border: 2px dashed black;
+        border-radius:3% ;
         padding: 3%;
         align-items: center;
     }
@@ -30,9 +32,16 @@
 .payments__details {
     width: 50%;
     margin: auto;
-    text-align: center;
+    
 
+    & h1  { 
+        text-align: center;
+    }
 
+    & button { 
+        width: 50%;
+        margin: auto;
+    }
 
 }
 
@@ -43,10 +52,11 @@
 
 }
 
-.payments__btn { 
+.payments__btn {
     width: 50%;
     margin: auto;
-    & button { 
+
+    & button {
         width: 100%;
         margin-top: 10%;
     }
