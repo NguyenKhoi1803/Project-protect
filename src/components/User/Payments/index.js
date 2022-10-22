@@ -1,11 +1,21 @@
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchTour } from "../../../store/user/fetchTour";
 import "./styles.scss";
 
 function Payments() {
-  const paymentsArr = useSelector((state) => state.fetchTourReducer.cart);
-  console.log("paymentsArr", paymentsArr);
+  const { id } = useParams()
+  const dispatch = useDispatch()
+  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+
+  useEffect(() => {
+    dispatch(fetchTour());
+  }, [dispatch]);
+
+
+  const arrr = newTourArr?.filter((item) => item.id == id)
 
   const [formFields, setFormFields] = useState([
     {
@@ -105,32 +115,36 @@ function Payments() {
         </div>
         <div className="payments__details">
           <h1>Details</h1>
-          <div className="CardItem">
-            <div className="card">
-              <a href="/" className="card-top">
-                <img src={paymentsArr.img} />
-              </a>
-              <div className="card-bottom">
-                <a href="">
-                  <h3>{paymentsArr.nameTour}</h3>
-                </a>
-                <p>
-                  {" "}
-                  <BarcodeOutlined /> Mã Tour : {paymentsArr.id}
-                </p>
-                <p>
-                  {" "}
-                  <CalendarOutlined /> Ngày Khời Hành : {
-                    paymentsArr.startDate
-                  }{" "}
-                </p>
-                <p>
-                  {" "}
-                  <CalendarOutlined /> Ngày Về : {paymentsArr.endDate}{" "}
-                </p>
+          {
+            arrr?.map((item) => (
+              <div className="CardItem">
+                <div className="card">
+                  <a href="/" className="card-top">
+                    <img src={item.img} />
+                  </a>
+                  <div className="card-bottom">
+                    <a href="">
+                      <h3>{item.nameTour}</h3>
+                    </a>
+                    <p>
+                      {" "}
+                      <BarcodeOutlined /> Mã Tour : {item.id}
+                    </p>
+                    <p>
+                      {" "}
+                      <CalendarOutlined /> Ngày Khời Hành : {
+                        item.startDate
+                      }{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            ))
+          }
           <button onClick={submit}> Hoàn Thành </button>
         </div>
       </div>

@@ -26,8 +26,8 @@ function App() {
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
           <Route path="/searchlist" element={<SearchList />}></Route>
-          <Route path="/cart" element={<DetailsPage />}></Route>
-          <Route path="/payments" element={<Payments />}></Route>
+          <Route path="/products/:id" element={<DetailsPage />}></Route>
+          <Route path="/products/cart/:id" element={<Payments />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
         </Routes>

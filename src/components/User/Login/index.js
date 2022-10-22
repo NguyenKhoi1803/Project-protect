@@ -1,11 +1,12 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
 import "./styles.scss";
 const Login = () => {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate()
   const loginArr = useSelector((state) => state.accountReducer.accounts);
   console.log("loginArr", loginArr);
 
@@ -27,7 +28,8 @@ const Login = () => {
     );
     if (isSucceed) {
       localStorage.setItem("account", JSON.stringify(values));
-      alert("dangnhap thanh cong");
+      navigate("/")
+      alert("dang nhap thanh cong");
     } else {
       alert("ten dang nhap hoac mat khau sai");
     }

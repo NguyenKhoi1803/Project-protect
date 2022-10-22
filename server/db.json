@@ -1,17 +1,7 @@
 {
   "account": [
     {
-      "fullname": "đasadads",
-      "email": "aaa@gmail.com",
-      "password": "111111",
-      "confirm": "111111",
-      "prefix": "84",
-      "phone": "5346546456",
-      "gender": "male",
-      "agreement": true,
-      "id": 1
-    },
-    {
+      "isAdmin": false,
       "fullname": "Thao Ngan",
       "email": "ngandu123@gmail.com",
       "password": "Ngan123a",
@@ -20,40 +10,41 @@
       "phone": "0906557709",
       "gender": "female",
       "agreement": true,
-      "id": 2
+      "id": 1
     },
     {
+      "isAdmin": true,
       "fullname": "Nguyen Khoi",
-      "email": "nguyenkhoi123@gmail.com",
-      "password": "khoi123a",
+      "email": "Nguyenkhoi180397@gmail.com",
+      "password": "Khoi123a",
       "confirm": "khoi123a",
       "prefix": "84",
       "phone": "eqweqwweqwe",
       "gender": "male",
       "agreement": true,
-      "id": 3
+      "id": 2
     },
     {
-      "fullname": "Ngan",
-      "email": "ngan123@gmail.com",
-      "password": "123456",
-      "confirm": "123456",
-      "prefix": "84",
-      "phone": "12837912",
-      "gender": "female",
-      "agreement": true,
-      "id": 4
-    },
-    {
-      "fullname": "KHOI",
-      "email": "khoi123a@gmail.com",
+      "fullname": "Nguyên Khôi",
+      "email": "nguyenkhoi180397@gmail.com",
       "password": "khoi123a",
       "confirm": "khoi123a",
       "prefix": "84",
-      "phone": "qưeqwe",
+      "phone": "0779950318",
       "gender": "male",
       "agreement": true,
-      "id": 5
+      "id": 3
+    },
+    {
+      "fullname": "Trần Thị Bơ",
+      "email": "bongu123@gmail.com",
+      "password": "bo123a",
+      "confirm": "bo123a",
+      "prefix": "84",
+      "phone": "0779950318",
+      "gender": "other",
+      "agreement": true,
+      "id": 4
     }
   ],
   "cart": [],

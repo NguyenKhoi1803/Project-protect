@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 import { cart } from "../../../../store/user/fetchTour";
 
 import "../tourItem/styles.scss";
@@ -17,9 +17,11 @@ function TourItem({ item }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    console.log("item", item);
-    dispatch(cart(item));
-    navigate("/cart");
+    navigate(
+      generatePath("/products/:id", {
+        id: item.id
+      })
+    );
   };
 
   return (
