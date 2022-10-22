@@ -45,6 +45,17 @@
       "gender": "other",
       "agreement": true,
       "id": 4
+    },
+    {
+      "fullname": "Trần Thị Bơ",
+      "email": "user@gmail.com",
+      "password": "123456789",
+      "confirm": "bo123a",
+      "prefix": "84",
+      "phone": "0779950318",
+      "gender": "other",
+      "agreement": true,
+      "id": 5
     }
   ],
   "cart": [],

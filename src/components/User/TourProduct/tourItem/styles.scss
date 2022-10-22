@@ -5,15 +5,11 @@
     width: 100%;
     background-color: #f6f6f6;
     margin-top: 25px;
-
-
 }
 
 .container__tourItem:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-
 }
-
 
 .container__tourItem--img {
     width: 30%;
@@ -24,22 +20,20 @@
     width: 60%;
     margin: auto;
 
-
     & p {
-        font-size: 1.5em;
+        font-size: 30px;
     }
 
     & span {
-        color: #FF7F00;
+        color: #00BFFF;
         font-weight: bold;
     }
-
 
     & .container__tourItem-details1 {
         width: 60%;
 
         & h4 {
-            color: #388b38;
+            color: #4682B4;
             font-size: 50px;
         }
     }
@@ -53,7 +47,7 @@
 .addToCart {
     width: 100%;
     margin: auto;
-    background-color: #50A625;
+    background-color: #4682B4;
     border: none;
     color: white;
     padding: 15px 32px;

@@ -1,9 +1,10 @@
-import { Button, Checkbox, Form, Input, Select, Modal } from "antd";
-import React, { useState } from "react";
+import { Button, Checkbox, Form, Input, Select } from "antd";
+import React from "react";
 import { useDispatch /* , useSelector */ } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
 import { addAccount } from "../../../store/user/register";
-import "./styles.scss"
+
+import "./styles.scss";
 const { Option } = Select;
 
 const formItemLayout = {
@@ -39,12 +40,12 @@ const tailFormItemLayout = {
 
 const Register = () => {
   const [form] = Form.useForm();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     dispatch(addAccount(values));
-    navigate("/login")
+    navigate("/login");
   };
 
   const prefixSelector = (
@@ -204,7 +205,7 @@ const Register = () => {
 
           <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit">
-              Register
+              Submit
             </Button>
           </Form.Item>
         </Form>

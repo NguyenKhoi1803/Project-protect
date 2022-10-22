@@ -1,7 +1,7 @@
 .container__body {
   width: 100%;
-  background-color: #e8e8e8;
-  background-image: linear-gradient(to right, #ECECEC, #D7D7D7, #C2C2C2);
+  background-color: white;
+
 }
 
 .container__body--List {
@@ -15,12 +15,12 @@
   width: 90%;
   margin: auto;
 
-  & h1 {
+  & h2 {
     width: 40%;
     font-size: 50px;
     font-weight: 700;
-    color: #367517;
-    border-bottom: 2px dashed #367517;
+    color: #4682b4;
+    border-bottom: 2px dashed #4682b4;
   }
 
   & p {
@@ -31,7 +31,7 @@
 .button {
   width: 10%;
   margin: auto;
-  background-color: #50a625;
+  background-color: #4682B4;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -61,7 +61,7 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.slick-slide > div {
+.slick-slide>div {
   margin: 0 10px;
 }
 
@@ -79,7 +79,7 @@
   cursor: pointer;
 }
 
-.card-top > img {
+.card-top>img {
   width: 100%;
   height: 200px;
   object-fit: cover;

@@ -95,7 +95,7 @@ function BodyList() {
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h1>Đà Nẵng</h1>
+            <h2>Đà Nẵng</h2>
             <p className="space"></p>
             <button
               class="button button2"
@@ -108,7 +108,7 @@ function BodyList() {
         </div>
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h1>Hồ Chí Minh</h1>
+            <h2>Hồ Chí Minh</h2>
             <p className="space"></p>
             <button
               class="button button2"
@@ -121,7 +121,7 @@ function BodyList() {
         </div>
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h1>Hà Nội</h1>
+            <h2>Hà Nội</h2>
             <p className="space"></p>
             <button
               class="button button2"

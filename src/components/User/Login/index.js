@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
 import { login } from "../../../Auth";
 import "./styles.scss";
+import { Nav } from "react-bootstrap";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,6 +26,10 @@ const Login = () => {
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
+  };
+
+  const handleToRegister = () => {
+    navigate("/register");
   };
 
   return (
@@ -83,6 +88,19 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item
+            name="remember"
+            valuePropName="checked"
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
+            <Button type="primary" onClick={handleToRegister}>
+              Register
+            </Button>
+          </Form.Item>
+
+          <Form.Item
             wrapperCol={{
               offset: 8,
               span: 16,
@@ -92,6 +110,7 @@ const Login = () => {
               Submit
             </Button>
           </Form.Item>
+          <Form.Item></Form.Item>
         </Form>
       </div>
     </div>
