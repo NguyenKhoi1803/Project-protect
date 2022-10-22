@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
+import { login } from "../../../Auth";
 import "./styles.scss";
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const loginArr = useSelector((state) => state.accountReducer.accounts);
   console.log("loginArr", loginArr);
 
@@ -16,23 +17,10 @@ const Login = () => {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-
-    const succeed = loginArr.map((item) => ({
-      username: item.email,
-      password: item.password,
-    }));
-
-    const isSucceed = succeed.find(
-      (item) =>
-        item.username === values.username && item.password === values.password
-    );
-    if (isSucceed) {
-      localStorage.setItem("account", JSON.stringify(values));
-      navigate("/")
-      alert("dang nhap thanh cong");
-    } else {
-      alert("ten dang nhap hoac mat khau sai");
-    }
+    login(values.username, values.password, loginArr, (user) => {
+      console.log("user", user);
+      navigate("/");
+    });
   };
 
   const onFinishFailed = (errorInfo) => {

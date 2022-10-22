@@ -1,10 +1,20 @@
-import React from "react";
+import { Button } from "antd";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-
+import { useNavigate } from "react-router-dom";
+import { checkLogin, logout } from "../../Auth";
 function NavBar() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (checkLogin()) {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <div>
       {["xxl"].map((expand) => (
@@ -32,8 +42,18 @@ function NavBar() {
                   <Nav.Link href="http://www.dulichvn.org.vn/">
                     Báo Du Lịch
                   </Nav.Link>
-                  <Nav.Link href="/login">Login</Nav.Link>
-                  <Nav.Link href="/register">Register</Nav.Link>
+                  {checkLogin() ? (
+                    <Button
+                      onClick={() => {
+                        logout();
+                        navigate("/");
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Nav.Link href="/login">Login</Nav.Link>
+                  )}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
