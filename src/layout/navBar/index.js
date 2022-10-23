@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 import { checkLogin, logout } from "../../Auth";
 function NavBar() {
   const navigate = useNavigate();
-  useEffect(() => {
-    if (checkLogin()) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (checkLogin()) {
+  //     navigate("/");
+  //   }
+  // });
 
   return (
     <div>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
 import { buttonFilterChange } from "../../../store/user/sortSlice";
-import { useNavigate } from "react-router-dom";
+import { generatePath, useNavigate } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +17,6 @@ function BodyList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const newArr123 = useSelector((state) => state.fetchTourReducer.tours);
-
 
   useEffect(() => {
     dispatch(fetchTour());
@@ -89,10 +88,13 @@ function BodyList() {
     ],
   };
 
-  // const handleToDetails = (val) => {
-  //   dispatch(buttonFilterChange(val));
-  //   navigate("/searchlist");
-  // };
+  const handleToDetails = (val) => {
+    navigate(
+      generatePath("/searchList/:id", {
+        id: val,
+      })
+    );
+  };
 
   return (
     <div className="container__body">
@@ -103,7 +105,7 @@ function BodyList() {
             <p className="space"></p>
             <button
               className="button button2"
-            // onClick={() => handleToDetails("Đà Nẵng")}
+              onClick={() => handleToDetails("Đà Nẵng")}
             >
               Chi Tiết
             </button>
@@ -116,7 +118,7 @@ function BodyList() {
             <p className="space"></p>
             <button
               className="button button2"
-            // onClick={() => handleToDetails("Hồ Chí Minh")}
+              onClick={() => handleToDetails("Hồ Chí Minh")}
             >
               Chi Tiết
             </button>
@@ -129,7 +131,7 @@ function BodyList() {
             <p className="space"></p>
             <button
               className="button button2"
-            // onClick={() => handleToDetails("Hà Nội")}
+              onClick={() => handleToDetails("Hà Nội")}
             >
               Chi Tiết
             </button>
