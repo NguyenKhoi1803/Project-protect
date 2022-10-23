@@ -31,7 +31,7 @@ function App() {
           <Route path="/products/cart/:id" element={<Payments />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/succeed" element={<SucceedPage />}></Route>
+          <Route path="/succeed/:id" element={<SucceedPage />}></Route>
         </Routes>
         <Footer />
       </ThemeProvider>

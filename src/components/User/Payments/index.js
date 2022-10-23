@@ -2,7 +2,7 @@ import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../Auth";
 import { fetchTour } from "../../../store/user/fetchTour";
 import "./styles.scss";
@@ -13,25 +13,25 @@ function Payments() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-
+  const arrr = newTourArr?.filter((item) => item.id == id);
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
 
   const account = getAccountInfo();
 
-  const arrr = newTourArr?.filter((item) => item.id == id);
-
-  
   const codeTour = arrr?.map((item) => item.id);
   const titleTour = arrr?.map((item) => item.nameTour);
   const priceTour = arrr?.map((item) => item.price);
+  const startDayTour = arrr?.map((item) => item.startDate);
 
   const [number, setNumber] = useState("");
 
   const handleChangeFields = (e) => {
     setNumber(e.target.value);
   };
+
+  const idss = arrr?.map((item) => item.id);
 
   const handleSubmit = () => {
     const cart = {
@@ -43,10 +43,15 @@ function Payments() {
       nameTour: titleTour,
       cost: priceTour,
       numberPeople: number,
+      day: startDayTour,
     };
 
     dispatch(addToCart(cart));
-    navigate("/");
+    navigate(
+      generatePath("/succeed/:id", {
+        id: idss,
+      })
+    );
   };
 
   return (
