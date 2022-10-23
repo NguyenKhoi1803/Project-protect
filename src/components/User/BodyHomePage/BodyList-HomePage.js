@@ -18,7 +18,7 @@ function BodyList() {
   const navigate = useNavigate();
   const newArr123 = useSelector((state) => state.fetchTourReducer.tours);
 
-  console.log("123", newArr123);
+
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
@@ -89,10 +89,10 @@ function BodyList() {
     ],
   };
 
-  const handleToDetails = (val) => {
-    dispatch(buttonFilterChange(val));
-    navigate("/searchlist");
-  };
+  // const handleToDetails = (val) => {
+  //   dispatch(buttonFilterChange(val));
+  //   navigate("/searchlist");
+  // };
 
   return (
     <div className="container__body">
@@ -102,8 +102,8 @@ function BodyList() {
             <h2>Đà Nẵng</h2>
             <p className="space"></p>
             <button
-              class="button button2"
-              onClick={() => handleToDetails("Đà Nẵng")}
+              className="button button2"
+            // onClick={() => handleToDetails("Đà Nẵng")}
             >
               Chi Tiết
             </button>
@@ -115,8 +115,8 @@ function BodyList() {
             <h2>Hồ Chí Minh</h2>
             <p className="space"></p>
             <button
-              class="button button2"
-              onClick={() => handleToDetails("Hồ Chí Minh")}
+              className="button button2"
+            // onClick={() => handleToDetails("Hồ Chí Minh")}
             >
               Chi Tiết
             </button>
@@ -128,8 +128,8 @@ function BodyList() {
             <h2>Hà Nội</h2>
             <p className="space"></p>
             <button
-              class="button button2"
-              onClick={() => handleToDetails("Hà Nội")}
+              className="button button2"
+            // onClick={() => handleToDetails("Hà Nội")}
             >
               Chi Tiết
             </button>
