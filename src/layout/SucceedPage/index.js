@@ -5,17 +5,12 @@ import { fetchCart } from "../../store/user/addToCartSlice";
 import "./styles.scss";
 
 function SucceedPage() {
-  const { id } = useParams();
+  const { id } = useParams;
+
   const dispatch = useDispatch();
   const newCartArr = useSelector((state) => state.addToCartReducer.carts);
 
-  const arrs = newCartArr?.filter((item) => item.id == id);
-
-  console.log("newCartArr", newCartArr);
-
-  const numbers = parseInt(newCartArr?.map((item) => item.numberPeople));
-  const price = parseInt(newCartArr?.map((item) => item.cost));
-  const totalPrice = numbers * price;
+  const newArr = newCartArr?.filter((item) => item.codeOrder == id);
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -23,7 +18,7 @@ function SucceedPage() {
 
   return (
     <div className="container__succeed">
-      {arrs?.map((item) => (
+      {newArr?.map((item) => (
         <div className="container__succeed--details">
           <div className="container__succeed--left">
             <h1>LOCAL TOURIST</h1>
@@ -33,7 +28,7 @@ function SucceedPage() {
               </p>
               <p>
                 {" "}
-                Mã Tour : <span>{item.idTour}</span>
+                Mã Đơn Hàng : <span>{item.codeOrder}</span>
               </p>
               <p>
                 {" "}
@@ -49,7 +44,7 @@ function SucceedPage() {
               </p>
               <p>
                 {" "}
-                Tổng Tiền : <span>{totalPrice}</span>
+                Tổng Tiền : <span>{item.total}</span>
               </p>
             </div>
           </div>

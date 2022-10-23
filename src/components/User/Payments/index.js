@@ -14,6 +14,7 @@ function Payments() {
   const navigate = useNavigate();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
   const arrr = newTourArr?.filter((item) => item.id == id);
+  
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
@@ -30,10 +31,10 @@ function Payments() {
   const handleChangeFields = (e) => {
     setNumber(e.target.value);
   };
-
-  const idss = arrr?.map((item) => item.id);
+  const total = number * priceTour;
 
   const handleSubmit = () => {
+    const ids = new Date().getTime();
     const cart = {
       idUser: account.id,
       name: account.fullname,
@@ -44,14 +45,16 @@ function Payments() {
       cost: priceTour,
       numberPeople: number,
       day: startDayTour,
+      total: total,
+      codeOrder: ids,
     };
 
-    dispatch(addToCart(cart));
     navigate(
       generatePath("/succeed/:id", {
-        id: idss,
+        id: ids,
       })
     );
+    dispatch(addToCart(cart));
   };
 
   return (
@@ -111,6 +114,18 @@ function Payments() {
                   <p>
                     {" "}
                     <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
+                  </p>
+
+                  <p>
+                    {" "}
+                    <CalendarOutlined /> Gia 1 nguoi : <span>
+                      {item.price}
+                    </span>{" "}
+                    x {number}
+                  </p>
+                  <p>
+                    {" "}
+                    <CalendarOutlined /> Tong : <span>{total}</span>
                   </p>
                 </div>
               </div>
