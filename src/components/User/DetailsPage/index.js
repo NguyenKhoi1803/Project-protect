@@ -76,7 +76,7 @@ function DetailsPage() {
                 </div>
               </ul>
             </div>
-            <div className="container__DetailsCard--descrip">
+            {/* <div className="container__DetailsCard--descrip">
               <div className="container__DetailsCard--schedule">
                 <h3>Lịch trình ngày 1:</h3>
                 <h4> {item.descriptions.des1}</h4>
@@ -89,7 +89,7 @@ function DetailsPage() {
                 <h3>Lịch trình ngày 3:</h3>
                 <h4> {item.descriptions.des1}</h4>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

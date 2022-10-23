@@ -60,9 +60,9 @@
   ],
   "cart": [
     {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
+      "idUser": 4,
+      "name": "Trần Thị Bơ",
+      "email": "bongu123@gmail.com",
       "phone": "0779950318",
       "idTour": [
         1
@@ -73,13 +73,16 @@
       "cost": [
         2000000
       ],
-      "numberPeople": "20",
+      "numberPeople": "10",
+      "day": [
+        "2022-09-23"
+      ],
       "id": 1
     },
     {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
+      "idUser": 4,
+      "name": "Trần Thị Bơ",
+      "email": "bongu123@gmail.com",
       "phone": "0779950318",
       "idTour": [
         1
@@ -90,7 +93,7 @@
       "cost": [
         2000000
       ],
-      "numberPeople": "3",
+      "numberPeople": "7",
       "day": [
         "2022-09-23"
       ],
@@ -110,7 +113,7 @@
       "cost": [
         2000000
       ],
-      "numberPeople": "3",
+      "numberPeople": "30",
       "day": [
         "2022-09-23"
       ],
@@ -130,7 +133,7 @@
       "cost": [
         2000000
       ],
-      "numberPeople": "1",
+      "numberPeople": "50",
       "day": [
         "2022-09-23"
       ],
@@ -142,15 +145,18 @@
       "email": "nguyenKhoi180397@gmail.com",
       "phone": "0779950318",
       "idTour": [
-        1
+        13
       ],
       "nameTour": [
         "Tour Du Lich Ha Noi"
       ],
       "cost": [
-        2000000
+        {
+          "adults": 11111,
+          "children": 22222
+        }
       ],
-      "numberPeople": "10",
+      "numberPeople": "20",
       "day": [
         "2022-09-23"
       ],
@@ -162,15 +168,18 @@
       "email": "nguyenKhoi180397@gmail.com",
       "phone": "0779950318",
       "idTour": [
-        1
+        13
       ],
       "nameTour": [
         "Tour Du Lich Ha Noi"
       ],
       "cost": [
-        2000000
+        {
+          "adults": 11111,
+          "children": 22222
+        }
       ],
-      "numberPeople": "12",
+      "numberPeople": "20",
       "day": [
         "2022-09-23"
       ],
@@ -195,66 +204,6 @@
         "2022-09-23"
       ],
       "id": 7
-    },
-    {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "cost": [
-        2000000
-      ],
-      "numberPeople": "10",
-      "day": [
-        "2022-09-23"
-      ],
-      "id": 8
-    },
-    {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "cost": [
-        2000000
-      ],
-      "numberPeople": "10",
-      "day": [
-        "2022-09-23"
-      ],
-      "id": 9
-    },
-    {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "cost": [
-        2000000
-      ],
-      "numberPeople": "10",
-      "day": [
-        "2022-09-23"
-      ],
-      "id": 10
     }
   ],
   "tour": [

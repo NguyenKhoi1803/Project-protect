@@ -56,9 +56,23 @@ function SucceedPage() {
           <div className="container__succeed--right">
             <h1>LOCAL TOURIST</h1>
             <div className="section__right--details">
-              <p>{item.idTour}</p>
-              <p>{item.nameTour}</p>
-              <p>{totalPrice}</p>
+              <p>
+                LOCAL TOURIST sẽ gửi biểu mẫu đăng ký thông tin hành khách qua
+                Email của bạn. Sau khi bạn điền thông tin và xác nhận chúng tôi
+                sẽ tiếp nhận thông tin và xử lý
+              </p>
+              <p>Chân thành cảm ơn Bạn vì đã đồng hành cùng LOCAL TOURIST !</p>
+              <p>
+                Mọi chi tiết xin liên hệ :{" "}
+                <ul>
+                  <li>
+                    <p>SDT :</p> <span>0779950318</span>
+                  </li>
+                  <li>
+                    <p>EMAIL : </p> <span>Nguyenkhoi180397@gmail.com</span>
+                  </li>
+                </ul>{" "}
+              </p>
             </div>
           </div>
         </div>

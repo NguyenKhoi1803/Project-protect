@@ -55,5 +55,27 @@
 }
 
 .section__right--details {
-    padding: 2%;
+    padding: 5%;
+    text-align: center;
+
+    & ul { 
+        list-style: none;
+        text-align: start;
+
+        & li { 
+            width: 100%;
+            display: flex;
+
+            & span { 
+                width: 70%;
+                overflow: auto;
+            }
+
+            & p { 
+                width: 30%;
+            }
+        }
+    }
+
+
 }

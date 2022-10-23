@@ -90,7 +90,6 @@ function Payments() {
           </form>
         </div>
         <div className="payments__details">
-          <h1>Details</h1>
           {arrr?.map((item) => (
             <div className="CardItem">
               <div className="card">
