@@ -1,29 +1,12 @@
-.commentItem {
-    display: flex;
-    justify-content: space-between;
-}
-
-.commentItem__img {
-    width: 40%;
-
-    & img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 65%;
-
-    }
-}
-
-.commentItem__info {
-    width: 50%;
-}
-
 .container__comment {
     width: 100%;
+}
 
-    & h2 {
-        margin-bottom: 5%;
-        font-size: 40px;
+.container__comment--list {
+    width: 80%;
+    margin: auto;
+
+    & h2 { 
         text-align: center;
     }
 }

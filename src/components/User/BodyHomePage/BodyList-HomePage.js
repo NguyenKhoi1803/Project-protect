@@ -1,13 +1,17 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import BodyItem from "./BodyItem-HomePage";
-import "../BodyHomePage/styles.scss";
-import Slider from "react-slick";
 import { buttonFilterChange } from "../../../store/user/sortSlice";
 import { useNavigate } from "react-router-dom";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../BodyHomePage/styles.scss";
+
+import Slider from "react-slick";
+import BodyItem from "./BodyItem-HomePage";
+import GridExample from "../Special";
+import Special from "../Special";
 
 function BodyList() {
   const dispatch = useDispatch();
@@ -133,6 +137,7 @@ function BodyList() {
           <Slider {...settings}>{renderItem(3)}</Slider>
         </div>
       </div>
+      <Special />
     </div>
   );
 }

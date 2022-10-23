@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchComment } from "../../../store/user/commentSlice";
 import "./styles.scss";
 import CommentItem from "./commentItem";
-import { Carousel } from "antd";
 import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function CommentList() {
   const dispatch = useDispatch();
@@ -23,12 +26,23 @@ function CommentList() {
     });
   };
 
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500,
+  };
+
   return (
     <div className="container__comment">
       <div className="container__comment--list">
-        <h2>KHÁCH HÀNG NÓI GÌ VỀ TOUR </h2>
-        <Slider autoplay>{renderItem()}</Slider>
+        <h2>KHÁCH HÀNG NÓI GÌ VỀ LOCAL TOURIST </h2>
+        <Slider {...settings}>{renderItem()}</Slider>
       </div>
+
+     
     </div>
   );
 }

@@ -3,8 +3,6 @@ import "../BodyHomePage/styles.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function BodyItem({ item }) {
   return (
@@ -14,7 +12,7 @@ function BodyItem({ item }) {
           <img src={item.img} />
         </a>
         <div className="card-bottom">
-          <a href="">
+          <a href="#">
             <h3>{item.nameTour}</h3>
           </a>
           <p>

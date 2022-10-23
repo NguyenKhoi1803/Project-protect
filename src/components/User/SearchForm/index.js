@@ -11,9 +11,6 @@ function SearchForm() {
   const dispatch = useDispatch();
 
   const onSearch = (value) => {
-    // console.log("val", value);
-    // dispatch(searchFilterChange(value));
-    // navigate("/searchlist");
     navigate(
       generatePath("/searchList/:id", {
         id: value,
