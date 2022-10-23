@@ -2,6 +2,7 @@ import {
   AimOutlined,
   CalendarOutlined,
   CarOutlined,
+  ClockCircleOutlined,
   DollarCircleOutlined,
 } from "@ant-design/icons";
 import React from "react";
@@ -19,10 +20,16 @@ function TourItem({ item }) {
   const handleAddToCart = () => {
     navigate(
       generatePath("/products/:id", {
-        id: item.id
+        id: item.id,
       })
     );
   };
+
+  const dayStart = new Date(item.startDate).getTime();
+  const dayEnd = new Date(item.endDate).getTime();
+  const countDay = (dayEnd - dayStart) / 86400000;
+
+  console.log("countDay", countDay);
 
   return (
     <div className="container__tourItem">
@@ -32,9 +39,13 @@ function TourItem({ item }) {
           <h4>{item.nameTour}</h4>
 
           <p>Mã Tour : {item.id}</p>
+
           <p>
             {" "}
             <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
+          </p>
+          <p>
+            <ClockCircleOutlined /> <span> Thời Gian </span> : {countDay} Ngày
           </p>
           <p>
             {" "}

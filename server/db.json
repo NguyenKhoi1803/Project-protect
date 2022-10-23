@@ -58,7 +58,47 @@
       "id": 5
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "idUser": 5,
+      "name": "Trần Thị Bơ",
+      "email": "user@gmail.com",
+      "phone": "0779950318",
+      "idTour": [
+        1
+      ],
+      "nameTour": [
+        "Tour Du Lich Ha Noi"
+      ],
+      "id": 1
+    },
+    {
+      "idUser": 3,
+      "name": "Nguyên Khôi",
+      "email": "nguyenKhoi180397@gmail.com",
+      "phone": "0779950318",
+      "idTour": [
+        1
+      ],
+      "nameTour": [
+        "Tour Du Lich Ha Noi"
+      ],
+      "id": 2
+    },
+    {
+      "idUser": 3,
+      "name": "Nguyên Khôi",
+      "email": "nguyenKhoi180397@gmail.com",
+      "phone": "0779950318",
+      "idTour": [
+        1
+      ],
+      "nameTour": [
+        "Tour Du Lich Ha Noi"
+      ],
+      "id": 3
+    }
+  ],
   "tour": [
     {
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
@@ -66,7 +106,7 @@
       "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
       "startDate": "2022-09-23",
-      "endDate": "2022-10-21",
+      "endDate": "2022-09-25",
       "nameTour": "Tour Du Lich Ha Noi",
       "vehicle": "oto",
       "quantity": 6,

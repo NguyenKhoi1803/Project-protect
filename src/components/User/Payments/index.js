@@ -1,14 +1,17 @@
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
+import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../Auth";
 import { fetchTour } from "../../../store/user/fetchTour";
 import "./styles.scss";
+import { addToCart } from "../../../store/user/addToCartSlice";
 
 function Payments() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
 
   useEffect(() => {
@@ -21,101 +24,51 @@ function Payments() {
 
   const arrr = newTourArr?.filter((item) => item.id == id);
 
-  const [formFields, setFormFields] = useState([
-    {
-      name: "",
-      phone: "",
-      address: "",
-      sex: "",
-      idCard: "",
-      age: "",
-    },
-  ]);
+  const codeTour = arrr?.map((item) => item.id);
+  const titleTour = arrr?.map((item) => item.nameTour);
 
-  const handleFormChange = (event, index) => {
-    let data = [...formFields];
-    data[index][event.target.name] = event.target.value;
-    setFormFields(data);
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-  };
-
-  const addFields = () => {
-    let object = {
-      name: "",
-      phone: "",
-      address: "",
-      sex: "",
-      idCard: "",
-      age: "",
+  const handleSubmit = () => {
+    const cart = {
+      idUser: account.id,
+      name: account.fullname,
+      email: account.email,
+      phone: account.phone,
+      idTour: codeTour,
+      nameTour: titleTour,
     };
-    setFormFields([...formFields, object]);
-  };
 
-  const removeFields = (index) => {
-    let data = [...formFields];
-    data.splice(index, 1);
-    setFormFields(data);
+    dispatch(addToCart(cart));
+    navigate("/");
   };
 
   return (
     <div className="container__payments">
       <div className="payments">
         <div className="payments__form">
-          <form onSubmit={submit}>
-            {formFields.map((form, index) => {
-              return (
-                <div key={index} className="payments__formFields">
-                  <p>Thông tin khách hàng</p>
-                  <input
-                    name="name"
-                    placeholder="Đầy Đủ Họ Tên"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.name}
-                  />
-                  <input
-                    name="phone"
-                    placeholder="Số Điện Thoại"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.phone}
-                  />
-                  <input
-                    name="sex"
-                    placeholder="Giới tính"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.sex}
-                  />
-                  <input
-                    name="address"
-                    placeholder="Địa Chỉ"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.address}
-                  />
-                  <input
-                    name="idCard"
-                    placeholder="CMND"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.idCard}
-                  />
-                  <input
-                    name="age"
-                    placeholder="Tuổi"
-                    onChange={(event) => handleFormChange(event, index)}
-                    value={form.age}
-                  />
-                  <button className="btn-1" onClick={() => removeFields(index)}>
-                    {" "}
-                    Remove
-                  </button>
-                </div>
-              );
-            })}
+          <form onSubmit={handleSubmit}>
+            <div className="payments__formFields">
+              <h2>Thông tin khách hàng</h2>
+              <input name="id" placeholder="Đầy Đủ Họ Tên" value={account.id} />
+              <input
+                name="name"
+                placeholder="Đầy Đủ Họ Tên"
+                value={account.fullname}
+              />
+              <input
+                name="email"
+                placeholder="Đầy Đủ Họ Tên"
+                value={account.email}
+              />
+              <input
+                name="phone"
+                placeholder="Số Điện Thoại"
+                value={account.phone}
+              />
+              <Button className="btn" variant="primary" onClick={handleSubmit}>
+                Hoàn Thành
+              </Button>
+            </div>
           </form>
-          <div className="payments__btn">
-            <button onClick={addFields}> Thêm Người </button>
-          </div>
         </div>
         <div className="payments__details">
           <h1>Details</h1>
@@ -145,7 +98,6 @@ function Payments() {
               </div>
             </div>
           ))}
-          <button onClick={submit}> Hoàn Thành </button>
         </div>
       </div>
     </div>
