@@ -18,7 +18,6 @@ function TourList() {
   return (
     <div className="container__TourList">
       <div className="TourList">
-        
         {newTourArr?.map((item) => (
           <TourItem key={item.id} item={item} />
         ))}

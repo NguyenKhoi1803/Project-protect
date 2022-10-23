@@ -1,4 +1,3 @@
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import "./styles.scss";
@@ -11,9 +10,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
-
-
+      to4: "Cầu Rồng",
     },
     {
       img: "https://www.vietnam.travel/sites/default/files/styles/top_banner/public/2017-06/vietnam-travel-5.jpg?itok=XVnHP3ty",
@@ -21,7 +18,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
+      to4: "Cầu Rồng",
     },
     {
       img: "https://vietnamdiscovery.com/wp-content/uploads/thumbnail/Saigon-Notre-Dame-Cathedral-@doanlehoang_vu-pg6c37vf4agaqvtb1sp27o4y4wosawxevdbdp4ds26.jpg",
@@ -29,7 +26,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
+      to4: "Cầu Rồng",
     },
     {
       img: " https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/1-3.jpg",
@@ -37,7 +34,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
+      to4: "Cầu Rồng",
     },
     {
       img: "https://www.vietnambooking.com/wp-content/uploads/2018/08/dulich-quang-binh-kham-pha-vuong-quoc-cua-nhung-hang-dong-ki-bi-22-8-2018-1.jpg",
@@ -45,7 +42,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
+      to4: "Cầu Rồng",
     },
     {
       img: "https://vhttdl.daklak.gov.vn/CMS/Content/AnhDep/dlk1.jpg",
@@ -53,7 +50,7 @@ function Special() {
       to1: "Hội An",
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
-      to4: "Cầu Rồng"
+      to4: "Cầu Rồng",
     },
   ];
 
@@ -62,10 +59,10 @@ function Special() {
       <div className="CardItem__Special">
         <div className="card__Special">
           <a href="/" className="card-top__Special">
-            <img src={item.img} />
+            <img src={item.img} alt="asda" />
           </a>
           <div className="card-bottom__Special">
-            <a href="#">
+            <a href="/">
               <h3>{item.title}</h3>
             </a>
 

@@ -1,7 +1,12 @@
 .container__DetailsCard {
     width: 100%;
     padding: 5%;
-    background-image: linear-gradient(to right, #ECECEC, #D7D7D7, #C2C2C2);
+    background-image: url("https://demoda.vn/wp-content/uploads/2022/03/background-vintage-lich-su-ban-do-in-chim-1.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -19,7 +24,7 @@
 .container__DetailsCard--title {
     display: flex;
     border: 1px solid black;
-    
+
 
     & img {
         width: 40%;
@@ -30,7 +35,7 @@
         width: 60%;
         padding: 30px;
         background-color: #f6f6f6;
-        
+
 
 
         & li {
@@ -81,8 +86,9 @@
 
 .container__DetailsCard--schedule {
     margin-top: 2%;
-    
+
     display: flex;
+
     & h3 {
         width: 30%;
     }

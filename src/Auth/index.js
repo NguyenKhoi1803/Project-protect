@@ -24,3 +24,7 @@ export const checkAdmin = () => {
 export const logout = () => {
   localStorage.removeItem("account");
 };
+
+export const getAccountInfo = () => {
+  return JSON.parse(localStorage.getItem("account") || "{}");
+};

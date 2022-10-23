@@ -1,7 +1,11 @@
 .container__payments {
     width: 100%;
-    background-image: linear-gradient(to right, #ECECEC, #D7D7D7, #C2C2C2);
-
+    background-image: url("https://demoda.vn/wp-content/uploads/2022/03/background-vintage-lich-su-ban-do-in-chim-1.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .payments {

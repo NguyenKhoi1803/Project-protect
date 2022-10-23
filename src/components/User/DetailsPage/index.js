@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
+import { checkLogin } from "../../../Auth";
 import { fetchTour } from "../../../store/user/fetchTour";
 
 import "./styles.scss";
@@ -21,11 +22,15 @@ function DetailsPage() {
   const ids = arr?.map((item) => item.id);
 
   const handlePayments = () => {
-    navigate(
-      generatePath("/products/cart/:id", {
-        id: ids,
-      })
-    );
+    if (checkLogin()) {
+      navigate(
+        generatePath("/products/cart/:id", {
+          id: ids,
+        })
+      );
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
