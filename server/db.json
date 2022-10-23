@@ -60,9 +60,9 @@
   ],
   "cart": [
     {
-      "idUser": 5,
-      "name": "Trần Thị Bơ",
-      "email": "user@gmail.com",
+      "idUser": 3,
+      "name": "Nguyên Khôi",
+      "email": "nguyenKhoi180397@gmail.com",
       "phone": "0779950318",
       "idTour": [
         1
@@ -70,33 +70,11 @@
       "nameTour": [
         "Tour Du Lich Ha Noi"
       ],
+      "cost": [
+        2000000
+      ],
+      "numberPeople": "20",
       "id": 1
-    },
-    {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "id": 2
-    },
-    {
-      "idUser": 3,
-      "name": "Nguyên Khôi",
-      "email": "nguyenKhoi180397@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "id": 3
     }
   ],
   "tour": [

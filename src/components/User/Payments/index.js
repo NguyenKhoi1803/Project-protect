@@ -20,12 +20,18 @@ function Payments() {
 
   const account = getAccountInfo();
 
-  console.log("account", account.email);
-
   const arrr = newTourArr?.filter((item) => item.id == id);
 
+  
   const codeTour = arrr?.map((item) => item.id);
   const titleTour = arrr?.map((item) => item.nameTour);
+  const priceTour = arrr?.map((item) => item.price);
+
+  const [number, setNumber] = useState("");
+
+  const handleChangeFields = (e) => {
+    setNumber(e.target.value);
+  };
 
   const handleSubmit = () => {
     const cart = {
@@ -35,6 +41,8 @@ function Payments() {
       phone: account.phone,
       idTour: codeTour,
       nameTour: titleTour,
+      cost: priceTour,
+      numberPeople: number,
     };
 
     dispatch(addToCart(cart));
@@ -63,6 +71,12 @@ function Payments() {
                 name="phone"
                 placeholder="Số Điện Thoại"
                 value={account.phone}
+              />
+
+              <input
+                name="number"
+                placeholder="Nhập số khách tham gia Tour tại đây !"
+                onChange={handleChangeFields}
               />
               <Button className="btn" variant="primary" onClick={handleSubmit}>
                 Hoàn Thành
