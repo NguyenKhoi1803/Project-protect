@@ -5,7 +5,9 @@ import { fetchCart } from "../../store/user/addToCartSlice";
 import "./styles.scss";
 
 function SucceedPage() {
-  const { id } = useParams;
+  const { id } = useParams();
+
+  console.log("idssss", id);
 
   const dispatch = useDispatch();
   const newCartArr = useSelector((state) => state.addToCartReducer.carts);

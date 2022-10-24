@@ -14,7 +14,7 @@ function Payments() {
   const navigate = useNavigate();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
   const arrr = newTourArr?.filter((item) => item.id == id);
-  
+
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
