@@ -1,8 +1,8 @@
 import { Button, Checkbox, Form, Input, Select } from "antd";
-import React from "react";
-import { useDispatch /* , useSelector */ } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
-import { addAccount } from "../../../store/user/register";
+import { addAccount, fetchAccount } from "../../../store/user/register";
 
 import "./styles.scss";
 const { Option } = Select;
@@ -42,10 +42,23 @@ const Register = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const newAccArr = useSelector((state) => state.accountReducer.accounts);
+  const usedEmail = newAccArr?.map((item) => item.email);
+
+  useEffect(() => {
+    dispatch(fetchAccount());
+  }, [dispatch]);
+
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-    dispatch(addAccount(values));
-    navigate("/login");
+    const gmail = values.email;
+    const arr = usedEmail.find((e) => e == gmail);
+    if (arr) {
+      alert("Email Đà Tồn Tại");
+    } else {
+      dispatch(addAccount(values));
+      navigate("/login");
+    }
   };
 
   const prefixSelector = (
@@ -83,8 +96,10 @@ const Register = () => {
                 required: true,
                 message: "Please input your fullname!",
                 whitespace: true,
+                min: 3,
               },
             ]}
+            hasFeedback
           >
             <Input />
           </Form.Item>
@@ -102,6 +117,7 @@ const Register = () => {
                 message: "Please input your E-mail!",
               },
             ]}
+            hasFeedback
           >
             <Input />
           </Form.Item>
@@ -113,7 +129,7 @@ const Register = () => {
               {
                 required: true,
                 message: "Please input your password!",
-                min: 6,
+                min: 8,
                 max: 20,
               },
             ]}
@@ -159,6 +175,7 @@ const Register = () => {
                 message: "Please input your phone number!",
               },
             ]}
+            hasFeedback
           >
             <Input
               addonBefore={prefixSelector}
@@ -177,6 +194,7 @@ const Register = () => {
                 message: "Please select gender!",
               },
             ]}
+            hasFeedback
           >
             <Select placeholder="select your gender">
               <Option value="male">Male</Option>

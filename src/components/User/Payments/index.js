@@ -121,7 +121,7 @@ function Payments() {
                     <CalendarOutlined /> Gia 1 nguoi : <span>
                       {item.price}
                     </span>{" "}
-                    x {number}
+                    <span>x {number}</span>
                   </p>
                   <p>
                     {" "}
