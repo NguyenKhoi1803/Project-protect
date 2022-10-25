@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchCart } from "../../store/user/addToCartSlice";
+import { fetchCart } from "../../../../store/user/addToCartSlice";
+
 import "./styles.scss";
 
 function SucceedPage() {
   const { id } = useParams();
-
   console.log("idssss", id);
-
   const dispatch = useDispatch();
   const newCartArr = useSelector((state) => state.addToCartReducer.carts);
-
   const newArr = newCartArr?.filter((item) => item.codeOrder == id);
 
   useEffect(() => {

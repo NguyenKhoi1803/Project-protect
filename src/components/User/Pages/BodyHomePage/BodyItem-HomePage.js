@@ -1,5 +1,5 @@
 import React from "react";
-import "../BodyHomePage/styles.scss";
+import "./styles.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";

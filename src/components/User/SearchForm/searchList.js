@@ -7,7 +7,7 @@ import "./styles.scss";
 
 function SearchList() {
   const { id } = useParams();
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const newTour = useSelector((state) => state.fetchTourReducer.tours);
 

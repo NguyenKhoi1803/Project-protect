@@ -3,10 +3,10 @@ import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
-import { getAccountInfo } from "../../../Auth";
-import { fetchTour } from "../../../store/user/fetchTour";
+import { getAccountInfo } from "../../../../Auth";
+import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
-import { addToCart } from "../../../store/user/addToCartSlice";
+import { addToCart } from "../../../../store/user/addToCartSlice";
 
 function Payments() {
   const { id } = useParams();

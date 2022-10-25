@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user/fetchTour";
+import { fetchTour } from "../../../../store/user/fetchTour";
 
 import { generatePath, useNavigate } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../BodyHomePage/styles.scss";
-
+import "./styles.scss";
 import Slider from "react-slick";
 import BodyItem from "./BodyItem-HomePage";
-
 import Special from "../Special";
 
 function BodyList() {

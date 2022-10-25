@@ -9,8 +9,8 @@ import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
-import { checkLogin } from "../../../Auth";
-import { fetchTour } from "../../../store/user/fetchTour";
+import { checkLogin } from "../../../../Auth";
+import { fetchTour } from "../../../../store/user/fetchTour";
 
 import "./styles.scss";
 

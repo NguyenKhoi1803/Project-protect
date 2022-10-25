@@ -27,35 +27,13 @@
       "cost": [
         2000000
       ],
-      "numberPeople": "10",
+      "numberPeople": "1",
       "day": [
         "2022-09-23"
       ],
-      "total": 20000000,
-      "codeOrder": 1666687660428,
+      "total": 2000000,
+      "codeOrder": 1666691436119,
       "id": 1
-    },
-    {
-      "idUser": 1,
-      "name": "Nguyên Khôi",
-      "email": "user@gmail.com",
-      "phone": "0779950318",
-      "idTour": [
-        1
-      ],
-      "nameTour": [
-        "Tour Du Lich Ha Noi"
-      ],
-      "cost": [
-        2000000
-      ],
-      "numberPeople": "10",
-      "day": [
-        "2022-09-23"
-      ],
-      "total": 20000000,
-      "codeOrder": 1666687718280,
-      "id": 2
     }
   ],
   "tour": [

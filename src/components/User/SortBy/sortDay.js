@@ -45,7 +45,7 @@ const SortByDay = () => {
       <Select
         className="select"
         showSearch
-        placeholder="Select Day"
+        placeholder="Đây là chọn ngày !"
         optionFilterProp="children"
         onChange={onChange}
         filterOption={(input, option) =>

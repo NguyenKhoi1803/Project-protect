@@ -22,7 +22,7 @@ function SearchForm() {
     <div className="container__searchForm">
       <div className="searchForm">
         <Search
-          placeholder="input search text"
+          placeholder="Tìm ở đây nè !"
           onSearch={onSearch}
           enterButton
           size="large"

@@ -45,7 +45,7 @@ const SortByLocation = () => {
       <Select
         className="select"
         showSearch
-        placeholder="Select Location"
+        placeholder="Đây là chọn nơi đến !"
         optionFilterProp="children"
         onChange={onChange}
         filterOption={(input, option) =>
