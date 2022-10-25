@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { selectFilterChange } from "../../../store/user/sortSlice/index";
 import { Select } from "antd";
+import { generatePath, useNavigate } from "react-router-dom";
 
 const { Option } = Select;
-const SortBy = () => {
+const SortByLocation = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const sortTour = useSelector((state) => state.fetchTourReducer.tours);
   let listPost = [];
@@ -28,36 +30,36 @@ const SortBy = () => {
     }
     return accumulator;
   },
-    []);
+  []);
 
   const onChange = (value) => {
-    console.log(`selected ${value}`);
-    dispatch(selectFilterChange(value));
-  };
-
-  const onSearch = (value) => {
-    console.log("search:", value);
-    // dispatch(selectFilterChange(value));
+    navigate(
+      generatePath("/searchList/:id", {
+        id: value,
+      })
+    );
   };
 
   return (
-    <Select
-      showSearch
-      placeholder="Select a person"
-      optionFilterProp="children"
-      onChange={onChange}
-      onSearch={onSearch}
-      filterOption={(input, option) =>
-        option.children.toLowerCase().includes(input.toLowerCase())
-      }
-    >
-      {myArrayWithNoDuplicates.map((item, i) => (
-        <Option key={i} value={item}>
-          {item}
-        </Option>
-      ))}
-    </Select>
+    <div className="container__select">
+      <Select
+        className="select"
+        showSearch
+        placeholder="Select Location"
+        optionFilterProp="children"
+        onChange={onChange}
+        filterOption={(input, option) =>
+          option.children.toLowerCase().includes(input.toLowerCase())
+        }
+      >
+        {myArrayWithNoDuplicates.map((item, i) => (
+          <Option key={i} value={item}>
+            {item}
+          </Option>
+        ))}
+      </Select>
+    </div>
   );
 };
 
-export default SortBy;
+export default SortByLocation;

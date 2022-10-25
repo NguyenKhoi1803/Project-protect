@@ -17,10 +17,15 @@ function SearchList() {
 
   const arr = newTour?.filter((item) => item.to == id);
 
+  const arrDay = newTour?.filter((item) => item.numberDay == id);
+
   return (
     <div className="container_SearchList">
       <div className="SearchList">
         {arr?.map((item) => (
+          <TourItem key={item.id} item={item} />
+        ))}
+        {arrDay?.map((item) => (
           <TourItem key={item.id} item={item} />
         ))}
       </div>

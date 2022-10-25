@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../store/user/fetchTour";
-import SortBy from "../SortBy/listSort";
+
 import TourItem from "../TourProduct/tourItem";
 
 import "./styles.scss";

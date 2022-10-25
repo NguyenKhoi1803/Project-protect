@@ -1,6 +1,9 @@
-.FormStyle {
-    width: 30%;
-    margin-top: 5%;
-    text-align: center;
-    
+.container__select {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.select { 
+    width: 200px;
 }

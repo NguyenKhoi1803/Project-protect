@@ -60,6 +60,7 @@
   ],
   "tour": [
     {
+      "numberDay": 2,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -83,6 +84,7 @@
       "id": 1
     },
     {
+      "numberDay": 2,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -102,6 +104,7 @@
       "id": 2
     },
     {
+      "numberDay": 3,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -121,6 +124,7 @@
       "id": 3
     },
     {
+      "numberDay": 3,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -140,6 +144,7 @@
       "id": 4
     },
     {
+      "numberDay": 3,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -159,6 +164,7 @@
       "id": 5
     },
     {
+      "numberDay": 4,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -178,6 +184,7 @@
       "id": 6
     },
     {
+      "numberDay": 4,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -197,6 +204,7 @@
       "id": 7
     },
     {
+      "numberDay": 5,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -216,6 +224,7 @@
       "id": 8
     },
     {
+      "numberDay": 5,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -235,6 +244,7 @@
       "id": 9
     },
     {
+      "numberDay": 5,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -254,6 +264,7 @@
       "id": 10
     },
     {
+      "numberDay": 6,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -273,6 +284,7 @@
       "id": 11
     },
     {
+      "numberDay": 6,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -292,6 +304,7 @@
       "id": 12
     },
     {
+      "numberDay": 6,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -311,6 +324,7 @@
       "id": 13
     },
     {
+      "numberDay": 9,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -330,6 +344,7 @@
       "id": 14
     },
     {
+      "numberDay": 9,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -349,6 +364,7 @@
       "id": 15
     },
     {
+      "numberDay": 9,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -368,6 +384,7 @@
       "id": 16
     },
     {
+      "numberDay": 11,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
@@ -387,6 +404,7 @@
       "id": 17
     },
     {
+      "numberDay": 11,
       "img": "https://www.tsttourist.com/vnt_upload/tour/05_2022/96171834_1.jpg",
       "price": 2000000,
       "from": "Hồ Chí Minh",
