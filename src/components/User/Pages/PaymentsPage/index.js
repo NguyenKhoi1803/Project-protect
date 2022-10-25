@@ -1,12 +1,13 @@
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
 import Button from "react-bootstrap/Button";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../../Auth";
 import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
+import emailjs from "@emailjs/browser";
 
 function Payments() {
   const { id } = useParams();
@@ -33,6 +34,8 @@ function Payments() {
   };
   const total = number * priceTour;
 
+  const form = useRef();
+
   const handleSubmit = () => {
     const ids = new Date().getTime();
     const cart = {
@@ -55,13 +58,29 @@ function Payments() {
       })
     );
     dispatch(addToCart(cart));
+
+    emailjs
+      .sendForm(
+        "service_6zuiagt",
+        "template_a2bgpmj",
+        form.current,
+        "hfd1w1MRIDzqlnoSE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
     <div className="container__payments">
       <div className="payments">
         <div className="payments__form">
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="payments__formFields">
               <h2>Thông tin khách hàng</h2>
               <input name="id" placeholder="Đầy Đủ Họ Tên" value={account.id} />
