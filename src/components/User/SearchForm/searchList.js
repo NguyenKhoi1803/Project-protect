@@ -15,7 +15,9 @@ function SearchList() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const arr = newTour?.filter((item) => item.to == id);
+  const pattern = new RegExp(id.trim(), "i");
+
+  const arr = newTour?.filter((item) => pattern.test(item.to));
 
   const arrDay = newTour?.filter((item) => item.numberDay == id);
 

@@ -51,14 +51,8 @@ const Register = () => {
   }, [dispatch]);
 
   const onFinish = (values) => {
-    const gmail = values.email;
-    const arr = usedEmail.find((e) => e == gmail);
-    if (arr) {
-      alert("Email Đã Tồn Tại");
-    } else {
-      dispatch(addAccount(values));
-      navigate("/login");
-    }
+    dispatch(addAccount(values));
+    navigate("/login");
   };
 
   const prefixSelector = (
@@ -117,12 +111,12 @@ const Register = () => {
                 message: "Please input your E-mail!",
               },
               {
-                message: "email already",
+                message: "Email already !",
                 validator: (_, value) => {
                   if (
                     newAccArr.find((item) =>
                       new RegExp(value, "i").test(item.email)
-                    ) != null
+                    ) != null && value != ""
                   ) {
                     return Promise.reject("Some message here");
                   } else {

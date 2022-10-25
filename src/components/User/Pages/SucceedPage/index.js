@@ -36,7 +36,13 @@ function SucceedPage() {
               </p>
               <p>
                 {" "}
-                Gía 1 Người : <span>{item.cost}</span>
+                Gía 1 Người :{" "}
+                <span>
+                  {new Intl.NumberFormat("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                  }).format(item.cost)}
+                </span>
               </p>
               <p>
                 {" "}
@@ -44,7 +50,13 @@ function SucceedPage() {
               </p>
               <p>
                 {" "}
-                Tổng Tiền : <span>{item.total}</span>
+                Tổng Tiền :{" "}
+                <span>
+                  {new Intl.NumberFormat("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                  }).format(item.total)}
+                </span>
               </p>
             </div>
           </div>

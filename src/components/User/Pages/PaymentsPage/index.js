@@ -118,14 +118,24 @@ function Payments() {
 
                   <p>
                     {" "}
-                    <CalendarOutlined /> Gia 1 nguoi : <span>
-                      {item.price}
+                    <CalendarOutlined /> Gia 1 nguoi :{" "}
+                    <span>
+                      {new Intl.NumberFormat("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      }).format(item.price)}
                     </span>{" "}
                     <span>x {number}</span>
                   </p>
                   <p>
                     {" "}
-                    <CalendarOutlined /> Tong : <span>{total}</span>
+                    <CalendarOutlined /> Tong :{" "}
+                    <span>
+                      {new Intl.NumberFormat("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      }).format(total)}
+                    </span>
                   </p>
                 </div>
               </div>

@@ -31,6 +31,11 @@ function TourItem({ item }) {
 
   console.log("countDay", countDay);
 
+  new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  }).format(item.price);
+
   return (
     <div className="container__tourItem">
       <img className="container__tourItem--img" src={item.img} />
@@ -63,7 +68,11 @@ function TourItem({ item }) {
         </p>
         <p>
           {" "}
-          <span>Gía 1 Người</span> : {item.price}
+          <span>Gía 1 Người</span> :{" "}
+          {new Intl.NumberFormat("vi-EN", {
+            style: "currency",
+            currency: "VND",
+          }).format(item.price)}
         </p>
 
         <Button

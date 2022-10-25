@@ -77,7 +77,11 @@ function DetailsPage() {
                 </p>
                 <p>
                   {" "}
-                  <span>Gía 1 Người</span> : {item.price}
+                  <span>Gía 1 Người</span> :{" "}
+                  {new Intl.NumberFormat("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                  }).format(item.price)}
                 </p>
                 <Button
                   variant="success"

@@ -11,6 +11,7 @@ function SearchForm() {
   const dispatch = useDispatch();
 
   const onSearch = (value) => {
+    
     navigate(
       generatePath("/searchList/:id", {
         id: value,
@@ -22,7 +23,7 @@ function SearchForm() {
     <div className="container__searchForm">
       <div className="searchForm">
         <Search
-          placeholder="Tìm ở đây nè !"
+          placeholder="Tìm ở đây nè"
           onSearch={onSearch}
           enterButton
           size="large"
