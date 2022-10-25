@@ -1,19 +1,19 @@
-.searchForm {
-  width: 40%;
-  margin: auto;
-  text-align: center;
-  padding: 1%;
-}
-
 .container__searchForm {
   width: 100%;
-  background-color: #98F5FF;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+
+.searchForm {
+  width: 300px;
+
 }
 
 
 .container_SearchList {
   width: 100%;
-  background-image: url("https://demoda.vn/wp-content/uploads/2022/03/background-vintage-lich-su-ban-do-in-chim-1.jpg");
+  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;

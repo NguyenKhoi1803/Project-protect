@@ -1,16 +1,19 @@
+import { SearchOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import React, { useEffect } from "react";
+import { ButtonGroup, Form } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useNavigate } from "react-router-dom";
 import { checkLogin, logout } from "../../Auth";
+
 function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="container__navbar">
       {["xxl"].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="">
           <Container fluid>

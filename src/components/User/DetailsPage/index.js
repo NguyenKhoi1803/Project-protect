@@ -1,4 +1,11 @@
+import {
+  AimOutlined,
+  CalendarOutlined,
+  CarOutlined,
+  ClockCircleOutlined,
+} from "@ant-design/icons";
 import React, { useEffect } from "react";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
@@ -34,49 +41,54 @@ function DetailsPage() {
   };
 
   return (
-    <div>
+    <div className="container__detailsPage">
       {arr?.map((item) => (
         <div className="container__DetailsCard">
           <div className="container__DetailsCard--all">
             <h1>{item.nameTour}</h1>
-            <div className="container__DetailsCard--title">
-              <img src={item.img} alt="" />
-              <ul className="container__DetailsCard--info">
-                <li>
-                  <p className="p-at">Mã Tour : </p>
-                  <p className="p-as">{item.id}</p>
-                </li>
-                <li>
-                  <p className="p-at">Ngày Khởi Hành : </p>
-                  <p className="p-as">{item.startDate}</p>
-                </li>
-                <li>
-                  <p className="p-at">Ngày Về: </p>
-                  <p className="p-as">{item.endDate}</p>
-                </li>
-                <li>
-                  <p className="p-at">Nơi Khởi Hành: </p>
-                  <p className="p-as">{item.from}</p>
-                </li>
-                <li>
-                  <p className="p-at">Nơi Đến : </p>
-                  <p className="p-as">{item.to}</p>
-                </li>
-                <li>
-                  <p className="p-at">Số Chỗ Còn Nhận: </p>
-                  <p className="p-as">{item.number}</p>
-                </li>
-                <div>
-                  <button
-                    class="container__DetailsCard--button"
-                    onClick={handlePayments}
-                  >
-                    Đặt Ngay
-                  </button>
-                </div>
-              </ul>
+            <div className="container__detail">
+              <img className="container__detail--img" src={item.img} />
+              <div className="container__detail-details">
+                <h4>{item.nameTour}</h4>
+
+                <p>
+                  {" "}
+                  <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
+                </p>
+
+                <p>
+                  {" "}
+                  <AimOutlined /> <span>Nơi Đến</span> : {item.to}
+                </p>
+
+                <p>
+                  {" "}
+                  <CarOutlined /> <span>Phương tiện di chuyển</span> :{" "}
+                  {item.vehicle}
+                </p>
+                <p>
+                  {" "}
+                  <CalendarOutlined /> <span>Ngày Khởi Hành</span> :{" "}
+                  {item.startDate}
+                </p>
+                <p>
+                  {" "}
+                  <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
+                </p>
+                <p>
+                  {" "}
+                  <span>Gía 1 Người</span> : {item.price}
+                </p>
+                <Button
+                  variant="success"
+                  className="addToCart"
+                  onClick={handlePayments}
+                >
+                  Đặt Ngay
+                </Button>
+              </div>
             </div>
-            {/* <div className="container__DetailsCard--descrip">
+            <div className="container__DetailsCard--descrip">
               <div className="container__DetailsCard--schedule">
                 <h3>Lịch trình ngày 1:</h3>
                 <h4> {item.descriptions.des1}</h4>
@@ -89,7 +101,7 @@ function DetailsPage() {
                 <h3>Lịch trình ngày 3:</h3>
                 <h4> {item.descriptions.des1}</h4>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       ))}

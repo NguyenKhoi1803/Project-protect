@@ -1,7 +1,6 @@
 .container__body {
   width: 100%;
-
-  background-image: url("https://demoda.vn/wp-content/uploads/2022/03/background-vintage-lich-su-ban-do-in-chim-1.jpg");
+  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -11,7 +10,7 @@
 }
 
 .container__body--List {
-  width: 90%;
+  width: 60%;
   margin: auto;
   padding: 3%;
 }
@@ -27,6 +26,10 @@
     font-weight: 700;
     color: #4682b4;
     border-bottom: 2px dashed #4682b4;
+
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+    }
   }
 
   & p {
@@ -48,6 +51,11 @@
   margin: 4px 2px;
   transition-duration: 0.4s;
   border-radius: 5%;
+
+  @media screen and (max-width: 767px) {
+    padding: 5px 10px;
+    min-width: 120px;
+  }
 }
 
 .button:hover {
@@ -56,7 +64,7 @@
 }
 
 .CardItem {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;

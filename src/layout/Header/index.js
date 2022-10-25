@@ -7,8 +7,10 @@ import "./styles.scss";
 function Header() {
   return (
     <div className="container__Header">
-      <NavBar />
-      <SearchForm />
+      <div className="container__Header--fixed">
+        <NavBar />
+        <SearchForm />
+      </div>
       <Banner />
     </div>
   );

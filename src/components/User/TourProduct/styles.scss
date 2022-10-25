@@ -1,0 +1,56 @@
+.container__TourList {
+  width: 100%;
+
+  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.TourList {
+  margin-top: 20px;
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+
+}
+
+
+.container__tourItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 1px dashed black;
+  border-radius: 10px;
+  background-color: #FFFBD1;
+
+
+  & .container__tourItem--img {
+    max-width: 40%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+.container__tourItem-details {
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+
+  & h4 {
+    color: #198754;
+    font-size: 40px;
+  }
+
+  & span {
+    color: #ff7f00;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+
+}

@@ -3,32 +3,20 @@ import Carousel from "react-bootstrap/Carousel";
 
 const items = [
   {
-    src: "https://brillianthotel.vn/upload/hinhanh/banner-cs-0074.png",
-    caption: "Đà Nẵng Đáng Sống",
-    descrip:
-      "Đà Nẵng, thành phố của Cửu Long Vượt Vũ Môn",
+    src: "https://danangfantasticity.com/wp-content/uploads/2020/05/mot-buoi-sang-that-khac-cung-binh-minh-tren-bien-da-nang.jpg",
   },
   {
-    src: "https://saigon.fusion-suites.com/wp-content/uploads/sites/7/2020/08/3-1-e1608794653928.jpg",
-    caption: "Sài Gòn Hoa Lệ",
-    descrip: "Sài Gòn Hoa Lệ, Hoa cho người giàu, Lệ cho người nghèo",
+    src: "https://vivuhotay.com/wp-content/uploads/2022/07/morning-in-hoan-kiem-lake-of-hanoi-spcjayjay.jpg",
   },
   {
-    src: "https://thgzurs.com/wp-content/uploads/2021/07/thgzurs.com-tim-hieu-ve-quang-truong-ba-dinh-giua-long-ha-noi-6-1536x1024.jpg",
-    caption: "Hà Nội Bình Yên",
-    descrip: "Hà Nội...Thủ Đô ngàn năm Văn Hiến",
+    src: "https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/1546099732022-UAN1M01VN6L3IT97M0ZY/image-asset.jpeg?format=1000w",
   },
 ];
 
 const slides = items?.map((item) => {
   return (
     <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src={item.src}
-        alt=""
-        className="banner__img"
-      />
+      <img className="d-block w-100 banner__img" src={item.src} alt="" />
       <Carousel.Caption className="banner__infor">
         <h3>{item.caption}</h3>
         <p>{item.descrip}</p>

@@ -58,6 +58,20 @@ const Login = () => {
                 required: true,
                 message: "Please input your username!",
               },
+              {
+                message: "Email này chưa đăng ký !",
+                validator: (_, value) => {
+                  if (
+                    loginArr.find((item) =>
+                      new RegExp(value, "i").test(item.email)
+                    ) == null
+                  ) {
+                    return Promise.reject("Email này chưa đăng ký !");
+                  } else {
+                    return Promise.resolve();
+                  }
+                },
+              },
             ]}
           >
             <Input />
@@ -70,6 +84,20 @@ const Login = () => {
               {
                 required: true,
                 message: "Please input your password!",
+              },
+              {
+                message: "Sai Mật Khẩu !",
+                validator: (_, value) => {
+                  if (
+                    loginArr.find((item) =>
+                      new RegExp(value, "i").test(item.password)
+                    ) == null
+                  ) {
+                    return Promise.reject("Email này chưa đăng ký !");
+                  } else {
+                    return Promise.resolve();
+                  }
+                },
               },
             ]}
           >
