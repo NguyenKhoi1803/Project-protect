@@ -8,6 +8,8 @@ import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
+import { uuid } from 'uuidv4';
+import { regex } from 'uuidv4';
 
 function BookingPages() {
   const { id } = useParams();
@@ -37,6 +39,8 @@ function BookingPages() {
   const form = useRef();
 
   const handleSubmit = () => {
+
+
     const ids = new Date().getTime();
 
     const cart = {
@@ -51,6 +55,9 @@ function BookingPages() {
       day: startDayTour,
       total: total,
       codeOrder: ids,
+      status: 0,
+      timeOrder: ids,
+
     };
 
     navigate(
