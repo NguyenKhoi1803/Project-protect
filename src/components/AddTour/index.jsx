@@ -5,19 +5,19 @@ import moment from "moment";
 import "antd/dist/antd.css";
 import { addTour } from "../../store/admin/addTourSlice";
 import { InboxOutlined, UploadOutlined, UserOutlined } from "@ant-design/icons";
-
+import "./styles.scss";
 import {
   Button,
-  Checkbox,
-  Col,
   Form,
   InputNumber,
-  Row,
   Select,
   Upload,
   Input,
   DatePicker,
 } from "antd";
+import { useEffect } from "react";
+import { checkAdmin, checkLogin } from "../../Auth";
+import { useNavigate } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
 
@@ -46,6 +46,14 @@ const normFile = (e) => {
 };
 
 const AddTour = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!checkLogin() || !checkAdmin()) {
+      navigate("/");
+    }
+  });
+
   const dispatch = useDispatch();
   const rangeConfig = {
     rules: [
@@ -58,25 +66,34 @@ const AddTour = () => {
 
   const onFinish = (fieldsValue) => {
     console.log("value", fieldsValue);
+    const rangeValue = fieldsValue["rangepicker"];
 
-    const { gia1, gia2, gia3 } = fieldsValue;
-    const price = { gia1, gia2, gia3 };
+    const rangepicker = {
+      startDate: rangeValue[0].format("YYYY-MM-DD"),
+      endDate: rangeValue[1].format("YYYY-MM-DD"),
+    };
 
-    const rangeValue = fieldsValue["range-picker"];
+    const startDay = new Date(rangepicker.startDate).getTime();
+    const endDay = new Date(rangepicker.endDate).getTime();
+
+    const numberDate = (endDay - startDay) / 86400000;
+
+    console.log("startDay", startDay);
+    console.log("startDay", endDay);
+    console.log("numberDay", numberDate);
 
     const dataSubmit = {
-      price,
       from: fieldsValue.from,
-      "range-picker": {
-        startDate: rangeValue[0].format("YYYY-MM-DD"),
-        endDate: rangeValue[1].format("YYYY-MM-DD"),
-      },
+      to: fieldsValue.to,
+      numberDay: numberDate,
+      startDate: rangepicker.startDate,
+      endDate: rangepicker.endDate,
+      img: fieldsValue.img,
       nameTour: fieldsValue.nameTour,
-      address: fieldsValue.address,
+      price: fieldsValue.gia1,
       vehicle: fieldsValue.vehicle,
       number: fieldsValue.number,
-      service: fieldsValue.service,
-      details: fieldsValue.details,
+      descriptions: fieldsValue.details,
     };
 
     console.log("dataSubmit", dataSubmit);
@@ -84,214 +101,154 @@ const AddTour = () => {
   };
 
   return (
-    <Form name="validate_other" {...formItemLayout} onFinish={onFinish}>
-      <Form.Item
-        name="nameTour"
-        label="tên tour"
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item label="gia">
-        <Form.Item
-          name="gia1"
-          label="giá1"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <InputNumber
-            addonBefore={<UserOutlined />}
-            addonAfter="$"
-            style={{ width: "100%" }}
-          />
-        </Form.Item>
-
-        <Form.Item name="gia2" label="giá2">
-          <InputNumber
-            addonBefore={<UserOutlined />}
-            addonAfter="$"
-            style={{ width: "100%" }}
-          />
-        </Form.Item>
-
-        <Form.Item name="gia3" label="giá3">
-          <InputNumber
-            addonBefore={<UserOutlined />}
-            addonAfter="$"
-            style={{ width: "100%" }}
-          />
-        </Form.Item>
-      </Form.Item>
-
-      <Form.Item
-        name="from"
-        label="nơi khỏi hành"
-        rules={[
-          {
-            required: true,
-            message: "ban càn chọn nơi khỏi hành!",
-          },
-        ]}
-      >
-        <Select placeholder="dịa diemr khỏi hành">
-          <Option value="Hà Nội">Hà Nội</Option>
-          <Option value="HCM">Hồ Chí Minh</Option>
-        </Select>
-      </Form.Item>
-
-      <Form.Item label="Address">
-        <Input.Group compact>
+    <div className="container__addProduct">
+      <div className="container__addProduct--form">
+        <Form name="validate_other" {...formItemLayout} onFinish={onFinish}>
           <Form.Item
-            name={["address", "province"]}
-            noStyle
+            name="img"
+            label="Upload Hình ảnh"
             rules={[
               {
                 required: true,
-                message: "Province is required",
               },
             ]}
           >
-            <Select placeholder="Select province">
-              <Option value="Zhejiang">Zhejiang</Option>
-              <Option value="Jiangsu">Jiangsu</Option>
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="nameTour"
+            label="Tên tour"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="gia1"
+            label="Giá"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="from"
+            label="Nơi Khởi Hành"
+            rules={[
+              {
+                required: true,
+                message: "ban càn chọn nơi khỏi hành!",
+              },
+            ]}
+          >
+            <Select placeholder="Địa điểm khỏi hành">
+              <Option value="Hà Nội">Hà Nội</Option>
+              <Option value="Hồ Chí Minh">Hồ Chí Minh</Option>
+              <Option value="Đà Nẵng">Đà Nẵng</Option>
             </Select>
           </Form.Item>
           <Form.Item
-            name={["address", "street"]}
-            noStyle
+            name="to"
+            label="Nơi Đến"
             rules={[
               {
                 required: true,
-                message: "Street is required",
+                message: "ban cần chọn nơi đến!",
               },
             ]}
           >
-            <Input
-              style={{
-                width: "50%",
-              }}
-              placeholder="Input street"
-            />
+            <Select placeholder="Địa Điểm Đến">
+              <Option value="Hà Nội">Hà Nội</Option>
+              <Option value="Hồ Chí Minh">Hồ Chí Minh</Option>
+              <Option value="Đà Nẵng">Đà Nẵng</Option>
+            </Select>
           </Form.Item>
-        </Input.Group>
-      </Form.Item>
-
-      <Form.Item
-        name="vehicle"
-        label="phương tiện"
-        rules={[
-          {
-            required: true,
-            message: "chọn phuong tiên!",
-            type: "array",
-          },
-        ]}
-      >
-        <Select mode="multiple" placeholder="phuong tien">
-          <Option value="oto">ô Tô</Option>
-          <Option value="xe-buyt">xe buyt</Option>
-          <Option value="máy bay">Máy bay</Option>
-        </Select>
-      </Form.Item>
-
-      <Form.Item name="number" label="Số lượng">
-        <InputNumber addonAfter={<UserOutlined />} min={1} max={10} />
-      </Form.Item>
-
-      <Form.Item name="service" label="dịch vụ đi kèm">
-        <Checkbox.Group>
-          <Row>
-            <Col span={8}>
-              <Checkbox value="A">A</Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox value="B">B</Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox value="C">C</Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox value="D">D</Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox value="E">E</Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox value="F">F</Checkbox>
-            </Col>
-          </Row>
-        </Checkbox.Group>
-      </Form.Item>
-
-      <Form.Item name="range-picker" label="RangePicker" {...rangeConfig}>
-        <RangePicker disabledDate={disabledDate} />
-      </Form.Item>
-
-      <Form.Item
-        name="details"
-        label="Intro"
-        rules={[
-          {
-            required: true,
-            message: "Please input details",
-          },
-        ]}
-      >
-        <Input.TextArea />
-      </Form.Item>
-
-      <Form.Item
-        name="upload"
-        label="Upload"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
-        extra="longgggggggggggggggggggggggggggggggggg"
-      >
-        <Upload name="logo" action="/upload.do" listType="picture">
-          <Button icon={<UploadOutlined />}>Click to upload</Button>
-        </Upload>
-      </Form.Item>
-
-      <Form.Item label="Dragger">
-        <Form.Item
-          name="dragger"
-          valuePropName="fileList"
-          getValueFromEvent={normFile}
-          noStyle
-        >
-          <Upload.Dragger name="files" action="/upload.do">
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p className="ant-upload-text">
-              Click or drag file to this area to upload
-            </p>
-            <p className="ant-upload-hint">
-              Support for a single or bulk upload.
-            </p>
-          </Upload.Dragger>
-        </Form.Item>
-      </Form.Item>
-
-      <Form.Item
-        wrapperCol={{
-          span: 12,
-          offset: 6,
-        }}
-      >
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+          s
+          <Form.Item
+            name="vehicle"
+            label="phương tiện"
+            rules={[
+              {
+                required: true,
+                message: "chọn phuong tiên!",
+                type: "array",
+              },
+            ]}
+          >
+            <Select mode="multiple" placeholder="phuong tien">
+              <Option value="oto">ô Tô</Option>
+              <Option value="xe-bus">xe bus</Option>
+              <Option value="máy bay">Máy bay</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item name="number" label="Số lượng">
+            <InputNumber addonAfter={<UserOutlined />} min={1} max={10} />
+          </Form.Item>
+          <Form.Item name="rangepicker" label="RangePicker" {...rangeConfig}>
+            <RangePicker disabledDate={disabledDate} />
+          </Form.Item>
+          <Form.Item
+            name="details"
+            label="Intro"
+            rules={[
+              {
+                required: true,
+                message: "Please input details",
+              },
+            ]}
+          >
+            <Input.TextArea />
+          </Form.Item>
+          <Form.Item
+            name="upload"
+            label="Upload"
+            valuePropName="fileList"
+            getValueFromEvent={normFile}
+            extra="longgggggggggggggggggggggggggggggggggg"
+          >
+            <Upload name="logo" action="/upload.do" listType="picture">
+              <Button icon={<UploadOutlined />}>Click to upload</Button>
+            </Upload>
+          </Form.Item>
+          <Form.Item label="Dragger">
+            <Form.Item
+              name="dragger"
+              valuePropName="fileList"
+              getValueFromEvent={normFile}
+              noStyle
+            >
+              <Upload.Dragger name="files" action="/upload.do">
+                <p className="ant-upload-drag-icon">
+                  <InboxOutlined />
+                </p>
+                <p className="ant-upload-text">
+                  Click or drag file to this area to upload
+                </p>
+                <p className="ant-upload-hint">
+                  Support for a single or bulk upload.
+                </p>
+              </Upload.Dragger>
+            </Form.Item>
+          </Form.Item>
+          <Form.Item
+            wrapperCol={{
+              span: 12,
+              offset: 6,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+    </div>
   );
 };
 

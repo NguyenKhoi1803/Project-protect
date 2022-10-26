@@ -18,8 +18,8 @@ export const checkLogin = () => {
   return localStorage.getItem("account") != null;
 };
 export const checkAdmin = () => {
-  const user = JSON.parse(localStorage.getItem("account") || "");
-  return localStorage.getItem("account") != null;
+  const user = JSON.parse(localStorage.getItem("account") || "{}");
+  return user.isAdmin;
 };
 export const logout = () => {
   localStorage.removeItem("account");

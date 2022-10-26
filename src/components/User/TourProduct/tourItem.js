@@ -3,11 +3,10 @@ import {
   CalendarOutlined,
   CarOutlined,
   ClockCircleOutlined,
-  DollarCircleOutlined,
 } from "@ant-design/icons";
 import React from "react";
 import { Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+
 import { generatePath, useNavigate } from "react-router-dom";
 
 import "./styles.scss";
@@ -15,21 +14,13 @@ import "./styles.scss";
 function TourItem({ item }) {
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
-
   const handleAddToCart = () => {
     navigate(
-      generatePath("/products/:id", {
+      generatePath("/products/details/:id", {
         id: item.id,
       })
     );
   };
-
-  const dayStart = new Date(item.startDate).getTime();
-  const dayEnd = new Date(item.endDate).getTime();
-  const countDay = (dayEnd - dayStart) / 86400000;
-
-  console.log("countDay", countDay);
 
   new Intl.NumberFormat("vi-VN", {
     style: "currency",
@@ -38,7 +29,8 @@ function TourItem({ item }) {
 
   return (
     <div className="container__tourItem">
-      <img className="container__tourItem--img" src={item.img} />
+      <img className="container__tourItem--img" src={item.img} alt="" />
+
       <div className="container__tourItem-details">
         <h4>{item.nameTour}</h4>
 
@@ -47,7 +39,8 @@ function TourItem({ item }) {
           <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
         </p>
         <p>
-          <ClockCircleOutlined /> <span> Thời Gian </span> : {countDay} Ngày
+          <ClockCircleOutlined /> <span> Thời Gian </span> : {item.numberDay}{" "}
+          Ngày
         </p>
         <p>
           {" "}

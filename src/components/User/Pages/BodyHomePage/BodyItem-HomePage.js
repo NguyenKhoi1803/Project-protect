@@ -3,18 +3,28 @@ import "./styles.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
+import { generatePath, useNavigate } from "react-router-dom";
 
 function BodyItem({ item }) {
+  const navigate = useNavigate();
+
+  const handleProductItem = () => {
+    navigate(
+      generatePath("/products/details/:id", {
+        id: item.id,
+      })
+    );
+  };
+
   return (
-    <div className="CardItem">
+    <div className="CardItem" onClick={handleProductItem}>
       <div className="card">
-        <a href="/" className="card-top">
-          <img src={item.img} />
+        <a href="" className="card-top">
+          <img src={item.img} alt="" />
         </a>
+
         <div className="card-bottom">
-          <a href="#">
-            <h3>{item.nameTour}</h3>
-          </a>
+          <h3>{item.nameTour}</h3>
           <p>
             {" "}
             <BarcodeOutlined /> Mã Tour : {item.id}

@@ -51,7 +51,17 @@ const Register = () => {
   }, [dispatch]);
 
   const onFinish = (values) => {
-    dispatch(addAccount(values));
+    const account = {
+      fullname: values.fullname,
+      email: values.email,
+      phone: values.phone,
+      prefix: values.prefix,
+      password: values.password,
+      connfirm: values.confirm,
+      isAdmin: false,
+    };
+
+    dispatch(addAccount(account));
     navigate("/login");
   };
 
@@ -116,7 +126,8 @@ const Register = () => {
                   if (
                     newAccArr.find((item) =>
                       new RegExp(value, "i").test(item.email)
-                    ) != null && value != ""
+                    ) != null &&
+                    value != ""
                   ) {
                     return Promise.reject("Some message here");
                   } else {

@@ -15,6 +15,7 @@ const SortByDay = () => {
 
   const sortTour = useSelector((state) => state.fetchTourReducer.tours);
   let listPost = [];
+
   if (sortTour?.length > 0) {
     listPost = sortTour?.map((item) => item?.numberDay);
   }

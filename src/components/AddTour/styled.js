@@ -192,3 +192,6 @@ export const Form = styled.form`
   width: 100%;
   justify-content: center;
 `;
+
+
+

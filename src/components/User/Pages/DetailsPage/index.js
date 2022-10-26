@@ -31,7 +31,7 @@ function DetailsPage() {
   const handlePayments = () => {
     if (checkLogin()) {
       navigate(
-        generatePath("/products/cart/:id", {
+        generatePath("/products/details/booking/:id", {
           id: ids,
         })
       );
@@ -94,16 +94,8 @@ function DetailsPage() {
             </div>
             <div className="container__DetailsCard--descrip">
               <div className="container__DetailsCard--schedule">
-                <h3>Lịch trình ngày 1:</h3>
-                <h4> {item.descriptions.des1}</h4>
-              </div>
-              <div className="container__DetailsCard--schedule">
-                <h3>Lịch trình ngày 2:</h3>
-                <h4> {item.descriptions.des1}</h4>
-              </div>
-              <div className="container__DetailsCard--schedule">
-                <h3>Lịch trình ngày 3:</h3>
-                <h4> {item.descriptions.des1}</h4>
+                <h3>Lịch trình : </h3>
+                <h4> {item.descriptions}</h4>
               </div>
             </div>
           </div>

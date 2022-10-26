@@ -1,6 +1,12 @@
 .container__succeed {
     width: 100%;
     padding: 5%;
+    background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container__succeed--details {

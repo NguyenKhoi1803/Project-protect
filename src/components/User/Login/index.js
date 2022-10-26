@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
-import { login } from "../../../Auth";
+import { checkAdmin, checkLogin, login } from "../../../Auth";
 import "./styles.scss";
-import { Nav } from "react-bootstrap";
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -13,14 +13,21 @@ const Login = () => {
   console.log("loginArr", loginArr);
 
   useEffect(() => {
+    if (checkLogin()) {
+      navigate("/");
+    }
+
     dispatch(fetchAccount());
   }, [dispatch]);
 
   const onFinish = (values) => {
     console.log("Success:", values);
     login(values.username, values.password, loginArr, (user) => {
-      console.log("user", user);
-      navigate("/");
+      if (user.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     });
   };
 

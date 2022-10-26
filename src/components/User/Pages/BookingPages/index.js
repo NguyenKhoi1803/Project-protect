@@ -9,7 +9,7 @@ import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
 
-function Payments() {
+function BookingPages() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ function Payments() {
 
   const handleSubmit = () => {
     const ids = new Date().getTime();
+
     const cart = {
       idUser: account.id,
       name: account.fullname,
@@ -53,7 +54,7 @@ function Payments() {
     };
 
     navigate(
-      generatePath("/succeed/:id", {
+      generatePath("/products/details/booking/succeed/:id", {
         id: ids,
       })
     );
@@ -166,4 +167,4 @@ function Payments() {
   );
 }
 
-export default Payments;
+export default BookingPages;
