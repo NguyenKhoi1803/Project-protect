@@ -11,6 +11,7 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 1,
     },
     {
       img: "https://www.vietnam.travel/sites/default/files/styles/top_banner/public/2017-06/vietnam-travel-5.jpg?itok=XVnHP3ty",
@@ -19,6 +20,7 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 2,
     },
     {
       img: "https://vietnamdiscovery.com/wp-content/uploads/thumbnail/Saigon-Notre-Dame-Cathedral-@doanlehoang_vu-pg6c37vf4agaqvtb1sp27o4y4wosawxevdbdp4ds26.jpg",
@@ -27,6 +29,7 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 3,
     },
     {
       img: " https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/1-3.jpg",
@@ -35,6 +38,7 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 4,
     },
     {
       img: "https://www.vietnambooking.com/wp-content/uploads/2018/08/dulich-quang-binh-kham-pha-vuong-quoc-cua-nhung-hang-dong-ki-bi-22-8-2018-1.jpg",
@@ -43,6 +47,7 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 5,
     },
     {
       img: "https://vhttdl.daklak.gov.vn/CMS/Content/AnhDep/dlk1.jpg",
@@ -51,12 +56,13 @@ function Special() {
       to2: "Chùa Linh Ứng",
       to3: "Chợ Hàn",
       to4: "Cầu Rồng",
+      id: 6,
     },
   ];
 
   const slides = touArr.map((item) => {
     return (
-      <div className="CardItem__Special">
+      <div className="CardItem__Special" key={item.id} item={item}>
         <div className="card__Special">
           <a href="/" className="card-top__Special">
             <img src={item.img} alt="asda" />

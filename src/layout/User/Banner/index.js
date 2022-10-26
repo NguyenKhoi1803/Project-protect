@@ -16,12 +16,8 @@ function Banner() {
 
   const slides = items?.map((item) => {
     return (
-      <Carousel.Item>
+      <Carousel.Item key={item.src} item={item}>
         <img className="d-block w-100 banner__img" src={item.src} alt="" />
-        <Carousel.Caption className="banner__infor">
-          <h3>{item.caption}</h3>
-          <p>{item.descrip}</p>
-        </Carousel.Caption>
       </Carousel.Item>
     );
   });
