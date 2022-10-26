@@ -9,7 +9,7 @@ import "antd/dist/antd.min.css";
 import Header from "./layout/User/Header";
 import Footer from "./layout/User/Footer";
 
-import AddTour from "./components/AddTour";
+import AddTour from "./components/Admin/AddTour";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 

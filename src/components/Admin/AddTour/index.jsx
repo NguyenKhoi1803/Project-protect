@@ -3,7 +3,7 @@ import { useDispatch /* , useSelector */ } from "react-redux";
 import moment from "moment";
 
 import "antd/dist/antd.css";
-import { addTour } from "../../store/admin/addTourSlice";
+
 import { InboxOutlined, UploadOutlined, UserOutlined } from "@ant-design/icons";
 import "./styles.scss";
 import {
@@ -16,8 +16,10 @@ import {
   DatePicker,
 } from "antd";
 import { useEffect } from "react";
-import { checkAdmin, checkLogin } from "../../Auth";
+
 import { useNavigate } from "react-router-dom";
+import { addTour } from "../../../store/admin/addTourSlice";
+import { checkAdmin, checkLogin } from "../../../Auth";
 
 const { RangePicker } = DatePicker;
 
