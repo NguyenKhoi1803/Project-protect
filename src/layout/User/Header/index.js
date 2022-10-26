@@ -1,12 +1,10 @@
 import React from "react";
 import Banner from "../Banner";
 import SearchForm from "../../../components/User/SearchForm";
-
 import "./styles.scss";
 
 import SortByLocation from "../../../components/User/SortBy/sortLocation";
 import SortByDay from "../../../components/User/SortBy/sortDay";
-import NavBar from "../NavBar";
 
 function Header() {
   return (
