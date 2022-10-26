@@ -22,6 +22,9 @@ const Login = () => {
       console.log("user", user);
       navigate("/");
     });
+
+
+
   };
 
   const onFinishFailed = (errorInfo) => {

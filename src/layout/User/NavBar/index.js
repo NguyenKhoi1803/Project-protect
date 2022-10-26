@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useNavigate } from "react-router-dom";
-import { checkLogin, logout } from "../../Auth";
+import { checkLogin, logout } from "../../../Auth";
 
 function NavBar() {
   const navigate = useNavigate();

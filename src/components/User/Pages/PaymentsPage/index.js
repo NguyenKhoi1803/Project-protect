@@ -8,6 +8,8 @@ import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
+import { uuid } from 'uuidv4';
+import { regex } from 'uuidv4';
 
 function Payments() {
   const { id } = useParams();
@@ -37,7 +39,13 @@ function Payments() {
   const form = useRef();
 
   const handleSubmit = () => {
+
+
     const ids = new Date().getTime();
+
+
+
+
     const cart = {
       idUser: account.id,
       name: account.fullname,
@@ -50,6 +58,9 @@ function Payments() {
       day: startDayTour,
       total: total,
       codeOrder: ids,
+      status: 0,
+      timeOrder: ids,
+
     };
 
     navigate(

@@ -51,7 +51,25 @@ const Register = () => {
   }, [dispatch]);
 
   const onFinish = (values) => {
-    dispatch(addAccount(values));
+
+    console.log("values", values)
+
+
+
+    const account = {
+      fullname: values.fullname,
+      email: values.email,
+      phone: values.phone,
+      prefix: values.prefix,
+      password: values.password,
+      connfirm: values.confirm,
+      isAdmin: false,
+    }
+
+    dispatch(addAccount(account));
+
+
+    console.log("account", account)
     navigate("/login");
   };
 
