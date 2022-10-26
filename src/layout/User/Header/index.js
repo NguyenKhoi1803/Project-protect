@@ -5,6 +5,7 @@ import "./styles.scss";
 
 import SortByLocation from "../../../components/User/SortBy/sortLocation";
 import SortByDay from "../../../components/User/SortBy/sortDay";
+import NavBar from "../NavBar";
 
 function Header() {
   return (
