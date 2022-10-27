@@ -19,7 +19,7 @@ function SucceedPage() {
   return (
     <div className="container__succeed">
       {newArr?.map((item) => (
-        <div className="container__succeed--details">
+        <div className="container__succeed--details" key={item.id} item={item}>
           <div className="container__succeed--left">
             <h1>LOCAL TOURIST</h1>
             <div className="section__left--details">
@@ -66,20 +66,10 @@ function SucceedPage() {
               <p>
                 LOCAL TOURIST sẽ gửi biểu mẫu đăng ký thông tin hành khách qua
                 Email của bạn. Sau khi bạn điền thông tin và xác nhận chúng tôi
-                sẽ tiếp nhận thông tin và xử lý
+                sẽ tiếp nhận thông tin và xử lý.
               </p>
               <p>Chân thành cảm ơn Bạn vì đã đồng hành cùng LOCAL TOURIST !</p>
-              <p>
-                Mọi chi tiết xin liên hệ :{" "}
-                <ul>
-                  <li>
-                    <p>SDT :</p> <span>0779950318</span>
-                  </li>
-                  <li>
-                    <p>EMAIL : </p> <span>Nguyenkhoi180397@gmail.com</span>
-                  </li>
-                </ul>{" "}
-              </p>
+
             </div>
           </div>
         </div>

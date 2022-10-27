@@ -91,22 +91,12 @@ function BookingPages() {
           <form ref={form} onSubmit={handleSubmit}>
             <div className="payments__formFields">
               <h2>Thông tin khách hàng</h2>
-              <input name="id" placeholder="Đầy Đủ Họ Tên" value={account.id} />
-              <input
-                name="name"
-                placeholder="Đầy Đủ Họ Tên"
-                value={account.fullname}
-              />
-              <input
-                name="email"
-                placeholder="Đầy Đủ Họ Tên"
-                value={account.email}
-              />
-              <input
-                name="phone"
-                placeholder="Số Điện Thoại"
-                value={account.phone}
-              />
+              <div className="payments__formFields--account" >
+                <p> <span> Mã Khách Hàng :  </span>{account.id}</p>
+                <p> <span> Đầy Đủ Họ Tên  :  </span>{account.fullname}</p>
+                <p> <span> Email :  </span>{account.email}</p>
+                <p> <span> Số Điện Thoại :  </span>{account.phone}</p>
+              </div>
 
               <input
                 name="number"
@@ -121,7 +111,7 @@ function BookingPages() {
         </div>
         <div className="payments__details">
           {arrr?.map((item) => (
-            <div className="CardItem">
+            <div className="CardItem" key={item.id} item={item}>
               <div className="card">
                 <a href="/" className="card-top">
                   <img src={item.img} alt="asdasd" />

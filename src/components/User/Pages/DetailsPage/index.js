@@ -43,7 +43,7 @@ function DetailsPage() {
   return (
     <div className="container__detailsPage">
       {arr?.map((item) => (
-        <div className="container__DetailsCard">
+        <div className="container__DetailsCard" key={item.id} item={item}>
           <div className="container__DetailsCard--all">
             <h1>{item.nameTour}</h1>
             <div className="container__detail">

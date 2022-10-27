@@ -1,88 +1,90 @@
 .container__payments {
-    width: 100%;
-    background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 100%;
+  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .payments {
-    width: 80%;
-    display: flex;
-    margin: auto;
-
-
+  width: 80%;
+  display: flex;
+  margin: auto;
 }
 
 .payments__form {
-    margin: 2%;
-    width: 50%;
-    align-items: center;
+  margin: 2%;
+  width: 50%;
+  align-items: center;
 
+  & input {
+    margin-top: 2%;
+    width: 100%;
+    height: 50px;
+  }
+
+  & .payments__formFields {
+    margin-top: 5%;
+    border: 2px dashed black;
+    border-radius: 3%;
+    padding: 3%;
+    align-items: center;
+    text-align: center;
+
+    & h2 {
+      font-size: 30px;
+      font-weight: 700;
+    }
 
     & input {
-        margin-top: 2%;
-        width: 100%;
-        height: 50px;
+      text-align: center;
     }
-
-
-
-    & .payments__formFields {
-        margin-top: 5%;
-        border: 2px dashed black;
-        border-radius: 3%;
-        padding: 3%;
-        align-items: center;
-        text-align: center;
-
-        & h2 {
-            font-size: 30px;
-            font-weight: 700;
-        }
-
-        & input {
-            text-align: center;
-        }
-
-    }
+  }
 }
 
 .payments__details {
+  width: 50%;
+  margin: auto;
+
+  & h1 {
+    text-align: center;
+  }
+
+  & button {
     width: 50%;
     margin: auto;
-
-
-    & h1 {
-        text-align: center;
-    }
-
-    & button {
-        width: 50%;
-        margin: auto;
-    }
-
+  }
 }
 
 .btn-1 {
-    margin-top: 2%;
-    width: 100%;
-    text-align: center;
-
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
 }
 
 .btn {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .payments__btn {
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
 
-    & button {
-        width: 100%;
-        margin-top: 10%;
-    }
+  & button {
+    width: 100%;
+    margin-top: 10%;
+  }
+}
+
+.payments__formFields--account {
+  text-align: start;
+  padding: 40px;
+  background-color: deepskyblue;
+  font: inherit;
+  font-style: oblique;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid black;
 }
