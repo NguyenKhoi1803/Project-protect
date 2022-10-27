@@ -7,7 +7,7 @@ import "./styles.scss";
 
 function SucceedPage() {
   const { id } = useParams();
-  console.log("idssss", id);
+  
   const dispatch = useDispatch();
   const newCartArr = useSelector((state) => state.addToCartReducer.carts);
   const newArr = newCartArr?.filter((item) => item.codeOrder == id);

@@ -9,7 +9,6 @@ import "./styles.scss";
 function TourList() {
   const dispatch = useDispatch();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-  console.log("newTourArr", newTourArr);
 
   useEffect(() => {
     dispatch(fetchTour());

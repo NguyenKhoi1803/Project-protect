@@ -3,14 +3,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
-import { checkAdmin, checkLogin, login } from "../../../Auth";
+import { checkLogin, login, checkAdmin } from "../../../Auth";
 import "./styles.scss";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loginArr = useSelector((state) => state.accountReducer.accounts);
-  console.log("loginArr", loginArr);
 
   useEffect(() => {
     if (checkLogin()) {
@@ -18,10 +17,9 @@ const Login = () => {
     }
 
     dispatch(fetchAccount());
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   const onFinish = (values) => {
-    console.log("Success:", values);
     login(values.username, values.password, loginArr, (user) => {
       if (user.isAdmin) {
         navigate("/admin");
@@ -29,14 +27,9 @@ const Login = () => {
         navigate("/");
       }
     });
-
-
-
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
+  const onFinishFailed = (errorInfo) => {};
 
   const handleToRegister = () => {
     navigate("/register");

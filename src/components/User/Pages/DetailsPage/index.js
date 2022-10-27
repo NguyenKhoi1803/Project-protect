@@ -1,9 +1,4 @@
-import {
-  AimOutlined,
-  CalendarOutlined,
-  CarOutlined,
-  ClockCircleOutlined,
-} from "@ant-design/icons";
+import { AimOutlined, CalendarOutlined, CarOutlined } from "@ant-design/icons";
 import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +42,7 @@ function DetailsPage() {
           <div className="container__DetailsCard--all">
             <h1>{item.nameTour}</h1>
             <div className="container__detail">
-              <img className="container__detail--img" src={item.img} />
+              <img className="container__detail--img" src={item.img} alt="" />
               <div className="container__detail-details">
                 <h4>{item.nameTour}</h4>
 

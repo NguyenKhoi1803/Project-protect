@@ -8,14 +8,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 function CommentList() {
   const dispatch = useDispatch();
   const newCommentArr = useSelector(
     (state) => state.fetchCommentReducer.comments
   );
 
-  console.log("newTourArr", newCommentArr);
   useEffect(() => {
     dispatch(fetchComment());
   }, [dispatch]);
@@ -41,8 +39,6 @@ function CommentList() {
         <h2>KHÁCH HÀNG NÓI GÌ VỀ LOCAL TOURIST </h2>
         <Slider {...settings}>{renderItem()}</Slider>
       </div>
-
-     
     </div>
   );
 }

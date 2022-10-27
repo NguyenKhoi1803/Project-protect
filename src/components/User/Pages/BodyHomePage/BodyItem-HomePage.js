@@ -19,7 +19,7 @@ function BodyItem({ item }) {
   return (
     <div className="CardItem" onClick={handleProductItem}>
       <div className="card">
-        <a href="" className="card-top">
+        <a href="#" className="card-top">
           <img src={item.img} alt="" />
         </a>
 

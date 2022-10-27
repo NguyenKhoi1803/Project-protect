@@ -39,8 +39,6 @@ const formItemLayout = {
 };
 
 const normFile = (e) => {
-  console.log("Upload event:", e);
-
   if (Array.isArray(e)) {
     return e;
   }
@@ -67,7 +65,6 @@ const AddTour = () => {
   };
 
   const onFinish = (fieldsValue) => {
-    console.log("value", fieldsValue);
     const rangeValue = fieldsValue["rangepicker"];
 
     const rangepicker = {
@@ -79,10 +76,6 @@ const AddTour = () => {
     const endDay = new Date(rangepicker.endDate).getTime();
 
     const numberDate = (endDay - startDay) / 86400000;
-
-    console.log("startDay", startDay);
-    console.log("startDay", endDay);
-    console.log("numberDay", numberDate);
 
     const dataSubmit = {
       from: fieldsValue.from,
@@ -98,8 +91,8 @@ const AddTour = () => {
       descriptions: fieldsValue.details,
     };
 
-    console.log("dataSubmit", dataSubmit);
     dispatch(addTour(dataSubmit));
+    navigate("/chart");
   };
 
   return (

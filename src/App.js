@@ -19,6 +19,8 @@ import SearchList from "./components/User/SearchForm/searchList";
 import DetailsPage from "./components/User/Pages/DetailsPage/index";
 import BookingPages from "./components/User/Pages/BookingPages/index";
 import SucceedPage from "./components/User/Pages/SucceedPage/index";
+import ChartPages from "./layout/Admin/chartPages";
+
 
 function App() {
   return (
@@ -26,10 +28,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header />
         <Routes>
+          <Route path="/addtour" element={<AddTour />}></Route>
+          <Route path="/admin" element={<ChartPages />}></Route>
+
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/admin" element={<AddTour />}></Route>
-
           <Route path="/" element={<BodyList />}></Route>
           <Route path="/product" element={<TourList />}></Route>
           <Route path="/searchList/:id" element={<SearchList />}></Route>

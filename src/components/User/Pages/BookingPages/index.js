@@ -8,14 +8,13 @@ import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
-import { uuid } from 'uuidv4';
-import { regex } from 'uuidv4';
 
 function BookingPages() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+
   const arrr = newTourArr?.filter((item) => item.id == id);
 
   useEffect(() => {
@@ -28,6 +27,7 @@ function BookingPages() {
   const titleTour = arrr?.map((item) => item.nameTour);
   const priceTour = arrr?.map((item) => item.price);
   const startDayTour = arrr?.map((item) => item.startDate);
+  const to = arrr?.map((item) => item.to);
 
   const [number, setNumber] = useState("");
 
@@ -39,8 +39,6 @@ function BookingPages() {
   const form = useRef();
 
   const handleSubmit = () => {
-
-
     const ids = new Date().getTime();
 
     const cart = {
@@ -48,16 +46,16 @@ function BookingPages() {
       name: account.fullname,
       email: account.email,
       phone: account.phone,
-      idTour: codeTour,
-      nameTour: titleTour,
-      cost: priceTour,
+      idTour: codeTour[0],
+      to: to[0],
+      nameTour: titleTour[0],
+      cost: priceTour[0],
       numberPeople: number,
-      day: startDayTour,
+      day: startDayTour[0],
       total: total,
       codeOrder: ids,
       status: 0,
       timeOrder: ids,
-
     };
 
     navigate(
@@ -91,11 +89,27 @@ function BookingPages() {
           <form ref={form} onSubmit={handleSubmit}>
             <div className="payments__formFields">
               <h2>Thông tin khách hàng</h2>
-              <div className="payments__formFields--account" >
-                <p> <span> Mã Khách Hàng :  </span>{account.id}</p>
-                <p> <span> Đầy Đủ Họ Tên  :  </span>{account.fullname}</p>
-                <p> <span> Email :  </span>{account.email}</p>
-                <p> <span> Số Điện Thoại :  </span>{account.phone}</p>
+              <div className="payments__formFields--account">
+                <p>
+                  {" "}
+                  <span> Mã Khách Hàng : </span>
+                  {account.id}
+                </p>
+                <p>
+                  {" "}
+                  <span> Đầy Đủ Họ Tên : </span>
+                  {account.fullname}
+                </p>
+                <p>
+                  {" "}
+                  <span> Email : </span>
+                  {account.email}
+                </p>
+                <p>
+                  {" "}
+                  <span> Số Điện Thoại : </span>
+                  {account.phone}
+                </p>
               </div>
 
               <input
