@@ -2,6 +2,7 @@ import { Button, Checkbox, Form, Input, Select } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
+import { checkLogin } from "../../../Auth";
 import { addAccount, fetchAccount } from "../../../store/user/register";
 
 import "./styles.scss";
@@ -49,6 +50,13 @@ const Register = () => {
   useEffect(() => {
     dispatch(fetchAccount());
   }, [dispatch]);
+
+
+  useEffect(() => { 
+    if (checkLogin()) { 
+      navigate('/')
+    }
+  })
 
   const onFinish = (values) => {
     const account = {

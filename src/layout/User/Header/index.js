@@ -12,6 +12,8 @@ function Header() {
     <div className="container__Header">
       <div className="container__Header--fixed">
         <NavBar />
+      </div>
+      <div className="container__Header--Search">
         <SearchForm />
         <SortByLocation />
         <SortByDay />
