@@ -42,6 +42,7 @@ function ManagerTour() {
           <tr>
             <th>#</th>
             <th>Tên Tour</th>
+            <th>Nơi Đến</th>
             <th>Giá</th>
             <th>Số Người</th>
           </tr>
@@ -51,6 +52,7 @@ function ManagerTour() {
             <tr>
               <td>{item.id}</td>
               <td>{item.nameTour}</td>
+              <td>{item.to}</td>
               <td>
                 {new Intl.NumberFormat("vi-EN", {
                   style: "currency",
