@@ -16,16 +16,22 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
   return res;
 });
 
+export const deleteIte = createAsyncThunk(
+  "Receipts/removeDeduction",
+  async (params, { dispatch, getState }) => {
+    console.log("receipt Id: ", params.receiptId);
+    console.log("deduction Id: ", params.id);
+    const response = await axios.delete(URL_TOUR);
+    dispatch(fetchTour());
+    return response.data;
+  }
+);
+
 const tourSlice = createSlice({
   name: "tour",
-  initialState: { tours: [], cart: {} },
+  initialState: { tours: [] },
 
-  reducers: {
-    cart: (state, action) => {
-      state.cart = action.payload;
-      console.log("aaaa", { state, action });
-    },
-  },
+  reducers: {},
 
   extraReducers(builder) {
     builder
@@ -42,8 +48,6 @@ const tourSlice = createSlice({
       });
   },
 });
-
-export const { cart } = tourSlice.actions;
 
 const { reducer: fetchTourReducer } = tourSlice;
 

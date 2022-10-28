@@ -171,73 +171,26 @@
       "status": 0,
       "timeOrder": 1666890176888,
       "id": 9
+    },
+    {
+      "idUser": 2,
+      "name": "Nguyên Khôi",
+      "email": "admin@gmail.com",
+      "phone": "0779950318",
+      "idTour": 13,
+      "to": "Đà Nẵng",
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "cost": "3000000",
+      "numberPeople": "2",
+      "day": "2022-10-31",
+      "total": 6000000,
+      "codeOrder": 1666915993266,
+      "status": 0,
+      "timeOrder": 1666915993266,
+      "id": 10
     }
   ],
   "tour": [
-    {
-      "from": "Hà Nội",
-      "to": "Đà Nẵng",
-      "numberDay": 4,
-      "startDate": "2022-10-27",
-      "endDate": "2022-10-31",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dragon_Bridge_%28Danang%29_20190919.jpg/1280px-Dragon_Bridge_%28Danang%29_20190919.jpg",
-      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
-      "price": "8000000",
-      "vehicle": [
-        "xe-buyt"
-      ],
-      "number": 10,
-      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
-      "id": 1
-    },
-    {
-      "from": "Hồ Chí Minh",
-      "to": "Đà Nẵng",
-      "numberDay": 3,
-      "startDate": "2022-10-29",
-      "endDate": "2022-11-01",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/T%C6%B0%E1%BB%A3ng_B%E1%BB%93_T%C3%A1t_t%E1%BA%A1i_Ch%C3%B9a_Linh_%E1%BB%A8ng%2C_S%C6%A1n_Tr%C3%A0%2C_%C4%90%C3%A0_N%E1%BA%B5ng%2C_th%C3%A1ng_3_n%C4%83m_2021_%287%29.jpg/800px-T%C6%B0%E1%BB%A3ng_B%E1%BB%93_T%C3%A1t_t%E1%BA%A1i_Ch%C3%B9a_Linh_%E1%BB%A8ng%2C_S%C6%A1n_Tr%C3%A0%2C_%C4%90%C3%A0_N%E1%BA%B5ng%2C_th%C3%A1ng_3_n%C4%83m_2021_%287%29.jpg",
-      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An ",
-      "price": "5000000",
-      "vehicle": [
-        "oto"
-      ],
-      "number": 10,
-      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
-      "id": 2
-    },
-    {
-      "from": "Hồ Chí Minh",
-      "to": "Đà Nẵng",
-      "numberDay": 14,
-      "startDate": "2022-10-27",
-      "endDate": "2022-11-10",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/My_Khe_Beach_2.jpg/1280px-My_Khe_Beach_2.jpg",
-      "nameTour": "Tour Du Lịch Đà Nẵng  - Biển Mỹ Khê",
-      "price": "5000000",
-      "vehicle": [
-        "oto"
-      ],
-      "number": 10,
-      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
-      "id": 3
-    },
-    {
-      "from": "Hồ Chí Minh",
-      "to": "Đà Nẵng",
-      "numberDay": 3,
-      "startDate": "2022-11-20",
-      "endDate": "2022-11-23",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Vietnam%2C_Ba_Na_Hill%2C_Golden_Bridge_-_Laslovarga.jpg/1280px-Vietnam%2C_Ba_Na_Hill%2C_Golden_Bridge_-_Laslovarga.jpg",
-      "nameTour": "Tour Du Lịch Đà Nẵng  - Bà Nà - Huế",
-      "price": "5000000",
-      "vehicle": [
-        "oto"
-      ],
-      "number": 10,
-      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
-      "id": 4
-    },
     {
       "from": "Hà Nội",
       "to": "Hồ Chí Minh",
@@ -253,22 +206,6 @@
       "number": 10,
       "descriptions": "Vùng đất này ban đầu được gọi là Prey Nokor theo tiếng Khmer của người dân bản địa,[16] có nghĩa là \"thành trong rừng\". Vì sự sụp đổ của đế chế Khmer, vùng Nam Bộ trở thành đất vô chủ, về sau đã sáp nhập vào Đại Việt nhờ công cuộc khai phá miền Nam của chúa Nguyễn. Năm 1698, Nguyễn Hữu Cảnh cho lập huyện Tân Bình thuộc phủ Gia Định, đánh dấu sự ra đời thành phố. Phủ Gia Định khi đó bao gồm Sài Gòn và các tỉnh xung quanh hiện nay (Tây Ninh, Long An...), còn huyện Tân Bình là chỉ vùng đất Sài Gòn.[17]",
       "id": 5
-    },
-    {
-      "from": "Đà Nẵng",
-      "to": "Hồ Chí Minh",
-      "numberDay": 2,
-      "startDate": "2022-11-09",
-      "endDate": "2022-11-11",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg/1280px-Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg",
-      "nameTour": "Hồ Chí Minh - Cần Thơ - An Giang",
-      "price": "8000000",
-      "vehicle": [
-        "oto"
-      ],
-      "number": 10,
-      "descriptions": "Vùng đất này ban đầu được gọi là Prey Nokor theo tiếng Khmer của người dân bản địa,[16] có nghĩa là \"thành trong rừng\". Vì sự sụp đổ của đế chế Khmer, vùng Nam Bộ trở thành đất vô chủ, về sau đã sáp nhập vào Đại Việt nhờ công cuộc khai phá miền Nam của chúa Nguyễn. Năm 1698, Nguyễn Hữu Cảnh cho lập huyện Tân Bình thuộc phủ Gia Định, đánh dấu sự ra đời thành phố. Phủ Gia Định khi đó bao gồm Sài Gòn và các tỉnh xung quanh hiện nay (Tây Ninh, Long An...), còn huyện Tân Bình là chỉ vùng đất Sài Gòn.[17]",
-      "id": 6
     },
     {
       "from": "Đà Nẵng",
@@ -369,34 +306,18 @@
     {
       "from": "Hồ Chí Minh",
       "to": "Đà Nẵng",
-      "numberDay": 11,
-      "startDate": "2022-10-29",
+      "numberDay": 9,
+      "startDate": "2022-10-31",
       "endDate": "2022-11-09",
-      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2022/08/1-2.gif",
+      "img": "https://vietjet.net/includes/uploads/2019/04/Ve-may-bay-di-sai-gon-600x399.jpeg",
       "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
-      "price": "2000000",
-      "vehicle": [
-        "máy bay"
-      ],
-      "number": 10,
-      "descriptions": "UBND thành phố vừa phê duyệt danh mục quỹ đất đấu giá quyền sử dụng đất trên địa bàn thành phố (đợt 2) năm 2022 gồm 14 khu đất lớn. Căn cứ danh mục quỹ đất đấu giá quyền sử dụng đất được phê duyệt, Sở Tài nguyên và Môi trường chỉ đạo Trung tâm Phát triển quỹ đất có trách nhiệm triển khai các thủ tục để đấu giá quyền sử dụng đất trong năm 2022 và năm 2023 theo quy định.",
-      "id": 13
-    },
-    {
-      "from": "Hà Nội",
-      "to": "Hồ Chí Minh",
-      "numberDay": 4,
-      "startDate": "2022-10-29",
-      "endDate": "2022-11-02",
-      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2022/08/1-2.gif",
-      "nameTour": "Tour Du Lịch Hồ Chí Minh - Đồng Nai",
-      "price": "1000000",
+      "price": "3000000",
       "vehicle": [
         "xe-bus"
       ],
-      "number": 2,
-      "descriptions": "UBND thành phố vừa phê duyệt danh mục quỹ đất đấu giá quyền sử dụng đất trên địa bàn thành phố (đợt 2) năm 2022 gồm 14 khu đất lớn. Căn cứ danh mục quỹ đất đấu giá quyền sử dụng đất được phê duyệt, Sở Tài nguyên và Môi trường chỉ đạo Trung tâm Phát triển quỹ đất có trách nhiệm triển khai các thủ tục để đấu giá quyền sử dụng đất trong năm 2022 và năm 2023 theo quy định.",
-      "id": 14
+      "number": 10,
+      "descriptions": "import Button from 'react-bootstrap/Button';",
+      "id": 13
     }
   ],
   "commentClient": [

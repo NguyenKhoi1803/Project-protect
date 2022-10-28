@@ -92,7 +92,7 @@ const AddTour = () => {
     };
 
     dispatch(addTour(dataSubmit));
-    navigate("/chart");
+    navigate("/admin");
   };
 
   return (

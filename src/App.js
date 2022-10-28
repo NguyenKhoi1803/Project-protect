@@ -21,7 +21,6 @@ import BookingPages from "./components/User/Pages/BookingPages/index";
 import SucceedPage from "./components/User/Pages/SucceedPage/index";
 import ChartPages from "./layout/Admin/chartPages";
 
-
 function App() {
   return (
     <Provider store={store}>

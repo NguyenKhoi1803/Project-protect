@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
 import axios from "axios";
+
 import { URL_TOUR } from "../../../constants";
 import { fetchTour } from "../../user/fetchTour";
 

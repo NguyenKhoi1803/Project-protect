@@ -1,19 +1,39 @@
-import Item from "antd/lib/list/Item";
+import axios from "axios";
+
 import React, { useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+
 import { fetchTour } from "../../store/user/fetchTour";
 
 function ManagerTour() {
-  const dispatch = useDispatch;
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const touArr = useSelector((state) => state.fetchTourReducer.tours);
 
-  //   const newArr = touArr?.filter((item) => item.id);
+  useEffect(() => {
+    dispatch(fetchTour());
+  }, [dispatch]);
 
-  //   const addd = newArr?.map((item) => item.id);
+  console.log("touArr", touArr);
 
-  //   console.log("newArr", newArr);
+  const deleteId = (e, id) => {
+    // e.preventDefault();
+
+    const thisClicked = e.currentTarget;
+    thisClicked.innerText = "Deleting";
+
+    axios.delete(`http://localhost:3011/tour/${id}`).then((res) => {
+      if (res.data.status === 200) {
+        thisClicked.closest("tr").remove();
+      } else if (res.data.status === 404) {
+        thisClicked.innerText = "Delete";
+      }
+    });
+    navigate("/admin");
+  };
 
   return (
     <div className="managerProduct">
@@ -26,7 +46,6 @@ function ManagerTour() {
             <th>Số Người</th>
           </tr>
         </thead>
-
         {touArr?.map((item) => (
           <tbody key={item.id} item={item}>
             <tr>
@@ -38,7 +57,12 @@ function ManagerTour() {
                   currency: "VND",
                 }).format(item.price)}
               </td>
-              <td>{item.number}</td>
+              <td>{item.number} </td>
+              <td>
+                <Button variant="danger" onClick={(e) => deleteId(e, item.id)}>
+                  Delete
+                </Button>{" "}
+              </td>
             </tr>
           </tbody>
         ))}
