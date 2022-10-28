@@ -379,54 +379,6 @@
   ],
   "tour": [
     {
-      "from": "Hà Nội",
-      "to": "Hồ Chí Minh",
-      "numberDay": 7,
-      "startDate": "2022-11-09",
-      "endDate": "2022-11-16",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/DJI_0550-HDR-Pano.jpg/1280px-DJI_0550-HDR-Pano.jpg",
-      "nameTour": "Hồ Chí Minh - Bến Tre - Cần Thơ ",
-      "price": "8000000",
-      "vehicle": [
-        "oto"
-      ],
-      "number": 10,
-      "descriptions": "Vùng đất này ban đầu được gọi là Prey Nokor theo tiếng Khmer của người dân bản địa,[16] có nghĩa là \"thành trong rừng\". Vì sự sụp đổ của đế chế Khmer, vùng Nam Bộ trở thành đất vô chủ, về sau đã sáp nhập vào Đại Việt nhờ công cuộc khai phá miền Nam của chúa Nguyễn. Năm 1698, Nguyễn Hữu Cảnh cho lập huyện Tân Bình thuộc phủ Gia Định, đánh dấu sự ra đời thành phố. Phủ Gia Định khi đó bao gồm Sài Gòn và các tỉnh xung quanh hiện nay (Tây Ninh, Long An...), còn huyện Tân Bình là chỉ vùng đất Sài Gòn.[17]",
-      "id": 5
-    },
-    {
-      "from": "Đà Nẵng",
-      "to": "Hồ Chí Minh",
-      "numberDay": 12,
-      "startDate": "2022-11-17",
-      "endDate": "2022-11-29",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/%C3%93pera%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_02.JPG/1280px-%C3%93pera%2C_Ciudad_Ho_Chi_Minh%2C_Vietnam%2C_2013-08-14%2C_DD_02.JPG",
-      "nameTour": "Hồ Chí Minh - Cần Thơ - Hậu Giang",
-      "price": "12000000",
-      "vehicle": [
-        "máy bay"
-      ],
-      "number": 10,
-      "descriptions": "Vùng đất này ban đầu được gọi là Prey Nokor theo tiếng Khmer của người dân bản địa,[16] có nghĩa là \"thành trong rừng\". Vì sự sụp đổ của đế chế Khmer, vùng Nam Bộ trở thành đất vô chủ, về sau đã sáp nhập vào Đại Việt nhờ công cuộc khai phá miền Nam của chúa Nguyễn. Năm 1698, Nguyễn Hữu Cảnh cho lập huyện Tân Bình thuộc phủ Gia Định, đánh dấu sự ra đời thành phố. Phủ Gia Định khi đó bao gồm Sài Gòn và các tỉnh xung quanh hiện nay (Tây Ninh, Long An...), còn huyện Tân Bình là chỉ vùng đất Sài Gòn.[17]",
-      "id": 7
-    },
-    {
-      "from": "Hà Nội",
-      "to": "Hồ Chí Minh",
-      "numberDay": 4,
-      "startDate": "2022-10-28",
-      "endDate": "2022-11-01",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/HCMC_Ben_Thanh.jpg/1280px-HCMC_Ben_Thanh.jpg",
-      "nameTour": "Tour Du Lịch Hồ Chí Minh - Đồng Nai",
-      "price": "1000000",
-      "vehicle": [
-        "máy bay"
-      ],
-      "number": 2,
-      "descriptions": "Vùng đất này ban đầu được gọi là Prey Nokor theo tiếng Khmer của người dân bản địa,[16] có nghĩa là \"thành trong rừng\". Vì sự sụp đổ của đế chế Khmer, vùng Nam Bộ trở thành đất vô chủ, về sau đã sáp nhập vào Đại Việt nhờ công cuộc khai phá miền Nam của chúa Nguyễn. Năm 1698, Nguyễn Hữu Cảnh cho lập huyện Tân Bình thuộc phủ Gia Định, đánh dấu sự ra đời thành phố. Phủ Gia Định khi đó bao gồm Sài Gòn và các tỉnh xung quanh hiện nay (Tây Ninh, Long An...), còn huyện Tân Bình là chỉ vùng đất Sài Gòn.[17]",
-      "id": 8
-    },
-    {
       "from": "Đà Nẵng",
       "to": "Hà Nội",
       "numberDay": 10,

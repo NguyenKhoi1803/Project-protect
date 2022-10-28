@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { checkLogin, logout } from "../../../Auth";
 
 function NavBar() {
@@ -43,6 +44,23 @@ function NavBar() {
                       onClick={() => {
                         logout();
                         navigate("/");
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: "You won't be able to revert this!",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Yes",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire(
+                              "Bye !",
+                              " Hold on , Did you pay ? ",
+                              "success"
+                            );
+                          }
+                        });
                       }}
                     >
                       Logout
