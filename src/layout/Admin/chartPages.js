@@ -6,6 +6,7 @@ import ChartPercent from "./chartPercent";
 import Button from "react-bootstrap/Button";
 import ManagerTour from "./manegerTour";
 import "./styles.scss";
+import ManagerUser from "./managerUser";
 
 function ChartPages() {
   const navigate = useNavigate();
@@ -32,6 +33,9 @@ function ChartPages() {
       </div>
       <div>
         <ManagerTour />
+      </div>
+      <div>
+        <ManagerUser />
       </div>
     </div>
   );

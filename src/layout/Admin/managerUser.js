@@ -4,22 +4,36 @@ import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { fetchTour } from "../../store/user/fetchTour";
+import { fetchAccount } from "../../store/user/register";
 import "./styles.scss";
 
-function ManagerTour() {
+function ManagerUser() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const touArr = useSelector((state) => state.fetchTourReducer.tours);
+  const touArr = useSelector((state) => state.accountReducer.accounts);
+  const newPaymentArr = useSelector((state) => state.addToCartReducer.carts);
+
+  const ids = touArr?.map((item) => item.id);
+  const idss = newPaymentArr?.filter((item) => item.idUser == ids);
+
+  console.log("ids", ids);
+  console.log("idss", idss);
+
+  function sumArray(mang) {
+    let sum = 0;
+    mang.forEach(function (value) {
+      sum += value;
+    });
+
+    return sum;
+  }
 
   useEffect(() => {
-    dispatch(fetchTour());
+    dispatch(fetchAccount());
   }, [dispatch]);
 
-  console.log("touArr", touArr);
-
   const deleteId = (e, id) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     const thisClicked = e.currentTarget;
     thisClicked.innerText = "Deleting";
@@ -35,31 +49,32 @@ function ManagerTour() {
   };
 
   return (
-    <div className="managerProduct">
-      <h3>Danh sách các Tour hiện có : </h3>
+    <div className="managerUser">
+      <h3>Danh sách Khách hàng : </h3>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Tên Tour</th>
-            <th>Nơi Đến</th>
-            <th>Giá</th>
-            <th>Số Người</th>
+            <th>Mã khách hàng</th>
+            <th>Họ và tên đầy đủ</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Số tiền đã dùng</th>
           </tr>
         </thead>
         {touArr?.map((item) => (
           <tbody key={item.id} item={item}>
             <tr>
               <td>{item.id}</td>
-              <td>{item.nameTour}</td>
-              <td>{item.to}</td>
+              <td>{item.fullname}</td>
+              <td>{item.email}</td>
+              <td>{item.phone}</td>
               <td>
-                {new Intl.NumberFormat("vi-EN", {
+                {/* {new Intl.NumberFormat("vi-EN", {
                   style: "currency",
                   currency: "VND",
-                }).format(item.price)}
+                }).format(item.price)} */}
               </td>
-              <td>{item.number} </td>
+
               <td>
                 <Button variant="danger" onClick={(e) => deleteId(e, item.id)}>
                   Delete
@@ -73,4 +88,4 @@ function ManagerTour() {
   );
 }
 
-export default ManagerTour;
+export default ManagerUser;
