@@ -40,7 +40,6 @@ function DetailsPage() {
       {arr?.map((item) => (
         <div className="container__DetailsCard" key={item.id} item={item}>
           <div className="container__DetailsCard--all">
-            <h1>{item.nameTour}</h1>
             <div className="container__detail">
               <img className="container__detail--img" src={item.img} alt="" />
               <div className="container__detail-details">
@@ -90,7 +89,11 @@ function DetailsPage() {
             <div className="container__DetailsCard--descrip">
               <div className="container__DetailsCard--schedule">
                 <h3>Lịch trình : </h3>
-                <h4> {item.descriptions}</h4>
+                <div className="container__DetailsCard--list">
+                  <p>{item.schedule.ngay1}</p>
+                  <p>{item.schedule.ngay2}</p>
+                  <p>{item.schedule.ngay3}</p>
+                </div>
               </div>
             </div>
           </div>

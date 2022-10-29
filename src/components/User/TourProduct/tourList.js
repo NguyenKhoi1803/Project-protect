@@ -8,11 +8,16 @@ import "./styles.scss";
 
 function TourList() {
   const dispatch = useDispatch();
-  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+
+  const TourArr = useSelector((state) => state.fetchTourReducer.tours);
 
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
+
+  const newTourArr = TourArr?.filter(
+    (item) => new Date(item.startDate).getTime() > new Date().getTime()
+  );
 
   return (
     <div className="container__TourList">

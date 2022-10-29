@@ -1,25 +1,18 @@
 import React from "react";
 import { useDispatch /* , useSelector */ } from "react-redux";
 import moment from "moment";
-
 import "antd/dist/antd.css";
-
-import { InboxOutlined, UploadOutlined, UserOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import "./styles.scss";
-import {
-  Button,
-  Form,
-  InputNumber,
-  Select,
-  Upload,
-  Input,
-  DatePicker,
-} from "antd";
+import { Button, Form, InputNumber, Select, Input, DatePicker } from "antd";
 import { useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { addTour } from "../../../store/admin/addTourSlice";
+
 import { checkAdmin, checkLogin } from "../../../Auth";
+
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import { addTour } from "../../../store/user/fetchTour";
 
 const { RangePicker } = DatePicker;
 
@@ -36,13 +29,6 @@ const formItemLayout = {
   wrapperCol: {
     span: 14,
   },
-};
-
-const normFile = (e) => {
-  if (Array.isArray(e)) {
-    return e;
-  }
-  return e?.fileList;
 };
 
 const AddTour = () => {
@@ -66,7 +52,6 @@ const AddTour = () => {
 
   const onFinish = (fieldsValue) => {
     const rangeValue = fieldsValue["rangepicker"];
-
     const rangepicker = {
       startDate: rangeValue[0].format("YYYY-MM-DD"),
       endDate: rangeValue[1].format("YYYY-MM-DD"),
@@ -74,10 +59,12 @@ const AddTour = () => {
 
     const startDay = new Date(rangepicker.startDate).getTime();
     const endDay = new Date(rangepicker.endDate).getTime();
-
     const numberDate = (endDay - startDay) / 86400000;
 
+    const idTour = new Date().getTime();
+
     const dataSubmit = {
+      codeTour: fieldsValue.codeTour + -idTour,
       from: fieldsValue.from,
       to: fieldsValue.to,
       numberDay: numberDate,
@@ -85,9 +72,11 @@ const AddTour = () => {
       endDate: rangepicker.endDate,
       img: fieldsValue.img,
       nameTour: fieldsValue.nameTour,
-      price: fieldsValue.gia1,
-      vehicle: fieldsValue.vehicle,
-      number: fieldsValue.number,
+      priceAdult: fieldsValue.gia1,
+      priceChildren: fieldsValue.gia2,
+      priceBaby: fieldsValue.gia3,
+      vehicle: fieldsValue.vehicle[0],
+      quantity: fieldsValue.quantity,
       descriptions: fieldsValue.details,
     };
 
@@ -122,8 +111,8 @@ const AddTour = () => {
             <Input />
           </Form.Item>
           <Form.Item
-            name="gia1"
-            label="Giá"
+            name="codeTour"
+            label="Mã Tour"
             rules={[
               {
                 required: true,
@@ -131,6 +120,39 @@ const AddTour = () => {
             ]}
           >
             <Input />
+          </Form.Item>
+          <Form.Item
+            name="gia1"
+            label="Giá Người Lớn"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <InputNumber />
+          </Form.Item>
+          <Form.Item
+            name="gia2"
+            label="Giá Trẻ Em "
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <InputNumber />
+          </Form.Item>
+          <Form.Item
+            name="gia3"
+            label="Giá Em Bé"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <InputNumber />
           </Form.Item>
           <Form.Item
             name="from"
@@ -164,10 +186,10 @@ const AddTour = () => {
               <Option value="Đà Nẵng">Đà Nẵng</Option>
             </Select>
           </Form.Item>
-          s
+
           <Form.Item
             name="vehicle"
-            label="phương tiện"
+            label="Phương tiện"
             rules={[
               {
                 required: true,
@@ -176,21 +198,21 @@ const AddTour = () => {
               },
             ]}
           >
-            <Select mode="multiple" placeholder="phuong tien">
+            <Select mode="multiple" placeholder="Phương Tiện">
               <Option value="oto">ô Tô</Option>
               <Option value="xe-bus">xe bus</Option>
               <Option value="máy bay">Máy bay</Option>
             </Select>
           </Form.Item>
-          <Form.Item name="number" label="Số lượng">
-            <InputNumber addonAfter={<UserOutlined />} min={1} max={10} />
+          <Form.Item name="quantity" label="Số Chỗ Nhận">
+            <InputNumber addonAfter={<UserOutlined />} />
           </Form.Item>
           <Form.Item name="rangepicker" label="RangePicker" {...rangeConfig}>
             <RangePicker disabledDate={disabledDate} />
           </Form.Item>
           <Form.Item
             name="details"
-            label="Intro"
+            label="Lịch Trình"
             rules={[
               {
                 required: true,
@@ -200,37 +222,7 @@ const AddTour = () => {
           >
             <Input.TextArea />
           </Form.Item>
-          <Form.Item
-            name="upload"
-            label="Upload"
-            valuePropName="fileList"
-            getValueFromEvent={normFile}
-            extra="longgggggggggggggggggggggggggggggggggg"
-          >
-            <Upload name="logo" action="/upload.do" listType="picture">
-              <Button icon={<UploadOutlined />}>Click to upload</Button>
-            </Upload>
-          </Form.Item>
-          <Form.Item label="Dragger">
-            <Form.Item
-              name="dragger"
-              valuePropName="fileList"
-              getValueFromEvent={normFile}
-              noStyle
-            >
-              <Upload.Dragger name="files" action="/upload.do">
-                <p className="ant-upload-drag-icon">
-                  <InboxOutlined />
-                </p>
-                <p className="ant-upload-text">
-                  Click or drag file to this area to upload
-                </p>
-                <p className="ant-upload-hint">
-                  Support for a single or bulk upload.
-                </p>
-              </Upload.Dragger>
-            </Form.Item>
-          </Form.Item>
+
           <Form.Item
             wrapperCol={{
               span: 12,

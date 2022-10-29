@@ -22,6 +22,8 @@ function ManagerTour() {
     // e.preventDefault();
 
     const thisClicked = e.currentTarget;
+
+    console.log("thisClicked", thisClicked);
     thisClicked.innerText = "Deleting";
 
     axios.delete(`http://localhost:3011/tour/${id}`).then((res) => {

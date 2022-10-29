@@ -14,11 +14,15 @@ import Special from "../Special";
 function BodyList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const newArr123 = useSelector((state) => state.fetchTourReducer.tours);
+  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
 
   useEffect(() => {
     dispatch(fetchTour());
   }, [dispatch]);
+
+  const newArr123 = newTourArr?.filter(
+    (item) => new Date(item.startDate).getTime() > new Date().getTime()
+  );
 
   const renderItem = (value) => {
     switch (value) {

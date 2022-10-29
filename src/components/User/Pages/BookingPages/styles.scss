@@ -1,17 +1,17 @@
 .container__payments {
   width: 100%;
-  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
 }
 
 .payments {
   width: 80%;
   display: flex;
   margin: auto;
+
+  @media screen and (max-width :767px) {
+
+    display: block;
+  }
 }
 
 .payments__form {
@@ -42,6 +42,11 @@
       text-align: center;
     }
   }
+
+  @media screen and (max-width :767px) {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 .payments__details {
@@ -54,6 +59,11 @@
 
   & button {
     width: 50%;
+    margin: auto;
+  }
+
+  @media screen and (max-width :767px) {
+    width: 80%;
     margin: auto;
   }
 }
@@ -87,4 +97,18 @@
   font-weight: 700;
   border-radius: 10px;
   border: 1px solid black;
+}
+
+.payments__formFields--input {
+  display: flex;
+  justify-content: space-between;
+
+  & input {
+    width: 30%;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width :767px) {
+    display: block;
+  }
 }

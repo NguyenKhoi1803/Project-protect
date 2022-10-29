@@ -15,11 +15,14 @@ function SearchList() {
     dispatch(fetchTour());
   }, [dispatch]);
 
+  const newTourArr = newTour?.filter(
+    (item) => new Date(item.startDate).getTime() > new Date().getTime()
+  );
+
   const pattern = new RegExp(id.trim(), "i");
+  const arr = newTourArr?.filter((item) => pattern.test(item.to));
 
-  const arr = newTour?.filter((item) => pattern.test(item.to));
-
-  const arrDay = newTour?.filter((item) => item.numberDay == id);
+  const arrDay = newTourArr?.filter((item) => item.numberDay == id);
 
   return (
     <div className="container_SearchList">

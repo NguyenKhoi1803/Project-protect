@@ -17,17 +17,17 @@ function BodyItem({ item }) {
   };
 
   return (
-    <div className="CardItem" onClick={handleProductItem}>
+    <div className="CardItem">
       <div className="card">
         <a href="#" className="card-top">
-          <img src={item.img} alt="" />
+          <img src={item.img} alt="" onClick={handleProductItem} />
         </a>
 
         <div className="card-bottom">
           <h3>{item.nameTour}</h3>
           <p>
             {" "}
-            <BarcodeOutlined /> Mã Tour : {item.id}
+            <BarcodeOutlined /> Mã Tour : {item.codeTour}
           </p>
           <p>
             {" "}
@@ -36,6 +36,10 @@ function BodyItem({ item }) {
           <p>
             {" "}
             <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
+          </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> Số Chỗ Còn Nhận: {item.quantity}{" "}
           </p>
         </div>
       </div>

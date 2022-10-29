@@ -16,14 +16,37 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
   return res;
 });
 
-export const deleteIte = createAsyncThunk(
-  "Receipts/removeDeduction",
-  async (params, { dispatch, getState }) => {
-    console.log("receipt Id: ", params.receiptId);
-    console.log("deduction Id: ", params.id);
-    const response = await axios.delete(URL_TOUR);
-    dispatch(fetchTour());
-    return response.data;
+export const addTour = createAsyncThunk(
+  "tour/addTour",
+  async (payload, store) => {
+    console.log("addTour ~ payload", payload);
+    const res = await axios
+      .post(URL_TOUR, payload)
+      .then((result) => {
+        console.log("addTour ~ result", result);
+        store.dispatch(fetchTour());
+      })
+      .catch((error) => {
+        console.log("addTour ~ error", error);
+      });
+    return res;
+  }
+);
+
+export const putTour = createAsyncThunk(
+  "tour/addTour",
+  async (payload, store) => {
+    console.log("addTour ~ payload", payload);
+    const res = await axios
+      .put(URL_TOUR, payload)
+      .then((result) => {
+        console.log("addTour ~ result", result);
+        store.dispatch(fetchTour());
+      })
+      .catch((error) => {
+        console.log("addTour ~ error", error);
+      });
+    return res;
   }
 );
 
@@ -35,6 +58,16 @@ const tourSlice = createSlice({
 
   extraReducers(builder) {
     builder
+      .addCase(addTour.pending, (state, action) => {
+        console.log("addTour.pending", { state, action });
+      })
+      .addCase(addTour.fulfilled, (state, action) => {
+        console.log("addTour.fulfilled", { state, action });
+        state.tours = action.payload;
+      })
+      .addCase(addTour.rejected, (state, action) => {
+        console.log("addTour.rejected", { state, action });
+      })
       .addCase(fetchTour.pending, (state, action) => {
         console.log("fetchTour.pending", { state, action });
       })
@@ -48,6 +81,8 @@ const tourSlice = createSlice({
       });
   },
 });
+
+export const { update } = tourSlice.actions;
 
 const { reducer: fetchTourReducer } = tourSlice;
 

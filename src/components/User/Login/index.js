@@ -31,8 +31,7 @@ const Login = () => {
 
     Swal.fire({
       title: "Sweet!",
-      text: "Pay to Use !",
-      text: "My Account : 03954560101 (Tp Bank)",
+      text: "Success!",
       imageUrl:
         "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/271969923_2982746808704815_3723708290699300753_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Ud33S7PrnbsAX8dnqhq&_nc_ht=scontent.fdad3-5.fna&oh=00_AfBJLNdf92ejBp1YeNla3u0Z4963dMb7JVmBjtOZ_8cmpQ&oe=6360AF3C",
       imageWidth: 400,

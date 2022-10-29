@@ -1,14 +1,12 @@
 import { Input } from "antd";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { generatePath, useNavigate } from "react-router-dom";
-import { searchFilterChange } from "../../../store/user/sortSlice";
+
 import "./styles.scss";
 const { Search } = Input;
 
 function SearchForm() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const onSearch = (value) => {
     navigate(

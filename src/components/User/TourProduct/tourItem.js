@@ -13,7 +13,7 @@ import "./styles.scss";
 
 function TourItem({ item }) {
   const navigate = useNavigate();
-
+  
   const handleAddToCart = () => {
     navigate(
       generatePath("/products/details/:id", {
@@ -55,6 +55,7 @@ function TourItem({ item }) {
           {" "}
           <CalendarOutlined /> <span>Ngày Khởi Hành</span> : {item.startDate}
         </p>
+
         <p>
           {" "}
           <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
