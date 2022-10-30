@@ -33,6 +33,7 @@ function BookingPages() {
   const [numberAdult, setNumberAdult] = useState("");
   const [numberChildren, setNumberChildren] = useState("");
   const [numberBaby, setNumberBaby] = useState("");
+  const [messErr, setMessErr] = useState("")
 
   const handleChangeFieldsAdult = (e) => {
     setNumberAdult(e.target.value);
@@ -107,7 +108,7 @@ function BookingPages() {
           }
         );
     } else {
-      alert("Quá số chỗ còn nhận !");
+      setMessErr(" * Quá Số Chỗ Còn Nhận !")
     }
   };
 
@@ -161,6 +162,7 @@ function BookingPages() {
                   onChange={(eve) => handleChangeFieldsBaby(eve)}
                 />
               </div>
+              <span className="messError">{messErr}</span>
             </div>
           </form>
         </div>

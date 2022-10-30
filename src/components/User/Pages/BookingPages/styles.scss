@@ -1,6 +1,5 @@
 .container__payments {
   width: 100%;
-
 }
 
 .payments {
@@ -8,8 +7,7 @@
   display: flex;
   margin: auto;
 
-  @media screen and (max-width :767px) {
-
+  @media screen and (max-width: 767px) {
     display: block;
   }
 }
@@ -43,7 +41,7 @@
     }
   }
 
-  @media screen and (max-width :767px) {
+  @media screen and (max-width: 767px) {
     width: 80%;
     margin: auto;
   }
@@ -62,7 +60,7 @@
     margin: auto;
   }
 
-  @media screen and (max-width :767px) {
+  @media screen and (max-width: 767px) {
     width: 80%;
     margin: auto;
   }
@@ -108,7 +106,15 @@
     border-radius: 5px;
   }
 
-  @media screen and (max-width :767px) {
+  @media screen and (max-width: 767px) {
     display: block;
   }
+}
+
+.messError {
+  margin-top: 50px;
+  color: red;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: italic;
 }

@@ -33,22 +33,24 @@ export const addTour = createAsyncThunk(
   }
 );
 
-export const putTour = createAsyncThunk(
-  "tour/addTour",
+export const patchTour = createAsyncThunk(
+  "tour/patchTour",
   async (payload, store) => {
-    console.log("addTour ~ payload", payload);
+    console.log("patchTour ~ payload", payload);
     const res = await axios
-      .put(URL_TOUR, payload)
+      .patch(URL_TOUR, payload)
       .then((result) => {
-        console.log("addTour ~ result", result);
+        console.log("patchTour ~ result", result);
         store.dispatch(fetchTour());
       })
       .catch((error) => {
-        console.log("addTour ~ error", error);
+        console.log("patchTour ~ error", error);
       });
     return res;
   }
 );
+
+
 
 const tourSlice = createSlice({
   name: "tour",
@@ -78,7 +80,18 @@ const tourSlice = createSlice({
       })
       .addCase(fetchTour.rejected, (state, action) => {
         console.log("fetchTour.rejected", { state, action });
-      });
+      })
+      .addCase(patchTour.pending, (state, action) => {
+        console.log("patchTour.pending", { state, action });
+      })
+
+      .addCase(patchTour.fulfilled, (state, action) => {
+        console.log("patchTour.fulfilled ", { state, action });
+        state.tours = action.payload;
+      })
+      .addCase(patchTour.rejected, (state, action) => {
+        console.log("patchTour.rejected", { state, action });
+      })
   },
 });
 
