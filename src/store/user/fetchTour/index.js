@@ -47,6 +47,8 @@ export const updateTour = createAsyncThunk("tour/updateTour", async (store) => {
   return res;
 });
 
+
+
 const tourSlice = createSlice({
   name: "tour",
   initialState: { tours: [] },
