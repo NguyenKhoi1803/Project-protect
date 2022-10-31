@@ -73,6 +73,15 @@ function BodyList() {
         },
       },
       {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
@@ -103,42 +112,9 @@ function BodyList() {
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h2>Đà Nẵng</h2>
-            <p className="space"></p>
-            <button
-              className="button button2"
-              onClick={() => handleToDetails("Đà Nẵng")}
-            >
-              Chi Tiết
-            </button>
+            <a onClick={() => handleToDetails("Đà Nẵng")}> * Đà Nẵng</a>
           </div>
           <Slider {...settings}>{renderItem(1)}</Slider>
-        </div>
-        <div className="container__body--Card">
-          <div className="container__body--Header">
-            <h2>Hồ Chí Minh</h2>
-            <p className="space"></p>
-            <button
-              className="button button2"
-              onClick={() => handleToDetails("Hồ Chí Minh")}
-            >
-              Chi Tiết
-            </button>
-          </div>
-          <Slider {...settings}>{renderItem(2)}</Slider>
-        </div>
-        <div className="container__body--Card">
-          <div className="container__body--Header">
-            <h2>Hà Nội</h2>
-            <p className="space"></p>
-            <button
-              className="button button2"
-              onClick={() => handleToDetails("Hà Nội")}
-            >
-              Chi Tiết
-            </button>
-          </div>
-          <Slider {...settings}>{renderItem(3)}</Slider>
         </div>
       </div>
       <Special />

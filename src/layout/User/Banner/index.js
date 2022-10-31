@@ -4,28 +4,34 @@ import Carousel from "react-bootstrap/Carousel";
 function Banner() {
   const items = [
     {
-      src: "https://danangfantasticity.com/wp-content/uploads/2020/05/mot-buoi-sang-that-khac-cung-binh-minh-tren-bien-da-nang.jpg",
+      name: " Bà Nà Hill",
+      descrip: "Đường lên tiên cảnh",
+      src: "http://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/cau-vang-da-nang-la-mot-trong-nhung-noi-dang-ghe-tham-nhat-nam-2018-theo-tap-chi-time.jpg ",
     },
     {
-      src: "https://vivuhotay.com/wp-content/uploads/2022/07/morning-in-hoan-kiem-lake-of-hanoi-spcjayjay.jpg",
+      name: "Đà Nẵng",
+      descrip: "Vươn mình ra biển lớn",
+      src: "http://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/dg_160519_du-lich-da-nang.jpg",
     },
     {
-      src: "https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/1546099732022-UAN1M01VN6L3IT97M0ZY/image-asset.jpeg?format=1000w",
+      name: "Hội An phố cổ",
+      descrip: "Xứ sở đèn lồng",
+      src: "http://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/lanterns-in-the-market.-pc.-urlaubsguru.de_-1.jpg",
     },
   ];
 
   const slides = items?.map((item) => {
     return (
-      <Carousel.Item key={item.src} item={item}>
-        <div>
-          <img className="d-block w-100 banner__img" src={item.src} alt="" />
+      <Carousel.Item key={item.src} item={item} className="banner">
+        <div className="banner__img">
+          <img className="d-block w-100 " src={item.src} alt="" />
           <div className="effect"></div>
         </div>
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
+        <div className="banner__infor">
+          <h3>{item.name}</h3>
+          <p>{item.descrip}</p>
+        </div>
       </Carousel.Item>
     );
   });

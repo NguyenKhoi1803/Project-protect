@@ -1,11 +1,6 @@
 .container__body {
   width: 100%;
-  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
 
 }
 
@@ -16,25 +11,20 @@
 }
 
 .container__body--Header {
-  display: flex;
-  width: 90%;
-  margin: auto;
+  text-align: center;
+  color: #4682B4;
 
-  & h2 {
-    width: 40%;
+
+  & a {
+
     font-size: 50px;
     font-weight: 700;
     color: #4682b4;
-    border-bottom: 2px dashed #4682b4;
+
 
     @media screen and (max-width: 767px) {
       font-size: 24px;
     }
-  }
-
-  & p {
-    width: 50%;
-
   }
 }
 
@@ -69,6 +59,7 @@
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+
   @media screen and (max-width:767px) {}
 }
 
@@ -111,7 +102,7 @@
     width: 80%;
     font-size: 30px;
     color: #ff7f00;
-   
+
 
   }
 

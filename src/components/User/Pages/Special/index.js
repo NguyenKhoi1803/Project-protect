@@ -1,8 +1,44 @@
 import Row from "react-bootstrap/Row";
+import Slider from "react-slick";
 
 import "./styles.scss";
 
 function Special() {
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   const touArr = [
     {
       img: " https://vcdn1-dulich.vnecdn.net/2022/06/03/cauvang-1654247842-9403-1654247849.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=Swd6JjpStebEzT6WARcoOA",
@@ -86,10 +122,11 @@ function Special() {
 
   return (
     <div className="container__Special">
-      <div className="container__Special--list">
-        <Row xs={1} md={3} className="g-4 ">
-          {slides}
-        </Row>
+      <div className="container__Special--wrap">
+        <div className="container__Special--list">
+          <h1>Địa Điểm Hot</h1>
+          <Slider {...settings}>{slides}</Slider>
+        </div>
       </div>
     </div>
   );
