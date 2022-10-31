@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  useNavigate,
+  useParams,
+  useLocation,
+  useSearchParams,
+} from "react-router-dom";
 import { fetchTour } from "../../../store/user/fetchTour";
 import TourItem from "../TourProduct/tourItem";
 import "./styles.scss";
 
 function SearchList() {
-  const { id } = useParams();
+  let { id } = useParams();
 
   const dispatch = useDispatch();
   const newTour = useSelector((state) => state.fetchTourReducer.tours);

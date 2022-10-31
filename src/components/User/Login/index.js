@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom/dist";
 import { fetchAccount } from "../../../store/user/register";
-import { checkLogin, login, checkAdmin } from "../../../Auth";
+import { checkLogin, login} from "../../../Auth";
 import "./styles.scss";
 import Swal from "sweetalert2";
 

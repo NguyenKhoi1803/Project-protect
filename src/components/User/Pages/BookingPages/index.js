@@ -4,11 +4,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../../Auth";
-import { fetchTour, putTour, update } from "../../../../store/user/fetchTour";
+import { fetchTour } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
 
 function BookingPages() {
   const { id } = useParams();
@@ -33,6 +32,7 @@ function BookingPages() {
   const [numberAdult, setNumberAdult] = useState("");
   const [numberChildren, setNumberChildren] = useState("");
   const [numberBaby, setNumberBaby] = useState("");
+  const [messErr, setMessErr] = useState("");
 
   const handleChangeFieldsAdult = (e) => {
     setNumberAdult(e.target.value);
@@ -107,7 +107,7 @@ function BookingPages() {
           }
         );
     } else {
-      alert("Quá số chỗ còn nhận !");
+      setMessErr("Quá số chỗ còn nhận !");
     }
   };
 
@@ -161,6 +161,7 @@ function BookingPages() {
                   onChange={(eve) => handleChangeFieldsBaby(eve)}
                 />
               </div>
+              <span>{messErr}</span>
             </div>
           </form>
         </div>

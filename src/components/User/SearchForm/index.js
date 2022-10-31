@@ -1,12 +1,20 @@
 import { Input } from "antd";
-import React from "react";
-import { generatePath, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { generatePath, useNavigate, useSearchParams } from "react-router-dom";
+import { fetchTour } from "../../../store/user/fetchTour";
 
 import "./styles.scss";
 const { Search } = Input;
 
 function SearchForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTour());
+  }, [dispatch]);
 
   const onSearch = (value) => {
     navigate(
