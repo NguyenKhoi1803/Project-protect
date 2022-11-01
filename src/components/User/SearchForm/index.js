@@ -27,12 +27,14 @@ function SearchForm() {
   return (
     <div className="container__searchForm">
       <div className="searchForm">
-        <Search
-          placeholder="Tìm ở đây nè"
-          onSearch={onSearch}
-          enterButton
-          size="large"
-        />
+        <div className="abc">
+          <Search
+            placeholder="Tìm ở đây nè"
+            onSearch={onSearch}
+            enterButton
+            size="large"
+          />
+        </div>
       </div>
     </div>
   );

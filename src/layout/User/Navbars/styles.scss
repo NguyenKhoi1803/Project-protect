@@ -30,9 +30,9 @@
 
 }
 
-.navbar { 
+.navbar {
 
-    & .logo { 
+    & .logo {
         color: #ffffff;
         text-decoration: none;
         font-size: 50px;
@@ -62,6 +62,12 @@
 
 .nav-item {
     color: #ffffff;
+
+    & button {
+        color: white;
+        background-color: rgba(0, 0, 0, .9);
+        border: 1px solid;
+    }
 }
 
 

@@ -13,12 +13,8 @@ function Header() {
       <div className="container__Header--fixed">
         <Navbars />
       </div>
-      <div className="container__Header--Search">
-        <SearchForm />
-        <SortByLocation />
-        <SortByDay />
-      </div>
       <Banner />
+      <SearchForm />
     </div>
   );
 }
