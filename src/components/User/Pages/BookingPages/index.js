@@ -4,12 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../../Auth";
-import {
-  fetchTour,
-  patchQuantity,
-  update,
-  updateTour,
-} from "../../../../store/user/fetchTour";
+import { fetchTour, patchQuantity } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
@@ -34,9 +29,9 @@ function BookingPages() {
   const childrenTour = arrr?.map((item) => item.priceChildren);
   const babyTour = arrr?.map((item) => item.priceBaby);
 
-  const [numberAdult, setNumberAdult] = useState("");
-  const [numberChildren, setNumberChildren] = useState("");
-  const [numberBaby, setNumberBaby] = useState("");
+  const [numberAdult, setNumberAdult] = useState("0");
+  const [numberChildren, setNumberChildren] = useState("0");
+  const [numberBaby, setNumberBaby] = useState("0");
   const [messErr, setMessErr] = useState("");
 
   const handleChangeFieldsAdult = (e) => {
@@ -47,12 +42,9 @@ function BookingPages() {
     setNumberChildren(ev.target.value);
   };
 
-  const handleChangeFieldsBaby = (ev) => {
-    setNumberBaby(ev.target.value);
+  const handleChangeFieldsBaby = (eve) => {
+    setNumberBaby(eve.target.value);
   };
-
-  const totalPeople =
-    parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
 
   const adults = numberAdult * adultsTour;
   const children = numberChildren * childrenTour;
@@ -61,8 +53,10 @@ function BookingPages() {
 
   const form = useRef();
 
-  const handleSubmit = (quantity) => {
-    if (totalPeople <= quantity) {
+  const handleSubmit = (value) => {
+    const totalPeople =
+      parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
+    if (totalPeople <= value) {
       const ids = new Date().getTime();
       const cart = {
         idUser: account.id,
@@ -70,6 +64,7 @@ function BookingPages() {
         email: account.email,
         phone: account.phone,
         to: to[0],
+        idTour: idTour[0],
         nameTour: titleTour[0],
         adultsTour: adultsTour[0],
         childrenTour: childrenTour[0],
@@ -106,8 +101,14 @@ function BookingPages() {
           }
         );
 
-      const newQuantity = id - totalPeople;
-      dispatch(patchQuantity({ id: idTour, quantity: newQuantity }));
+      const newQuantity = value - totalPeople;
+
+      dispatch(
+        patchQuantity({
+          id: id,
+          quantity: newQuantity,
+        })
+      );
     } else {
       setMessErr("Quá số chỗ còn nhận !");
     }

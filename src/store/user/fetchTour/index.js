@@ -35,7 +35,7 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
 
 export const patchQuantity = createAsyncThunk(
   "tour/patchQuantity",
-  async (store, payload) => {
+  async (payload, store) => {
     const res = await axios
       .patch(`${URL_TOUR}/${payload.id}`, {
         quantity: payload.quantity,

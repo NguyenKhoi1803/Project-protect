@@ -33,7 +33,7 @@ function ManagerTour() {
         thisClicked.innerText = "Delete";
       }
     });
-    
+
     navigate("/admin");
   };
 
