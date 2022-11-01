@@ -5,13 +5,13 @@ import "./styles.scss";
 
 import SortByLocation from "../../../components/User/SortBy/sortLocation";
 import SortByDay from "../../../components/User/SortBy/sortDay";
-import NavBar from "../NavBar";
+import Navbars from "../Navbars";
 
 function Header() {
   return (
     <div className="container__Header">
       <div className="container__Header--fixed">
-        <NavBar />
+        <Navbars />
       </div>
       <div className="container__Header--Search">
         <SearchForm />

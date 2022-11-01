@@ -57,18 +57,7 @@ function NavBar() {
                   <Nav.Link href="http://www.dulichvn.org.vn/">
                     Báo Du Lịch
                   </Nav.Link>
-                  {checkLogin() ? (
-                    <Button
-                      onClick={() => {
-                        logout();
-                        navigate("/");
-                      }}
-                    >
-                      Logout
-                    </Button>
-                  ) : (
-                    <Nav.Link onClick={handleToLogin}>Login</Nav.Link>
-                  )}
+                
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
