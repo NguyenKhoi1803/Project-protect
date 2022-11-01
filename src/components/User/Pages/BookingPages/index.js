@@ -4,7 +4,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../../Auth";
-import { fetchTour } from "../../../../store/user/fetchTour";
+import {
+  fetchTour,
+  patchQuantity,
+  update,
+  updateTour,
+} from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
@@ -21,7 +26,7 @@ function BookingPages() {
   }, [dispatch]);
 
   const account = getAccountInfo();
-  const codeTour = arrr?.map((item) => item.id);
+  const idTour = arrr?.map((item) => item.id);
   const titleTour = arrr?.map((item) => item.nameTour);
   const startDayTour = arrr?.map((item) => item.startDate);
   const to = arrr?.map((item) => item.to);
@@ -56,19 +61,14 @@ function BookingPages() {
 
   const form = useRef();
 
-  const handleSubmit = (id) => {
-    console.log("id", id);
-
-    const newQuantity = id - totalPeople;
-
-    if (totalPeople <= id) {
+  const handleSubmit = (quantity) => {
+    if (totalPeople <= quantity) {
       const ids = new Date().getTime();
       const cart = {
         idUser: account.id,
         name: account.fullname,
         email: account.email,
         phone: account.phone,
-        idTour: codeTour[0],
         to: to[0],
         nameTour: titleTour[0],
         adultsTour: adultsTour[0],
@@ -81,7 +81,6 @@ function BookingPages() {
         total: total,
         codeOrder: ids,
         status: 0,
-        timeOrder: ids,
       };
 
       navigate(
@@ -106,6 +105,9 @@ function BookingPages() {
             console.log(error.text);
           }
         );
+
+      const newQuantity = id - totalPeople;
+      dispatch(patchQuantity({ id: idTour, quantity: newQuantity }));
     } else {
       setMessErr("Quá số chỗ còn nhận !");
     }

@@ -33,21 +33,24 @@ export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
   return res;
 });
 
-export const updateTour = createAsyncThunk("tour/updateTour", async (store) => {
-  const res = await axios
-    .patch(URL_TOUR)
-    .then((result) => {
-      console.log("get ~ result", result);
-      // store.dispatch(fetchTour());
-      return result.data;
-    })
-    .catch((error) => {
-      console.log("get ~ error", error);
-    });
-  return res;
-});
-
-
+export const patchQuantity = createAsyncThunk(
+  "tour/patchQuantity",
+  async (store, payload) => {
+    const res = await axios
+      .patch(`${URL_TOUR}/${payload.id}`, {
+        quantity: payload.quantity,
+      })
+      .then((result) => {
+        console.log("get ~ result", result);
+        store.dispatch(fetchTour());
+        return result.data;
+      })
+      .catch((error) => {
+        console.log("get ~ error", error);
+      });
+    return res;
+  }
+);
 
 const tourSlice = createSlice({
   name: "tour",
@@ -79,16 +82,16 @@ const tourSlice = createSlice({
         console.log("fetchTour.rejected", { state, action });
       })
 
-      .addCase(updateTour.pending, (state, action) => {
-        console.log("updateTour.pending", { state, action });
+      .addCase(patchQuantity.pending, (state, action) => {
+        console.log("patchQuantity.pending", { state, action });
       })
 
-      .addCase(updateTour.fulfilled, (state, action) => {
-        console.log("updateTour.fulfilled ", { state, action });
+      .addCase(patchQuantity.fulfilled, (state, action) => {
+        console.log("patchQuantity.fulfilled ", { state, action });
         state.tours = action.payload;
       })
-      .addCase(updateTour.rejected, (state, action) => {
-        console.log("updateTour.rejected", { state, action });
+      .addCase(patchQuantity.rejected, (state, action) => {
+        console.log("patchQuantity.rejected", { state, action });
       });
   },
 });
