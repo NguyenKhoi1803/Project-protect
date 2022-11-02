@@ -10,7 +10,9 @@ import "./styles.scss";
 import Slider from "react-slick";
 import BodyItem from "./BodyItem-HomePage";
 import Special from "../Special";
-
+import SearchForm from "../../SearchForm/index";
+import SortByDay from "../../SortBy/sortDay";
+import SortByLocation from "../../SortBy/sortLocation";
 function BodyList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,10 +26,12 @@ function BodyList() {
     (item) => new Date(item.startDate).getTime() > new Date().getTime()
   );
 
+  const newsArr = newArr123?.filter((item) => item.quantity > 0)
+
   const renderItem = (value) => {
     switch (value) {
       case 1:
-        return newArr123
+        return newsArr
           ?.filter((item) => item.to === "Đà Nẵng")
           ?.map((item) => (
             <div key={item?.id}>
@@ -35,7 +39,7 @@ function BodyList() {
             </div>
           ));
       case 2:
-        return newArr123
+        return newsArr
           ?.filter((item) => item.to === "Hồ Chí Minh")
           ?.map((item) => (
             <div key={item?.id}>
@@ -43,7 +47,7 @@ function BodyList() {
             </div>
           ));
       case 3:
-        return newArr123
+        return newsArr
           ?.filter((item) => item.to === "Hà Nội")
           ?.map((item) => (
             <div key={item?.id}>
@@ -62,6 +66,7 @@ function BodyList() {
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
+    adaptiveHeight:false,
     responsive: [
       {
         breakpoint: 1024,
@@ -109,6 +114,13 @@ function BodyList() {
 
   return (
     <div className="container__body">
+      <div className="container__body--search">
+        <div className="container__body--searchItem">
+          <SearchForm />
+          <SortByDay />
+          <SortByLocation />
+        </div>
+      </div>
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">

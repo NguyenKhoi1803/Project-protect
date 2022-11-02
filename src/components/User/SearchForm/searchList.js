@@ -9,6 +9,9 @@ import {
 import { fetchTour } from "../../../store/user/fetchTour";
 import TourItem from "../TourProduct/tourItem";
 import "./styles.scss";
+import SearchForm from "../SearchForm";
+import SortByDay from "../SortBy/sortDay";
+import SortByLocation from "../SortBy/sortLocation";
 
 function SearchList() {
   let { id } = useParams();
@@ -24,13 +27,22 @@ function SearchList() {
     (item) => new Date(item.startDate).getTime() > new Date().getTime()
   );
 
-  const pattern = new RegExp(id.trim(), "i");
-  const arr = newTourArr?.filter((item) => pattern.test(item.to));
+  const newArr = newTourArr?.filter((item) => item.quantity > 0);
 
-  const arrDay = newTourArr?.filter((item) => item.numberDay == id);
+  const pattern = new RegExp(id.trim(), "i");
+  const arr = newArr?.filter((item) => pattern.test(item.to));
+
+  const arrDay = newArr?.filter((item) => item.numberDay == id);
 
   return (
     <div className="container_SearchList">
+      <div className="container__body--search">
+        <div className="container__body--searchItem">
+          <SearchForm />
+          <SortByDay />
+          <SortByLocation />
+        </div>
+      </div>
       <div className="SearchList">
         {arr?.map((item) => (
           <TourItem key={item.id} item={item} />

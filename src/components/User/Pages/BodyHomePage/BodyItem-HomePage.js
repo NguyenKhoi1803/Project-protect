@@ -17,6 +17,7 @@ function BodyItem({ item }) {
   };
 
   return (
+    
     <div className="CardItem">
       <div className="card">
         <a className="card-top">

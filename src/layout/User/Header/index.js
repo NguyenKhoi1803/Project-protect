@@ -1,6 +1,5 @@
 import React from "react";
 import Banner from "../Banner";
-import SearchForm from "../../../components/User/SearchForm";
 import "./styles.scss";
 
 import SortByLocation from "../../../components/User/SortBy/sortLocation";
@@ -14,7 +13,6 @@ function Header() {
         <Navbars />
       </div>
       <Banner />
-      <SearchForm />
     </div>
   );
 }

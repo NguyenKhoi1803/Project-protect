@@ -44,9 +44,7 @@ const SortByLocation = () => {
         placeholder="Đây là chọn nơi đến !"
         optionFilterProp="children"
         onChange={onChange}
-        filterOption={(input, option) =>
-          option.children.toLowerCase().includes(input.toLowerCase())
-        }
+        
       >
         {myArrayWithNoDuplicates.map((item, i) => (
           <Option key={i} value={item}>
