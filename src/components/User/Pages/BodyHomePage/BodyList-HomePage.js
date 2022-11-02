@@ -13,6 +13,8 @@ import Special from "../Special";
 import SearchForm from "../../SearchForm/index";
 import SortByDay from "../../SortBy/sortDay";
 import SortByLocation from "../../SortBy/sortLocation";
+import Voucher from "../../../../layout/User/GetVoucher";
+import Food from "../../../../layout/User/Food";
 function BodyList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -130,6 +132,8 @@ function BodyList() {
         </div>
       </div>
       <Special />
+      <Food/>
+      <Voucher/>
     </div>
   );
 }
