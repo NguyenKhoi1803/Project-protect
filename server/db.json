@@ -1,8 +1,8 @@
 {
   "account": [
     {
-      "fullname": "Nguyên Khôi",
-      "email": "user@gmail.com",
+      "fullname": "Bùi Nguyên Khôi",
+      "email": "Nguyenkhoi180397@gmail.com",
       "phone": "0779950318",
       "prefix": "84",
       "password": "user123a",
@@ -11,13 +11,9 @@
       "id": 1
     },
     {
-      "fullname": "Nguyên Khôi",
-      "email": "admin@gmail.com",
-      "phone": "0779950318",
-      "prefix": "84",
-      "password": "admin123a",
-      "connfirm": "admin123a",
-      "isAdmin": true,
+      "fullname": "2",
+      "email": "2",
+      "phone": "2",
       "id": 3
     },
     {
@@ -421,6 +417,66 @@
       "codeOrder": 1667316351973,
       "status": 0,
       "id": 19
+    },
+    {
+      "idUser": 3,
+      "name": "Nguyên Khôi",
+      "email": "admin@gmail.com",
+      "phone": "0779950318",
+      "to": "Đà Nẵng",
+      "idTour": 10,
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "adultsTour": 150,
+      "childrenTour": 70,
+      "babyTour": 30,
+      "numberAdult": "2",
+      "numberChildren": "2",
+      "numberBaby": "2",
+      "day": "2022-11-30",
+      "total": 500,
+      "codeOrder": 1667441669356,
+      "status": 0,
+      "id": 20
+    },
+    {
+      "idUser": 3,
+      "name": "Nguyên Khôi",
+      "email": "admin@gmail.com",
+      "phone": "0779950318",
+      "to": "Đà Nẵng",
+      "idTour": 10,
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "adultsTour": 150,
+      "childrenTour": 70,
+      "babyTour": 30,
+      "numberAdult": "2",
+      "numberChildren": "2",
+      "numberBaby": "2",
+      "day": "2022-11-30",
+      "total": 500,
+      "codeOrder": 1667444010618,
+      "status": 0,
+      "id": 21
+    },
+    {
+      "idUser": 1,
+      "name": "Bùi Nguyên Khôi",
+      "email": "Nguyenkhoi180397@gmail.com",
+      "phone": "0779950318",
+      "to": "Đà Nẵng",
+      "idTour": 10,
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "adultsTour": 150,
+      "childrenTour": 70,
+      "babyTour": 30,
+      "numberAdult": "0",
+      "numberChildren": "0",
+      "numberBaby": "0",
+      "day": "2022-11-30",
+      "total": 0,
+      "codeOrder": 1667446855632,
+      "status": 0,
+      "id": 22
     }
   ],
   "tour": [
@@ -437,7 +493,7 @@
       "priceChildren": 70,
       "priceBaby": 30,
       "vehicle": "máy bay",
-      "quantity": 30,
+      "quantity": 18,
       "descriptions": "Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
       "id": 10,
       "schedule": {

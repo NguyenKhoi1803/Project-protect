@@ -45,11 +45,10 @@ const SortByDay = () => {
         placeholder="Đây là chọn ngày !"
         optionFilterProp="children"
         onChange={onChange}
-        
       >
         {myArrayWithNoDuplicates.map((item, i) => (
           <Option key={i} value={item}>
-            {item}
+            {item} Ngày
           </Option>
         ))}
       </Select>

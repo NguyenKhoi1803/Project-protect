@@ -6,6 +6,7 @@ import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
 import { checkLogin } from "../../../../Auth";
 import { fetchTour } from "../../../../store/user/fetchTour";
+import Nav from "react-bootstrap/Nav";
 
 import "./styles.scss";
 

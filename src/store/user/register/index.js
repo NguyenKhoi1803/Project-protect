@@ -33,6 +33,27 @@ export const fetchAccount = createAsyncThunk(
   }
 );
 
+export const updateUser = createAsyncThunk(
+  "account/updateUser",
+  async (payload, store) => {
+    const res = await axios
+      .patch(`${URL_ACCOUNT}/${payload.id}`, {
+        fullname: payload.fullname,
+        email: payload.email,
+        phone: payload.phone,
+      })
+      .then((result) => {
+        console.log("get ~ result", result);
+        store.dispatch(fetchAccount());
+        return result.data;
+      })
+      .catch((error) => {
+        console.log("get ~ error", error);
+      });
+    return res;
+  }
+);
+
 const accountSlice = createSlice({
   name: "account",
   initialState: { accounts: [] },
@@ -61,6 +82,17 @@ const accountSlice = createSlice({
       })
       .addCase(fetchAccount.rejected, (state, action) => {
         console.log("fetchAccount.rejected", { state, action });
+      })
+      .addCase(updateUser.pending, (state, action) => {
+        console.log("updateUser.pending", { state, action });
+      })
+
+      .addCase(updateUser.fulfilled, (state, action) => {
+        console.log("updateUser.fulfilled ", { state, action });
+        state.accounts = action.payload;
+      })
+      .addCase(updateUser.rejected, (state, action) => {
+        console.log("updateUser.rejected", { state, action });
       });
   },
 });

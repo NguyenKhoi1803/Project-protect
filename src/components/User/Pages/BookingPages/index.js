@@ -1,5 +1,5 @@
 import { BarcodeOutlined, CalendarOutlined } from "@ant-design/icons";
-import Button from "react-bootstrap/Button";
+
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useNavigate, useParams } from "react-router-dom";
@@ -8,6 +8,9 @@ import { fetchTour, patchQuantity } from "../../../../store/user/fetchTour";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 import emailjs from "@emailjs/browser";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { updateUser } from "../../../../store/user/register";
 
 function BookingPages() {
   const { id } = useParams();
@@ -114,6 +117,37 @@ function BookingPages() {
     }
   };
 
+  const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const hanldeChangeName = (name) => {
+    setName(name.target.value);
+  };
+
+  const hanldeChangeEmail = (email) => {
+    setEmail(email.target.value);
+  };
+
+  const hanldeChangePhone = (phone) => {
+    setPhone(phone.target.value);
+  };
+
+  const handleSave = (e) => {
+    dispatch(
+      updateUser({
+        id: e,
+        fullname: name,
+        email: email,
+        phone: phone,
+      })
+    );
+
+    setShow(false);
+  };
+  const handleShow = () => setShow(true);
+
   return (
     <div className="container__payments">
       <div className="payments">
@@ -142,6 +176,49 @@ function BookingPages() {
                   <span> Số Điện Thoại : </span>
                   {account.phone}
                 </p>
+
+                <div>
+                  <Button variant="primary" onClick={handleShow}>
+                    Sửa Thông Tin
+                  </Button>
+
+                  <Modal show={show}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Sửa Thông Tin</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <div className="detailsForm">
+                        <label>Họ Tên : </label>
+                        <input
+                          type="text"
+                          onChange={(name) => hanldeChangeName(name)}
+                        />
+                      </div>
+                      <div className="detailsForm">
+                        <label>Email : </label>
+                        <input
+                          type="email"
+                          onChange={(email) => hanldeChangeEmail(email)}
+                        />
+                      </div>
+                      <div className="detailsForm">
+                        <label>Số Điện Thoại : </label>
+                        <input
+                          type="number"
+                          onChange={(phone) => hanldeChangePhone(phone)}
+                        />
+                      </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button
+                        variant="primary"
+                        onClick={() => handleSave(account.id)}
+                      >
+                        Save Changes
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                </div>
               </div>
 
               <div className="payments__formFields--input">
@@ -200,7 +277,7 @@ function BookingPages() {
                   <div>
                     <p>
                       {" "}
-                      <CalendarOutlined /> Gia Người Lớn :{" "}
+                      <CalendarOutlined /> Giá Người Lớn :{" "}
                       <span>
                         {new Intl.NumberFormat("vi-VN", {
                           style: "currency",
@@ -212,7 +289,7 @@ function BookingPages() {
 
                     <p>
                       {" "}
-                      <CalendarOutlined /> Gia Trẻ Em :{" "}
+                      <CalendarOutlined /> Giá Trẻ Em :{" "}
                       <span>
                         {new Intl.NumberFormat("vi-VN", {
                           style: "currency",
@@ -224,7 +301,7 @@ function BookingPages() {
 
                     <p>
                       {" "}
-                      <CalendarOutlined /> Gia Em Bé :{" "}
+                      <CalendarOutlined /> Giá Em Bé :{" "}
                       <span>
                         {new Intl.NumberFormat("vi-VN", {
                           style: "currency",
@@ -236,7 +313,7 @@ function BookingPages() {
                   </div>
                   <p>
                     {" "}
-                    <CalendarOutlined /> Tong :{" "}
+                    <CalendarOutlined /> Tổng :{" "}
                     <span>
                       {new Intl.NumberFormat("vi-VN", {
                         style: "currency",
