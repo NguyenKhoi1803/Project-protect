@@ -20,6 +20,7 @@ import DetailsPage from "./components/User/Pages/DetailsPage/index";
 import BookingPages from "./components/User/Pages/BookingPages/index";
 import SucceedPage from "./components/User/Pages/SucceedPage/index";
 import ChartPages from "./layout/Admin/chartPages";
+import Payments from "./components/User/Pages/Payments";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route path="/products/details/:id" element={<DetailsPage />}></Route>
           <Route
             path="/products/details/booking/:id"
-            element={<BookingPages />}
+            element={<Payments />}
           ></Route>
           <Route
             path="/products/details/booking/succeed/:id"

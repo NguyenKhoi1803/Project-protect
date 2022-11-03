@@ -121,6 +121,7 @@ function BookingPages() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const handleClose = () => setShow(false);
 
   const hanldeChangeName = (name) => {
     setName(name.target.value);
@@ -210,6 +211,9 @@ function BookingPages() {
                       </div>
                     </Modal.Body>
                     <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        Close
+                      </Button>
                       <Button
                         variant="primary"
                         onClick={() => handleSave(account.id)}
