@@ -1,29 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../store/user/fetchTour";
+import { useDispatch } from "react-redux";
 import SearchForm from "../SearchForm";
 import SortByDay from "../SortBy/sortDay";
 import SortByLocation from "../SortBy/sortLocation";
 import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
-
 import "./styles.scss";
 
 function TourList() {
-  const dispatch = useDispatch();
   const [items, setItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
 
-  const handlePageClick = (data) => {
-    console.log("clicked", data.selected);
-  };
-
-  const TourArr = useSelector((state) => state.fetchTourReducer.tours);
+  const limit = 5;
 
   useEffect(() => {
-    dispatch(fetchTour());
-  }, [dispatch]);
+    const getTour = async () => {
+      const res = await fetch(
+        `http://localhost:3011/tour?_page=1&_limit=${limit}`
+      );
+      const data = await res.json();
+      const total = res.headers.get("x-total-count");
+      setPageCount(Math.ceil(total / 10));
+      setItems(data);
+    };
+    getTour();
+  }, []);
 
-  const newTourArr = TourArr?.filter(
+  console.log(items);
+
+  const getTours = async (currentPage) => {
+    const res = await fetch(
+      `http://localhost:3011/tour?_page=${currentPage}limit=${limit}`
+    );
+    const data = await res.json();
+    return data;
+  };
+
+  const handlePageClick = async (data) => {
+    console.log("clicked", data.selected);
+    let currentPage = data.selected + 1;
+    const tourFromServer = await getTours(currentPage);
+    setItems(tourFromServer);
+  };
+
+  const newTourArr = items?.filter(
     (item) => new Date(item.startDate).getTime() > new Date().getTime()
   );
 
@@ -44,10 +64,11 @@ function TourList() {
         ))}
       </div>
       <ReactPaginate
+        style="margin-bottom: 0;padding: 20px;"
         previousLabel={"Previous"}
         nextLabel={"Next"}
         breakLabel={"..."}
-        pageCount={15}
+        pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={2}
         onPageChange={handlePageClick}

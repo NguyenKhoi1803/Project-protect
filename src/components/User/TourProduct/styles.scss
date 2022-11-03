@@ -20,6 +20,7 @@
 
 
 .container__tourItem {
+
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
@@ -31,9 +32,36 @@
 
   & .container__tourItem--img {
     max-width: 40%;
+
     object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+  }
+
+  & .container__tourItem-details {
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    & h4 {
+      color: #198754;
+      font-size: 30px;
+    }
+
+    & span {
+      color: #ff7f00;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+
+    & .addToCart {
+      height: 50px;
+    }
+
   }
 
   @media screen and (max-width:767px) {
@@ -50,7 +78,8 @@
     & .container__tourItem-details {
       margin: auto;
       width: 100%;
-      padding: 30px;
+      display: block;
+
 
       & h4 {
         color: #198754;
@@ -69,23 +98,7 @@
 
 
 
-
-
-.container__tourItem-details {
-  margin: auto;
-  width: 50%;
-  padding: 30px;
-
-  & h4 {
-    color: #198754;
-    font-size: 40px;
-  }
-
-  & span {
-    color: #ff7f00;
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-
+.pagination {
+  margin-bottom: 0;
+  padding: 20px;
 }

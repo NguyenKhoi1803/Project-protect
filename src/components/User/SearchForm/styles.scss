@@ -1,19 +1,5 @@
-// .container__searchForm {
-//   width: 100%;
-//   background-color: #f7f7f7;
-
-// }
-
-// .searchForm {
-//   width: 40%;
-//   margin: auto;
-//   padding: 30px;
-// }
-
-
 .container_SearchList {
   width: 100%;
-  background-image: url("https://content.api.news/v3/images/bin/64e10494ffb888899ce5280808c1d24f?width=1280");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -26,4 +12,9 @@
   margin: auto;
   padding: 3%;
 
+}
+
+.pagination {
+  margin-bottom: 0;
+  padding: 20px;
 }

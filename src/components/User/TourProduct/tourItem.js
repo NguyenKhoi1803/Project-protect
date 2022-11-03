@@ -13,7 +13,7 @@ import "./styles.scss";
 
 function TourItem({ item }) {
   const navigate = useNavigate();
-  
+
   const handleAddToCart = () => {
     navigate(
       generatePath("/products/details/:id", {
@@ -32,42 +32,44 @@ function TourItem({ item }) {
       <img className="container__tourItem--img" src={item.img} alt="" />
 
       <div className="container__tourItem-details">
-        <h4>{item.nameTour}</h4>
+        <div className="container__tourItem--info" >
+          <h4>{item.nameTour}</h4>
 
-        <p>
-          {" "}
-          <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
-        </p>
-        <p>
-          <ClockCircleOutlined /> <span> Thời Gian </span> : {item.numberDay}{" "}
-          Ngày
-        </p>
-        <p>
-          {" "}
-          <AimOutlined /> <span>Nơi Đến</span> : {item.to}
-        </p>
+          <p>
+            {" "}
+            <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
+          </p>
+          <p>
+            <ClockCircleOutlined /> <span> Thời Gian </span> : {item.numberDay}{" "}
+            Ngày
+          </p>
+          <p>
+            {" "}
+            <AimOutlined /> <span>Nơi Đến</span> : {item.to}
+          </p>
 
-        <p>
-          {" "}
-          <CarOutlined /> <span>Phương tiện di chuyển</span> : {item.vehicle}
-        </p>
-        <p>
-          {" "}
-          <CalendarOutlined /> <span>Ngày Khởi Hành</span> : {item.startDate}
-        </p>
+          <p>
+            {" "}
+            <CarOutlined /> <span>Phương tiện di chuyển</span> : {item.vehicle}
+          </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> <span>Ngày Khởi Hành</span> : {item.startDate}
+          </p>
 
-        <p>
-          {" "}
-          <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
-        </p>
-        <p>
-          {" "}
-          <span>Gía 1 Người</span> :{" "}
-          {new Intl.NumberFormat("vi-EN", {
-            style: "currency",
-            currency: "VND",
-          }).format(item.price)}
-        </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
+          </p>
+          <p>
+            {" "}
+            <span>Gía 1 Người</span> :{" "}
+            {new Intl.NumberFormat("vi-EN", {
+              style: "currency",
+              currency: "VND",
+            }).format(item.priceAdult)}
+          </p>
+        </div>
 
         <Button
           variant="success"

@@ -34,9 +34,7 @@ function Food(props) {
     return (
       <div key={item.title} className="card__food">
         <h3>{item.title}</h3>
-        <div>
-          <img src={item.img} alt="" className="img" />
-        </div>
+        <img src={item.img} alt="" className="img" />
       </div>
     );
   });
