@@ -182,7 +182,7 @@ function Payments(props) {
         ))}
       </div>
 
-      <div className="container__payments--wrap">
+      <div className="container__payments--wrap1">
         <div className="accountInfo">
           <h3>Thông Tin Khách Hàng</h3>
           <div className="accountInfo--form">
@@ -203,7 +203,7 @@ function Payments(props) {
           </div>
           <div className="accountInfo--formValue">
             <div>
-              <label>Nhập Số Người Lớn</label>
+              <label>Người Lớn</label>
               <div>
                 <input
                   type="number"
@@ -213,7 +213,7 @@ function Payments(props) {
               </div>
             </div>
             <div>
-              <label>Nhập Số Trẻ Em</label>
+              <label>Trẻ Em</label>
               <div>
                 <input
                   type="number"
@@ -223,7 +223,7 @@ function Payments(props) {
               </div>
             </div>
             <div>
-              <label>Nhập Số Em Bé</label>
+              <label>Em Bé</label>
               <div>
                 <input
                   type="number"
@@ -264,6 +264,65 @@ function Payments(props) {
                 Hoàn Thành
               </Button>
             ))}
+          </div>
+        </div>
+
+        <div className="paymentsMethod">
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Tiền Mặt</h3>
+              <div className="checkbox__info">
+                <p>
+                  "Quý khách hàng vui lòng liên hệ sales để được hỗ trợ thủ tục
+                  thanh toán trực tiếp."
+                </p>
+                <strong>Địa điềm thanh toán:</strong>
+                <p>
+                  Trụ sở thanh toán : <span>126 Xuân Thủy</span>{" "}
+                </p>
+                <p>
+                  Điện Thoại : <span>0779950318</span>{" "}
+                </p>
+                <p>
+                  FanPage : <span>0779950318</span>{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Chuyển Khoản</h3>
+              <div className="checkbox__info">
+                <p>
+                  Quý khách vui lòng lựa chọn chuyển vào một trong các tài khoản
+                  dưới đây :
+                </p>
+                <div className="backing1">
+                  <p>
+                    <strong>Ngân hàng Vietcombank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>0041000388783</span>{" "}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Ngân hàng Tp Bank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>03954560101</span>{" "}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

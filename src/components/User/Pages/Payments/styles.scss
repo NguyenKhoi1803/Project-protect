@@ -109,49 +109,105 @@
 
 }
 
-.accountInfo { 
-    width: 50%;
+.accountInfo {
+    width: 60%;
     margin: auto;
     text-align: center;
     margin-bottom: 50px;
     background-color: #f3f3f3;
     padding: 20px;
 
-    & .accountInfo--form { 
+
+    & .accountInfo--form {
         width: 80%;
         margin: auto;
         margin-top: 20px;
         align-items: center;
-        & label { 
+
+        & label {
             width: 30%;
             text-align: start;
-            
+
         }
-        & input { 
+
+        & input {
             text-align: center;
             width: 60%;
             height: 60px;
         }
     }
 
-    & .accountInfo--formValue { 
+    & .accountInfo--formValue {
         width: 100%;
         margin: auto;
         margin-top: 50px;
         display: flex;
         justify-content: space-between;
+
+        & input {
+            padding: 20px;
+            border: 1px solid black;
+            width: 100px;
+            height: 50px;
+        }
+
+        @media screen and (max-width : 767px) {
+            display: block;
+
+        }
     }
+
+    @media screen and (max-width : 767px) {
+        width: 80%;
+
+    }
+
 }
 
-.totalPrice  {
+.totalPrice {
     width: 100%;
     margin-top: 30px;
-    border-top:1px solid black ;
-    border-bottom:1px solid black ;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 
     display: flex;
     justify-content: space-between;
-     & p { 
+
+    & p {
         font-size: 50px;
-     }
+    }
+
+
+    @media screen and (max-width : 767px) {
+        display: block;
+
+    }
+}
+
+
+.container__payments--wrap1 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.byCash {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid black;
+
+
+    & input {
+        width: 100px;
+    }
+
+
+    .backing1 {
+        margin-bottom: 20px;
+        border-bottom: 1px dashed black;
+        line-height: 20px;
+    }
 }
