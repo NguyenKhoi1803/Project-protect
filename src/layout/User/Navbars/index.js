@@ -1,3 +1,4 @@
+import { SearchOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -13,11 +14,15 @@ const Navbars = () => {
   };
 
   const handleToChangeList = () => {
-    navigate("/product");
+    navigate("/search");
   };
 
   const handleToLogin = () => {
     navigate("/login");
+  };
+
+  const handleToSearch = () => {
+    navigate("/search");
   };
 
   const [click, setClick] = useState(false);

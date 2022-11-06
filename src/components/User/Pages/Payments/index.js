@@ -309,6 +309,7 @@ function Payments(props) {
                   <p>
                     Số tài khoản : <span>0041000388783</span>{" "}
                   </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
                 </div>
                 <div>
                   <p>
@@ -320,6 +321,7 @@ function Payments(props) {
                   <p>
                     Số tài khoản : <span>03954560101</span>{" "}
                   </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
                 </div>
               </div>
             </div>

@@ -190,6 +190,11 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width : 767px) {
+        display: block;
+
+    }
 }
 
 .byCash {
@@ -197,7 +202,7 @@
     justify-content: center;
     padding: 20px;
     align-items: center;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
 
 
     & input {

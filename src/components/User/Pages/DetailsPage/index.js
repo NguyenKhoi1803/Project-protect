@@ -27,7 +27,7 @@ function DetailsPage() {
   const handlePayments = () => {
     if (checkLogin()) {
       navigate(
-        generatePath("/products/details/booking/:id", {
+        generatePath("/products/details/payments/:id", {
           id: ids,
         })
       );

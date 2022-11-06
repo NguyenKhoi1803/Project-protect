@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import SearchForm from "../SearchForm";
-import SortByDay from "../SortBy/sortDay";
-import SortByLocation from "../SortBy/sortLocation";
 import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
 import "./styles.scss";
@@ -51,13 +47,6 @@ function TourList() {
 
   return (
     <div className="container__TourList">
-      <div className="container__body--search">
-        <div className="container__body--searchItem">
-          <SearchForm />
-          <SortByDay />
-          <SortByLocation />
-        </div>
-      </div>
       <div className="TourList">
         {newArr?.map((item) => (
           <TourItem key={item.id} item={item} />

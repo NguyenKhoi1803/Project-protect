@@ -10,9 +10,6 @@ import "./styles.scss";
 import Slider from "react-slick";
 import BodyItem from "./BodyItem-HomePage";
 import Special from "../Special";
-import SearchForm from "../../SearchForm/index";
-import SortByDay from "../../SortBy/sortDay";
-import SortByLocation from "../../SortBy/sortLocation";
 import Voucher from "../../../../layout/User/GetVoucher";
 import Food from "../../../../layout/User/Food";
 function BodyList() {
@@ -28,7 +25,7 @@ function BodyList() {
     (item) => new Date(item.startDate).getTime() > new Date().getTime()
   );
 
-  const newsArr = newArr123?.filter((item) => item.quantity > 0)
+  const newsArr = newArr123?.filter((item) => item.quantity > 0);
 
   const renderItem = (value) => {
     switch (value) {
@@ -68,7 +65,7 @@ function BodyList() {
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
-    adaptiveHeight:false,
+    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -116,13 +113,6 @@ function BodyList() {
 
   return (
     <div className="container__body">
-      <div className="container__body--search">
-        <div className="container__body--searchItem">
-          <SearchForm />
-          <SortByDay />
-          <SortByLocation />
-        </div>
-      </div>
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
@@ -132,8 +122,8 @@ function BodyList() {
         </div>
       </div>
       <Special />
-      <Food/>
-      <Voucher/>
+      <Food />
+      <Voucher />
     </div>
   );
 }
