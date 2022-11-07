@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import {
   AimOutlined,
+  BarcodeOutlined,
   CalendarOutlined,
   CarOutlined,
   ClockCircleOutlined,
+  DollarOutlined,
+  TeamOutlined,
 } from "@ant-design/icons";
 import { Button } from "react-bootstrap";
 import { generatePath, useNavigate } from "react-router-dom";
@@ -226,7 +229,7 @@ function Search(props) {
             </select>
           </div>
           {newTourArr.length === 0 ? (
-            <div>
+            <div className="error">
               <h3>Không có kết quả bạn tìm kiếm !</h3>
             </div>
           ) : (
@@ -241,56 +244,73 @@ function Search(props) {
 
                   <div className="container__tourItem-details">
                     <div className="container__tourItem--info">
-                      <h4>{item.nameTour}</h4>
-                      <p>Mã Tour : {item.id}</p>
-                      <p>
-                        {" "}
-                        <AimOutlined /> <span> Nơi Khởi Hành</span> :{" "}
-                        {item.from}
-                      </p>
-                      <p>
-                        <ClockCircleOutlined /> <span> Thời Gian </span> :{" "}
-                        {item.numberDay} Ngày
-                      </p>
-                      <p>
-                        {" "}
-                        <AimOutlined /> <span>Nơi Đến</span> : {item.to}
-                      </p>
+                      <div className="info-1">
+                        <h4>{item.nameTour}</h4>
+                        <Button
+                          variant="success"
+                          className="addToCart"
+                          onClick={() => handleAddToCart(item.id)}
+                        >
+                          Chi Tiết
+                        </Button>
+                      </div>
+                      <div className="info-2">
+                        <div>
+                          <p>
+                            {" "}
+                            <BarcodeOutlined /> <span> Mã Tour</span> :{" "}
+                            {item.id}
+                          </p>
+                          <p>
+                            {" "}
+                            <AimOutlined /> <span> Nơi Khởi Hành</span> :{" "}
+                            {item.from}
+                          </p>
+                          <p>
+                            {" "}
+                            <AimOutlined /> <span>Nơi Đến</span> : {item.to}
+                          </p>
+                          <p>
+                            <ClockCircleOutlined /> <span> Thời Gian </span> :{" "}
+                            {item.numberDay} Ngày
+                          </p>
+                          <p>
+                            <TeamOutlined /> <span> Số chỗ còn nhận </span> :{" "}
+                            {item.quantity}
+                          </p>
+                        </div>
 
-                      <p>
-                        {" "}
-                        <CarOutlined /> <span>
-                          Phương tiện di chuyển
-                        </span> : {item.vehicle}
-                      </p>
-                      <p>
-                        {" "}
-                        <CalendarOutlined /> <span>Ngày Khởi Hành</span> :{" "}
-                        {item.startDate}
-                      </p>
+                        <div>
+                          <p>
+                            {" "}
+                            <CarOutlined /> <span>
+                              Phương tiện di chuyển
+                            </span> : {item.vehicle}
+                          </p>
+                          <p>
+                            {" "}
+                            <CalendarOutlined /> <span>
+                              Ngày Khởi Hành
+                            </span> : {item.startDate}
+                          </p>
 
-                      <p>
-                        {" "}
-                        <CalendarOutlined /> <span>Ngày Về</span> :{" "}
-                        {item.endDate}
-                      </p>
-                      <p>
-                        {" "}
-                        <span>Gía 1 Người</span> :{" "}
-                        {new Intl.NumberFormat("vi-EN", {
-                          style: "currency",
-                          currency: "VND",
-                        }).format(item.priceAdult)}
-                      </p>
+                          <p>
+                            {" "}
+                            <CalendarOutlined /> <span>Ngày Về</span> :{" "}
+                            {item.endDate}
+                          </p>
+                          <p>
+                            {" "}
+                            <DollarOutlined />
+                            <span>Gía 1 Người</span> :{" "}
+                            {new Intl.NumberFormat("vi-EN", {
+                              style: "currency",
+                              currency: "VND",
+                            }).format(item.priceAdult)}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-
-                    <Button
-                      variant="success"
-                      className="addToCart"
-                      onClick={() => handleAddToCart(item.id)}
-                    >
-                      Chi Tiết
-                    </Button>
                   </div>
                 </div>
               </div>

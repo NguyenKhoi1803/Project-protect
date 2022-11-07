@@ -66,6 +66,14 @@
     justify-content: space-between;
 }
 
+.error {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+
 
 
 
@@ -78,7 +86,47 @@
     justify-content: space-between;
 }
 
+.container__tourItem--info {
+    & .info-1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
+        & h4 {
+            width: 80%;
+        }
+
+
+    }
+
+    & .info-2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    @media screen and (max-width:767px) {
+        text-align: center;
+
+        & .info-1 {
+            width: 100%;
+            display: block;
+
+            & h4 {
+                width: 100%;
+            }
+
+
+        }
+
+        & .info-2 {
+            display: block;
+            margin-top: 30px;
+        }
+
+    }
+}
 
 
 
