@@ -16,7 +16,9 @@ import DetailsPage from "./components/User/Pages/DetailsPage/index";
 import SucceedPage from "./components/User/Pages/SucceedPage/index";
 import ChartPages from "./layout/Admin/chartPages";
 import Payments from "./components/User/Pages/Payments";
-import Search from "./components/User/Search";
+import Search from "./components/User/SearchForm/Search";
+import TourList from "./components/User/TourProduct/tourList";
+import SearchFunction from "./components/User/SearchForm/SearchFunction";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path="/addtour" element={<AddTour />}></Route>
           <Route path="/admin" element={<ChartPages />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          <Route path="/product" element={<TourList />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/" element={<BodyList />}></Route>
@@ -41,6 +44,8 @@ function App() {
           ></Route>
         </Routes>
         <Footer />
+
+        {/* <SearchFunction /> */}
       </ThemeProvider>
     </Provider>
   );

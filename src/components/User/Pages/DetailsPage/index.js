@@ -91,9 +91,7 @@ function DetailsPage() {
               <div className="container__DetailsCard--schedule">
                 <h3>Lịch trình : </h3>
                 <div className="container__DetailsCard--list">
-                  <p>{item.schedule.ngay1}</p>
-                  <p>{item.schedule.ngay2}</p>
-                  <p>{item.schedule.ngay3}</p>
+                  <p>{item.descriptions}</p>
                 </div>
               </div>
             </div>

@@ -26,7 +26,11 @@ function Search(props) {
   const [operation, setOperation] = useState("");
 
   const sortOptions = ["priceAdult", "quantity", "numberDay"];
-
+  const languages = {
+    priceAdult: "gia ng lon",
+    quantity: "so luong con lai",
+    numberDay: "so ngay",
+  };
   useEffect(() => {
     loadTourData(0, 4, 0);
   }, []);
@@ -44,19 +48,7 @@ function Search(props) {
         setSortValue("");
         return await axios
           .get(
-            `http://localhost:3011/tour?q=${value}&_satrt=${start}&_end=${end}`
-          )
-          .then((response) => {
-            setData(response.data);
-            setCurentPage(curentPage + increase);
-          })
-          .catch((err) => console.log(err));
-      case "sort":
-        setOperation(optType);
-        setSortFilterValue(sortValues);
-        return await axios
-          .get(
-            `http://localhost:3011/tour?_sort=${sortValues}&_order=asc&_start=${start}&_end=${end}`
+            `http://localhost:3011/tour?q=${value}&_start=${start}&_end=${end}`
           )
           .then((response) => {
             setData(response.data);
@@ -84,12 +76,15 @@ function Search(props) {
 
   const hanldeSort = async (e) => {
     let value = e.target.value;
-    setSortValue(value);
-    loadTourData(0, 4, 0, "sort", value);
+    console.log(value);
+    data.sort((a, b) => b[value] - a[value]);
+    console.log(data.map((item) => item[value]));
+    // setSortValue(value);
+    // loadTourData(0, 4, 0, "sort", value);
   };
 
   const renderPagination = () => {
-    if (data.length < 4 && curentPage == 0) return null;
+    if (data.length < 4 && curentPage === 0) return null;
     if (curentPage === 0) {
       return (
         <div className="renderPagin">
@@ -219,11 +214,11 @@ function Search(props) {
         <div className="searchList">
           <div className="sortBy">
             <h5>Sort By : </h5>
-            <select onChange={hanldeSort} value={sortValue}>
+            <select onChange={hanldeSort}>
               <option>pls !</option>
               {sortOptions.map((item, index) => (
                 <option value={item} key={index}>
-                  {item}
+                  {languages[item]}
                 </option>
               ))}
             </select>

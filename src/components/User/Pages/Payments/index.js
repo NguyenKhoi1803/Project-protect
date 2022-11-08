@@ -33,15 +33,18 @@ function Payments(props) {
   const [messErr, setMessErr] = useState("");
 
   const handleChangeFieldsAdult = (e) => {
-    setNumberAdult(e.target.value);
+    setNumberAdult(e.target.value || 0);
+    setMessErr('');
   };
 
   const handleChangeFieldsChildren = (ev) => {
-    setNumberChildren(ev.target.value);
+    setNumberChildren(ev.target.value || 0);
+    setMessErr('');
   };
 
   const handleChangeFieldsBaby = (eve) => {
-    setNumberBaby(eve.target.value);
+    setNumberBaby(eve.target.value || 0);
+    setMessErr('');
   };
 
   const totalPeople =
@@ -53,6 +56,7 @@ function Payments(props) {
   const total = adults + children + baby;
 
   const handleSubmit = (value) => {
+    console.log(value, numberAdult)
     const totalPeople =
       parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
     if (totalPeople <= value) {

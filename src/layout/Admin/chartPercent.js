@@ -25,9 +25,9 @@ function ChartPercent() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const daNang = newArr?.filter((item) => item.to === "Đà Nẵng");
-  const saiGon = newArr?.filter((item) => item.to === "Hồ Chí Minh");
-  const haNoi = newArr?.filter((item) => item.to === "Hà Nội");
+  const daNang = newArr?.filter((item) => item.to == "Đà Nẵng");
+  const saiGon = newArr?.filter((item) => item.to == "Hồ Chí Minh");
+  const haNoi = newArr?.filter((item) => item.to == "Hà Nội");
 
   const totalDaNang = daNang.length;
   const totalHoChiMinh = saiGon.length;
