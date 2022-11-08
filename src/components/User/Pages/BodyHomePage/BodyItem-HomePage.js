@@ -17,7 +17,6 @@ function BodyItem({ item }) {
   };
 
   return (
-    
     <div className="CardItem">
       <div className="card">
         <a className="card-top">
@@ -41,6 +40,10 @@ function BodyItem({ item }) {
           <p>
             {" "}
             <CalendarOutlined /> Số Chỗ Còn Nhận: {item.quantity}{" "}
+          </p>
+          <p>
+            {" "}
+            <CalendarOutlined /> Giá người lớn: {item.priceAdult}{" "}
           </p>
         </div>
       </div>

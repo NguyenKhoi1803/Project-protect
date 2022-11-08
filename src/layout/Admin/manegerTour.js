@@ -47,7 +47,7 @@ function ManagerTour() {
             <th>Tên Tour</th>
             <th>Nơi Đến</th>
             <th>Giá</th>
-            <th>Số Người</th>
+            <th>Số Chỗ</th>
           </tr>
         </thead>
         {touArr?.map((item) => (
@@ -62,7 +62,7 @@ function ManagerTour() {
                   currency: "VND",
                 }).format(item.priceAdult)}
               </td>
-              <td>{item.number} </td>
+              <td>{item.quantity} </td>
               <td>
                 <Button variant="danger" onClick={(e) => deleteId(e, item.id)}>
                   Delete

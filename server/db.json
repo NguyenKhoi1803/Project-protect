@@ -11,7 +11,48 @@
       "id": 1
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "idUser": 1,
+      "name": "Nguyên Khôi",
+      "email": "admin123a@gmail.com",
+      "phone": "0779950318",
+      "to": "Đà Nẵng",
+      "idTour": 2,
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế - Bà Nà",
+      "adultsTour": 80,
+      "childrenTour": 70,
+      "babyTour": 10,
+      "numberAdult": "2",
+      "numberChildren": "1",
+      "numberBaby": 0,
+      "day": "2022-11-16",
+      "total": 230,
+      "codeOrder": 1667938518235,
+      "status": 0,
+      "id": 1
+    },
+    {
+      "idUser": 1,
+      "name": "Nguyên Khôi",
+      "email": "admin123a@gmail.com",
+      "phone": "0779950318",
+      "to": "Đà Nẵng",
+      "idTour": 2,
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế - Bà Nà",
+      "adultsTour": 80,
+      "childrenTour": 70,
+      "babyTour": 10,
+      "numberAdult": "7",
+      "numberChildren": "0",
+      "numberBaby": "0",
+      "day": "2022-11-16",
+      "total": 560,
+      "codeOrder": 1667939491934,
+      "status": 0,
+      "id": 2
+    }
+  ],
   "tour": [
     {
       "codeTour": "DN-1667925463708",
@@ -43,7 +84,7 @@
       "priceChildren": 70,
       "priceBaby": 10,
       "vehicle": "máy bay",
-      "quantity": 10,
+      "quantity": 0,
       "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
       "id": 2
     },
@@ -63,6 +104,23 @@
       "quantity": 10,
       "descriptions": "Thành phố Hồ Chí Minh, còn gọi bằng tên cũ phổ biến là Sài Gòn, là thành phố lớn nhất ở Việt Nam về dân số và quy mô đô thị hóa. Đây còn là trung tâm kinh tế, chính trị, văn hóa, giải trí và giáo dục tại Việt Nam. Thành phố Hồ Chí Minh là thành phố trực thuộc trung ương thuộc loại đô thị đặc biệt của Việt Nam cùng với thủ đô Hà Nội.[8] Nằm trong vùng chuyển tiếp giữa Đông Nam Bộ và Tây Nam Bộ, thành phố này hiện có 16 quận, 1 thành phố và 5 huyện, tổng diện tích 2.095 km2 (809 dặm vuông Anh).[9] Theo kết quả điều tra dân số sơ bộ vào năm 2021 thì dân số thành phố là 9.166.800 người (chiếm 9,3% dân số Việt Nam), mật độ dân số trung bình 4.375 người/km² (cao nhất cả nước)[5]:90. Tuy nhiên, nếu tính những người cư trú không đăng ký hộ khẩu thì dân số thực tế của thành phố này năm 2018 là gần 14 triệu người.[10]",
       "id": 3
+    },
+    {
+      "codeTour": "HN-1667938812965",
+      "from": "Đà Nẵng",
+      "to": "Hà Nội",
+      "numberDay": 3,
+      "startDate": "2023-01-02",
+      "endDate": "2023-01-05",
+      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2022/08/1-2.gif",
+      "nameTour": "Tour Du Lịch Hà Nội - Ninh Bình - Huế",
+      "priceAdult": 8000000,
+      "priceChildren": 5000000,
+      "priceBaby": 0,
+      "vehicle": "máy bay",
+      "quantity": 100,
+      "descriptions": "Hà Nội là thủ đô, thành phố trực thuộc trung ương và là một đô thị loại đặc biệt của Việt Nam. Hà Nội nằm về phía tây bắc của trung tâm vùng đồng bằng châu thổ sông Hồng, với địa hình bao gồm vùng đồng bằng trung tâm và vùng đồi núi ở phía bắc và phía tây thành phố. Với diện tích 3.359,82 km²,[2] và dân số 8,33 triệu người,[4] Hà Nội là thành phố trực thuộc trung ương có diện tích lớn nhất Việt Nam, đồng thời cũng là thành phố đông dân thứ hai và có mật độ dân số cao thứ hai trong 63 đơn vị hành chính cấp tỉnh của Việt Nam, nhưng phân bố dân số không đồng đều. Hà Nội có 30 đơn vị hành chính cấp huyện, gồm 12 quận, 17 huyện và 1 thị xã.",
+      "id": 4
     }
   ]
 }

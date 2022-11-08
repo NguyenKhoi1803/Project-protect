@@ -29,16 +29,16 @@ function ChartPercent() {
   const saiGon = newArr?.filter((item) => item.to === "Hồ Chí Minh");
   const haNoi = newArr?.filter((item) => item.to === "Hà Nội");
 
-  const totalDaNang = daNang.length;
-  const totalHoChiMinh = saiGon.length;
-  const totalHaNoi = haNoi.length;
+  // const totalDaNang = daNang.length;
+  // const totalHoChiMinh = saiGon.length;
+  // const totalHaNoi = haNoi.length;
 
   const data = {
     labels: ["Đà Nẵng", "Hồ Chí Minh", "Hà Nội"],
     datasets: [
       {
         label: "# of Votes",
-        data: [totalDaNang, totalHoChiMinh, totalHaNoi],
+        data: [daNang, saiGon, haNoi],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",

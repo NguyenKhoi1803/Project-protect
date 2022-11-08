@@ -27,6 +27,9 @@ function BodyList() {
 
   const newsArr = newArr123?.filter((item) => item.quantity > 0);
 
+  const startDay = new Date("2023-01-01").getTime();
+  const endDay = new Date("2023-04-29").getTime();
+
   const renderItem = (value) => {
     switch (value) {
       case 1:
@@ -39,15 +42,11 @@ function BodyList() {
           ));
       case 2:
         return newsArr
-          ?.filter((item) => item.to === "Hồ Chí Minh")
-          ?.map((item) => (
-            <div key={item?.id}>
-              <BodyItem item={item} />
-            </div>
-          ));
-      case 3:
-        return newsArr
-          ?.filter((item) => item.to === "Hà Nội")
+          ?.filter(
+            (item) =>
+              new Date(item.startDate).getTime() >= startDay &&
+              new Date(item.startDate).getTime() <= endDay
+          )
           ?.map((item) => (
             <div key={item?.id}>
               <BodyItem item={item} />
@@ -103,25 +102,25 @@ function BodyList() {
     ],
   };
 
-  const handleToDetails = (val) => {
-    navigate(
-      generatePath("/searchList/:id", {
-        id: val,
-      })
-    );
-  };
-
   return (
     <div className="container__body">
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <a onClick={() => handleToDetails("Đà Nẵng")}> * Đà Nẵng</a>
+            <a> * Đà Nẵng</a>
           </div>
           <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
       </div>
       <Special />
+      <div className="container__body--List">
+        <div className="container__body--Card">
+          <div className="container__body--Header">
+            <a> *Tour Mùa Thu</a>
+          </div>
+          <Slider {...settings}>{renderItem(2)}</Slider>
+        </div>
+      </div>
       <Food />
       <Voucher />
     </div>
