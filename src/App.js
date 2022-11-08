@@ -44,8 +44,6 @@ function App() {
           ></Route>
         </Routes>
         <Footer />
-
-        {/* <SearchFunction /> */}
       </ThemeProvider>
     </Provider>
   );

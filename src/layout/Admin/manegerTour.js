@@ -60,7 +60,7 @@ function ManagerTour() {
                 {new Intl.NumberFormat("vi-EN", {
                   style: "currency",
                   currency: "VND",
-                }).format(item.price)}
+                }).format(item.priceAdult)}
               </td>
               <td>{item.number} </td>
               <td>

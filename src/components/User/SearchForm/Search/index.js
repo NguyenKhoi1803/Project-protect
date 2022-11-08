@@ -20,152 +20,46 @@ function Search(props) {
   const [data, setData] = useState([]);
   const [value, setValue] = useState("");
   const [sortValue, setSortValue] = useState("");
-  const [curentPage, setCurentPage] = useState(0);
-  const [pageLimit] = useState(4);
-  const [sortFilterValue, setSortFilterValue] = useState("");
-  const [operation, setOperation] = useState("");
 
   const sortOptions = ["priceAdult", "quantity", "numberDay"];
   const languages = {
-    priceAdult: "gia ng lon",
-    quantity: "so luong con lai",
-    numberDay: "so ngay",
+    priceAdult: "Gía Người Lớn",
+    quantity: "Sô Chỗ Còn",
+    numberDay: "Thời Gian Đi",
   };
   useEffect(() => {
-    loadTourData(0, 4, 0);
+    loadTourData();
   }, []);
 
-  const loadTourData = async (
-    start,
-    end,
-    increase,
-    optType = null,
-    sortValues
-  ) => {
-    switch (optType) {
-      case "search":
-        setOperation(optType);
-        setSortValue("");
-        return await axios
-          .get(
-            `http://localhost:3011/tour?q=${value}&_start=${start}&_end=${end}`
-          )
-          .then((response) => {
-            setData(response.data);
-            setCurentPage(curentPage + increase);
-          })
-          .catch((err) => console.log(err));
-
-      default:
-        return await axios
-          .get(`http://localhost:3011/tour?_start=${start}&_end=${end}`)
-          .then((response) => {
-            setData(response.data);
-            setCurentPage(curentPage + increase);
-          })
-          .catch((err) => console.log(err));
-    }
+  const loadTourData = async () => {
+    return await axios
+      .get("http://localhost:3011/tour")
+      .then((response) => setData(response.data))
+      .catch((err) => console.log(err));
   };
-
-  console.log("data : ", data);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    loadTourData(0, 4, 0, "search");
+    return await axios
+      .get(`http://localhost:3011/tour?q=${value}`)
+      .then((response) => {
+        setData(response.data);
+        setValue("");
+      })
+      .catch((err) => console.log(err));
   };
 
   const hanldeSort = async (e) => {
     let value = e.target.value;
-    console.log(value);
-    data.sort((a, b) => b[value] - a[value]);
+    setSortValue(value);
+    console.log("value", value);
+    data.sort((a, b) => a[value] - b[value]);
     console.log(data.map((item) => item[value]));
-    // setSortValue(value);
-    // loadTourData(0, 4, 0, "sort", value);
   };
 
-  const renderPagination = () => {
-    if (data.length < 4 && curentPage === 0) return null;
-    if (curentPage === 0) {
-      return (
-        <div className="renderPagin">
-          <div className="paginItem">
-            <p>1</p>
-          </div>
-          <div className="paginItem">
-            <Button
-              variant="primary"
-              onClick={() => loadTourData(4, 8, 1, operation, sortFilterValue)}
-            >
-              Next
-            </Button>
-          </div>
-        </div>
-      );
-    } else if (curentPage < pageLimit - 1 && data.length === pageLimit) {
-      return (
-        <div className="renderPagin">
-          <div className="paginItem">
-            <Button
-              variant="primary"
-              onClick={() =>
-                loadTourData(
-                  (curentPage - 1) * 4,
-                  curentPage * 4,
-                  -1,
-                  operation,
-                  sortFilterValue
-                )
-              }
-            >
-              Previous
-            </Button>
-          </div>
-          <div className="paginItem">
-            <p>{curentPage + 1}</p>
-          </div>
-          <div className="paginItem">
-            <Button
-              variant="primary"
-              onClick={() =>
-                loadTourData(
-                  (curentPage + 1) * 4,
-                  (curentPage + 2) * 4,
-                  1,
-                  operation,
-                  sortFilterValue
-                )
-              }
-            >
-              Next
-            </Button>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="renderPagin">
-          <div className="paginItem">
-            <Button
-              variant="primary"
-              onClick={() =>
-                loadTourData(
-                  (curentPage - 1) * 4,
-                  curentPage * 4,
-                  -1,
-                  operation,
-                  sortFilterValue
-                )
-              }
-            >
-              Previous
-            </Button>
-          </div>
-          <div className="paginItem">
-            <p>{curentPage + 1}</p>
-          </div>
-        </div>
-      );
-    }
+  const handleReset = () => {
+    loadTourData();
+    setSortValue("");
   };
 
   const newTourArr = data?.filter(
@@ -173,20 +67,13 @@ function Search(props) {
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
       item.quantity > 0
   );
+
   const handleAddToCart = (e) => {
     navigate(
       generatePath("/products/details/:id", {
         id: e,
       })
     );
-  };
-
-  const handleReset = () => {
-    setOperation("");
-    setValue("");
-    setSortValue("");
-    setSortFilterValue("");
-    loadTourData(0, 4, 0);
   };
 
   return (
@@ -214,8 +101,8 @@ function Search(props) {
         <div className="searchList">
           <div className="sortBy">
             <h5>Sort By : </h5>
-            <select onChange={hanldeSort}>
-              <option>pls !</option>
+            <select onChange={hanldeSort} value={sortValue}>
+              <option>Lọc</option>
               {sortOptions.map((item, index) => (
                 <option value={item} key={index}>
                   {languages[item]}
@@ -223,6 +110,7 @@ function Search(props) {
               ))}
             </select>
           </div>
+
           {newTourArr.length === 0 ? (
             <div className="error">
               <h3>Không có kết quả bạn tìm kiếm !</h3>
@@ -311,13 +199,6 @@ function Search(props) {
               </div>
             ))
           )}
-          <div
-            style={{
-              padding: "20px",
-            }}
-          >
-            {renderPagination()}
-          </div>
         </div>
       </div>
     </div>
