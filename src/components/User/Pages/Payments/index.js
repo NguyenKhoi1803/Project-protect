@@ -7,18 +7,14 @@ import { getAccountInfo } from "../../../../Auth";
 import "./styles.scss";
 import { addToCart } from "../../../../store/user/addToCartSlice";
 
-function Payments(props) {
+function Payments() {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-  const arrr = newTourArr?.filter((item) => item.id === parseInt(id));
+  const arrr = newTourArr?.filter((item) => item.id == id);
   const account = getAccountInfo();
-  const idTour = arrr?.map((item) => item.id);
-  const titleTour = arrr?.map((item) => item.nameTour);
-  const startDayTour = arrr?.map((item) => item.startDate);
-  const to = arrr?.map((item) => item.to);
   const adultsTour = arrr?.map((item) => item.priceAdult);
   const childrenTour = arrr?.map((item) => item.priceChildren);
   const babyTour = arrr?.map((item) => item.priceBaby);
@@ -54,7 +50,11 @@ function Payments(props) {
   const children = numberChildren * childrenTour;
   const baby = numberBaby * babyTour;
   const total = adults + children + baby;
-
+  let list = [];
+  const handleListForm = (e, index, name) => {
+    list[index] = list[index] || {};
+    list[index][name] = e.target.value;
+  };
   const handleSubmit = (value) => {
     console.log(value, numberAdult);
     const totalPeople =
@@ -62,38 +62,21 @@ function Payments(props) {
     if (totalPeople <= value) {
       const ids = new Date().getTime();
       const cart = {
-        idUser: account.id,
-        name: account.fullname,
-        email: account.email,
-        phone: account.phone,
-        to: to[0],
-        idTour: idTour[0],
-        nameTour: titleTour[0],
-        adultsTour: adultsTour[0],
-        childrenTour: childrenTour[0],
-        babyTour: babyTour[0],
+        account: account,
+        tour: arrr[0],
         numberAdult: numberAdult,
         numberChildren: numberChildren,
         numberBaby: numberBaby,
-        day: startDayTour[0],
         total: total,
         codeOrder: ids,
         status: 0,
+        infos: list[0],
       };
+      dispatch(addToCart(cart));
 
       navigate(
         generatePath("/products/details/booking/succeed/:id", {
           id: ids,
-        })
-      );
-      dispatch(addToCart(cart));
-
-      const newQuantity = value - totalPeople;
-
-      dispatch(
-        patchQuantity({
-          id: id,
-          quantity: newQuantity,
         })
       );
     } else {
@@ -185,7 +168,24 @@ function Payments(props) {
           </div>
         ))}
       </div>
-
+      <div>
+        {[...Array(parseInt(numberAdult)).keys()].map((item) => (
+          <div key={item}>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              onChange={(e) => handleListForm(e, item, "email")}
+            />
+            <input
+              type="text"
+              name="name"
+              placeholder="full name"
+              onChange={(e) => handleListForm(e, item, "fullname")}
+            />
+          </div>
+        ))}
+      </div>
       <div className="container__payments--wrap1">
         <div className="accountInfo">
           <h3>Thông Tin Khách Hàng</h3>

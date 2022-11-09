@@ -19,12 +19,11 @@ export const addTour = createAsyncThunk(
   }
 );
 
-export const fetchTour = createAsyncThunk("tour/fetchTour", async (store) => {
+export const fetchTour = createAsyncThunk("tour/fetchTour", async () => {
   const res = await axios
     .get(URL_TOUR)
     .then((result) => {
       console.log("get ~ result", result);
-      // store.dispatch(fetchTour());
       return result.data;
     })
     .catch((error) => {

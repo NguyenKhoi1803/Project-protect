@@ -4,16 +4,17 @@ import { URL_CART } from "../../../constants";
 
 export const addToCart = createAsyncThunk(
   "carts/addToCart",
-  async (payload) => {
+  async (payload, store) => {
     const res = await axios
       .post(URL_CART, payload)
       .then((result) => {
+        store.dispatch(fetchCart());
         console.log("get ~ result ~ cart", result);
       })
       .catch((error) => {
         console.log("get ~ result ~ cart", error);
       });
-    return res;
+    return res.data;
   }
 );
 export const fetchCart = createAsyncThunk("carts/fetchCart", async () => {

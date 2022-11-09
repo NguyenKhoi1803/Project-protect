@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTour } from "../../../../store/user/fetchTour";
 
-import { generatePath, useNavigate } from "react-router-dom";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./styles.scss";
@@ -14,7 +12,7 @@ import Voucher from "../../../../layout/User/GetVoucher";
 import Food from "../../../../layout/User/Food";
 function BodyList() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
 
   useEffect(() => {

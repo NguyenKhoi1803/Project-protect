@@ -254,7 +254,7 @@ function BookingPages() {
             <div className="CardItem" key={item.id} item={item}>
               <div className="card">
                 <a href="/" className="card-top">
-                  <img src={item.img} alt="asdasd" />
+                  <img src={item.img}  />
                 </a>
                 <div className="card-bottom">
                   <a href="/">

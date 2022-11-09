@@ -20,7 +20,7 @@ function DetailsPage() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const arr = newTourArr?.filter((item) => item.id === parseInt(id));
+  const arr = newTourArr?.filter((item) => item.id == id);
 
   const ids = arr?.map((item) => item.id);
 
