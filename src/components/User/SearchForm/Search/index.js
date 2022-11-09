@@ -14,6 +14,7 @@ import {
 import { Button } from "react-bootstrap";
 import { generatePath, useNavigate } from "react-router-dom";
 import "./styles.scss";
+import { DatePicker } from "antd";
 
 function Search(props) {
   const navigate = useNavigate();
@@ -61,11 +62,12 @@ function Search(props) {
     loadTourData();
     setSortValue("");
   };
-
+  const pt = new RegExp(value.trim(), 'i');
+  console.log(value)
   const newTourArr = data?.filter(
     (item) =>
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
-      item.quantity > 0
+      item.quantity > 0 && pt.test(item.to) 
   );
 
   const handleAddToCart = (e) => {
@@ -87,6 +89,12 @@ function Search(props) {
             placeholder="Nhập Nơi đi hoặc Đến "
             onChange={(e) => setValue(e.target.value)}
           />
+          {/* <input
+            type="date"
+            value={value}
+            placeholder="Chọn Ngày Khởi Hành "
+            onChange={(e) => setValue(e.target.value)}
+          /> */}
           <button type="submit" className="btn-1">
             {" "}
             Search{" "}

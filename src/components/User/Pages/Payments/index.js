@@ -13,7 +13,7 @@ function Payments(props) {
   const dispatch = useDispatch();
 
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
-  const arrr = newTourArr?.filter((item) => item.id == id);
+  const arrr = newTourArr?.filter((item) => item.id === parseInt(id));
   const account = getAccountInfo();
   const idTour = arrr?.map((item) => item.id);
   const titleTour = arrr?.map((item) => item.nameTour);

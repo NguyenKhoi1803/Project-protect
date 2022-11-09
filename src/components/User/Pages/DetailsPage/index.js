@@ -6,12 +6,12 @@ import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
 import { checkLogin } from "../../../../Auth";
 import { fetchTour } from "../../../../store/user/fetchTour";
-import Nav from "react-bootstrap/Nav";
 
 import "./styles.scss";
 
 function DetailsPage() {
   const { id } = useParams();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
@@ -20,7 +20,7 @@ function DetailsPage() {
     dispatch(fetchTour());
   }, [dispatch]);
 
-  const arr = newTourArr?.filter((item) => item.id == id);
+  const arr = newTourArr?.filter((item) => item.id === parseInt(id));
 
   const ids = arr?.map((item) => item.id);
 
