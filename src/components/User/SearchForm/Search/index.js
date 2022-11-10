@@ -62,12 +62,13 @@ function Search(props) {
     loadTourData();
     setSortValue("");
   };
-  const pt = new RegExp(value.trim(), 'i');
-  console.log(value)
+  const pt = new RegExp(value.trim(), "i");
+
   const newTourArr = data?.filter(
     (item) =>
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
-      item.quantity > 0 && pt.test(item.to) 
+      item.quantity > 0 &&
+      pt.test(item.to)
   );
 
   const handleAddToCart = (e) => {

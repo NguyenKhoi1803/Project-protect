@@ -18,7 +18,6 @@ import ChartPages from "./layout/Admin/chartPages";
 import Payments from "./components/User/Pages/Payments";
 import Search from "./components/User/SearchForm/Search";
 import TourList from "./components/User/TourProduct/tourList";
-import SearchFunction from "./components/User/SearchForm/SearchFunction";
 
 function App() {
   return (

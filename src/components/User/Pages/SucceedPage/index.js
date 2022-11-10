@@ -18,14 +18,8 @@ function SucceedPage() {
   return (
     <div className="container__succeed">
       {newArr?.map((item) => (
-        <div
-          className="container__succeed--details"
-          key={item.id}
-          item={item}
-        >
-
-
-
+        <div className="container__succeed--details" key={item.id} item={item}>
+          
         </div>
       ))}
     </div>

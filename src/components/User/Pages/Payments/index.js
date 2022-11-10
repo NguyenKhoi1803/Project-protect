@@ -70,7 +70,7 @@ function Payments() {
         total: total,
         codeOrder: ids,
         status: 0,
-        infos: list[0],
+        infos: list,
       };
       dispatch(addToCart(cart));
 
@@ -168,24 +168,6 @@ function Payments() {
           </div>
         ))}
       </div>
-      <div>
-        {[...Array(parseInt(numberAdult)).keys()].map((item) => (
-          <div key={item}>
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              onChange={(e) => handleListForm(e, item, "email")}
-            />
-            <input
-              type="text"
-              name="name"
-              placeholder="full name"
-              onChange={(e) => handleListForm(e, item, "fullname")}
-            />
-          </div>
-        ))}
-      </div>
       <div className="container__payments--wrap1">
         <div className="accountInfo">
           <h3>Thông Tin Khách Hàng</h3>
@@ -257,7 +239,7 @@ function Payments() {
             </p>
           </div>
 
-          <div>
+          <div className="button__submit">
             {arrr.map((item) => (
               <Button
                 key={item.id}
@@ -270,8 +252,7 @@ function Payments() {
             ))}
           </div>
         </div>
-
-        <div className="paymentsMethod">
+        {/* <div className="paymentsMethod">
           <div className="byCash">
             <input type="checkbox" />
             <div>
@@ -330,6 +311,136 @@ function Payments() {
               </div>
             </div>
           </div>
+        </div> */}
+      </div>
+
+      <div className="container__detailInfo">
+        <div className="container__adult">
+          {[...Array(parseInt(numberAdult)).keys()].map((item) => (
+            <div key={item} className="formAdult">
+              <h5> * Thông Tin Người Lớn</h5>
+              <div className="formAdult__info">
+                <div className="formAdult__info--item">
+                  <label> Đầy Đủ Họ Tên : </label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    onChange={(e) => handleListForm(e, item, "fullname")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Điện Thoại : </label>
+                  <input
+                    type="number"
+                    name="phone"
+                    onChange={(e) => handleListForm(e, item, "phone")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Passport/CMND : </label>
+                  <input
+                    type="number"
+                    name="idcard"
+                    onChange={(e) => handleListForm(e, item, "idcard")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Ngày Sinh : </label>
+                  <input
+                    type="date"
+                    name="birthDay"
+                    onChange={(e) => handleListForm(e, item, "birthDay")}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container__detailInfo">
+        <div className="container__adult">
+          {[...Array(parseInt(numberChildren)).keys()].map((item) => (
+            <div key={item} className="formAdult">
+              <h5> * Thông Tin Trẻ Em</h5>
+              <div className="formAdult__info">
+                <div className="formAdult__info--item">
+                  <label> Đầy Đủ Họ Tên : </label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    onChange={(e) => handleListForm(e, item, "fullname")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Điện Thoại (Người đại diện) : </label>
+                  <input
+                    type="number"
+                    name="phone"
+                    onChange={(e) => handleListForm(e, item, "phone")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Passport/CMND : </label>
+                  <input
+                    type="number"
+                    name="idcard"
+                    onChange={(e) => handleListForm(e, item, "idcard")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Ngày Sinh : </label>
+                  <input
+                    type="date"
+                    name="birthDay"
+                    onChange={(e) => handleListForm(e, item, "birthDay")}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container__detailInfo">
+        <div className="container__adult">
+          {[...Array(parseInt(numberBaby)).keys()].map((item) => (
+            <div key={item} className="formAdult">
+              <h5> * Thông Tin Em Bé</h5>
+              <div className="formAdult__info">
+                <div className="formAdult__info--item">
+                  <label> Đầy Đủ Họ Tên : </label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    onChange={(e) => handleListForm(e, item, "fullname")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Điện Thoại (Người đại diện) : </label>
+                  <input
+                    type="number"
+                    name="phone"
+                    onChange={(e) => handleListForm(e, item, "phone")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Số Passport/CMND : </label>
+                  <input
+                    type="number"
+                    name="idcard"
+                    onChange={(e) => handleListForm(e, item, "idcard")}
+                  />
+                </div>
+                <div className="formAdult__info--item">
+                  <label> Ngày Sinh : </label>
+                  <input
+                    type="date"
+                    name="birthDay"
+                    onChange={(e) => handleListForm(e, item, "birthDay")}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

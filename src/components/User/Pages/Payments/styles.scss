@@ -110,7 +110,7 @@
 }
 
 .accountInfo {
-    width: 60%;
+    width: 80%;
     margin: auto;
     text-align: center;
     margin-bottom: 50px;
@@ -184,6 +184,12 @@
     }
 }
 
+.button__submit { 
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
 
 .container__payments--wrap1 {
     width: 80%;
@@ -214,5 +220,53 @@
         margin-bottom: 20px;
         border-bottom: 1px dashed black;
         line-height: 20px;
+    }
+}
+
+
+.container__detailInfo {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+
+    & .container__adult {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+
+.formAdult {
+    width: 500px;
+    border: 1px solid;
+    margin-bottom: 30px;
+
+    & h5 { 
+        border-bottom: 1px solid black;
+        padding: 20px;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    & .formAdult__info { 
+        padding: 20px;
+    }
+}
+
+.formAdult__info--item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    & label { 
+        width: 40%;
+        
+    }
+
+    & input { 
+        width: 50%;
+        border: 1px solid black;
     }
 }
