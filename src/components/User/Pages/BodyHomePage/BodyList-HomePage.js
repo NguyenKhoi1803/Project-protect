@@ -1,7 +1,4 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTour } from "../../../../store/user/fetchTour";
-
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./styles.scss";
@@ -10,45 +7,53 @@ import BodyItem from "./BodyItem-HomePage";
 import Special from "../Special";
 import Voucher from "../../../../layout/User/GetVoucher";
 import Food from "../../../../layout/User/Food";
+import tourApis from "../../../../apis/tourApis";
+import { STATUS_CODE } from "../../../../constants/indexs";
 function BodyList() {
-  const dispatch = useDispatch();
+  const [tourList, setTourList] = useState([])
+  const [isLoadData , setIsLoadData] = useState(true)
 
-  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+  const fetchData = async () => { 
+    setIsLoadData(true)
 
-  useEffect(() => {
-    dispatch(fetchTour());
-  }, [dispatch]);
+    const response = await tourApis.getAll()
 
-  const newArr123 = newTourArr?.filter(
-    (item) => new Date(item.startDate).getTime() > new Date().getTime()
+    if ( response.status === STATUS_CODE.OK) { 
+      setTourList(response.data)
+    } else {
+      console.log("Get list failed" ,response.status )
+    }
+  }
+  const newArr123 = tourList?.filter(
+    (item) => new Date(item.startDate).getTime() > (new Date().getTime() - 21600000) && item.quantity > 0
   );
+  useEffect(() => {
+    fetchData()
+  },[isLoadData])
 
-  const newsArr = newArr123?.filter((item) => item.quantity > 0);
 
   const startDay = new Date("2023-01-01").getTime();
   const endDay = new Date("2023-04-29").getTime();
 
+  
+
   const renderItem = (value) => {
     switch (value) {
       case 1:
-        return newsArr
+        return newArr123
           ?.filter((item) => item.to === "Đà Nẵng")
           ?.map((item) => (
-            <div key={item?.id}>
-              <BodyItem item={item} />
-            </div>
+            <BodyItem item={item}  key={item?.id}/>
           ));
       case 2:
-        return newsArr
+        return newArr123
           ?.filter(
             (item) =>
               new Date(item.startDate).getTime() >= startDay &&
               new Date(item.startDate).getTime() <= endDay
           )
           ?.map((item) => (
-            <div key={item?.id}>
-              <BodyItem item={item} />
-            </div>
+            <BodyItem item={item} key={item?.id} />
           ));
 
       default:
@@ -84,13 +89,14 @@ function BodyList() {
       },
     ],
   };
+ 
 
   return (
     <div className="container__body">
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <a> * Đà Nẵng</a>
+            <h2> * Đà Nẵng</h2>
           </div>
           <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
@@ -99,7 +105,7 @@ function BodyList() {
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <a> *Tour Mùa Thu</a>
+            <h2 >  *Tour Mùa Thu</h2>
           </div>
           <Slider {...settings}>{renderItem(2)}</Slider>
         </div>

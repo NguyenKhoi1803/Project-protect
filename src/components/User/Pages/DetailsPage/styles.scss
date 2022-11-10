@@ -13,6 +13,15 @@
     }
 }
 
+.container__DetailsCard--all { 
+
+    
+    & .productItem--price { 
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
 .container__detail {
     display: flex;
     justify-content: space-between;
@@ -36,6 +45,8 @@
             max-width: 100%;
         }
     }
+
+    
 
 
 }
@@ -111,3 +122,4 @@
 
     }
 }
+

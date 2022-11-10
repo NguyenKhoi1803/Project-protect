@@ -4,6 +4,8 @@ import { ThemeProvider } from "styled-components";
 import store from "./store";
 import theme from "./styles/theme";
 import { Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
 import "antd/dist/antd.min.css";
 
 import Header from "./layout/User/Header";
@@ -18,34 +20,39 @@ import ChartPages from "./layout/Admin/chartPages";
 import Payments from "./components/User/Pages/Payments";
 import Search from "./components/User/SearchForm/Search";
 import TourList from "./components/User/TourProduct/tourList";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Header />
+      <BrowserRouter>
+      <Header />
+      <ScrollTop/>
         <Routes>
           <Route path="/addtour" element={<AddTour />}></Route>
           <Route path="/admin" element={<ChartPages />}></Route>
-          <Route path="/search" element={<Search />}></Route>
-          <Route path="/product" element={<TourList />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/" element={<BodyList />}></Route>
-          <Route path="/products/details/:id" element={<DetailsPage />}></Route>
+          <Route path="/tour" element={<TourList />}></Route>
+          <Route path="/tour/:id" element={<DetailsPage />}></Route>
           <Route
-            path="/products/details/payments/:id"
+            path="/tour/payments/:id"
             element={<Payments />}
           ></Route>
           <Route
-            path="/products/details/booking/succeed/:id"
+            path="/tour/payments/succeed/:id"
             element={<SucceedPage />}
           ></Route>
         </Routes>
-        <Footer />
-      </ThemeProvider>
+        <Footer /> 
+      </BrowserRouter>
     </Provider>
   );
 }
 
 export default App;
+
+
+
+ 

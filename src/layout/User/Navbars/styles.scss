@@ -63,10 +63,21 @@
 .nav-item {
     color: #ffffff;
 
+
+    & a { 
+        font-size: 20px;
+        font-weight: 700;
+    }
+
     & button {
         color: white;
         background-color: rgba(0, 0, 0, .9);
         border: 1px solid;
+    }
+
+    &:hover { 
+        color: pink;
+        border-bottom: 2px solid white;
     }
 }
 

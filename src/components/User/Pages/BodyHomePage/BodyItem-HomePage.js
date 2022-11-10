@@ -8,23 +8,19 @@ import { generatePath, useNavigate } from "react-router-dom";
 function BodyItem({ item }) {
   const navigate = useNavigate();
 
-  const handleProductItem = () => {
-    navigate(
-      generatePath("/products/details/:id", {
-        id: item.id,
-      })
-    );
+  const handleToItem = () => {
+    navigate(`/tour/${item.id}`)
   };
 
   return (
     <div className="CardItem">
       <div className="card">
         <a className="card-top">
-          <img src={item.img} alt="" onClick={handleProductItem} />
+          <img src={item.img} alt="" onClick={handleToItem} />
         </a>
 
         <div className="card-bottom">
-          <h3>{item.nameTour}</h3>
+          <h3 onClick={handleToItem}>{item.nameTour}</h3>
           <p>
             {" "}
             <BarcodeOutlined /> Mã Tour : {item.codeTour}

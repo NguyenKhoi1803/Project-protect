@@ -90,12 +90,7 @@ function Search(props) {
             placeholder="Nhập Nơi đi hoặc Đến "
             onChange={(e) => setValue(e.target.value)}
           />
-          {/* <input
-            type="date"
-            value={value}
-            placeholder="Chọn Ngày Khởi Hành "
-            onChange={(e) => setValue(e.target.value)}
-          /> */}
+          
           <button type="submit" className="btn-1">
             {" "}
             Search{" "}

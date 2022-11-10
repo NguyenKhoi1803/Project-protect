@@ -5,7 +5,7 @@
 }
 
 .container__body--List {
-  width: 60%;
+  width: 80%;
   margin: auto;
   padding: 3%;
 }
@@ -15,7 +15,7 @@
   color: #4682B4;
 
 
-  & a {
+  & h2 {
 
     font-size: 50px;
     font-weight: 700;
@@ -55,10 +55,15 @@
 }
 
 .CardItem {
+  height: 550px;
   max-width: 100%;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+
+  & .card { 
+    height: 100%;
+  }
 
   @media screen and (max-width:767px) {}
 }
@@ -95,10 +100,7 @@
 }
 
 
-.card-top:hover img { 
-  animation: zoom-in-zoom-out 10s ease infinite
 
-}
 
 
 

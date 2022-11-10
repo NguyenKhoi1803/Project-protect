@@ -14,12 +14,9 @@ import "./styles.scss";
 function TourItem({ item }) {
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    navigate(
-      generatePath("/products/details/:id", {
-        id: item.id,
-      })
-    );
+  const handleToDetails = () => {
+    navigate(`/tour/${item.id}`)
+
   };
 
   new Intl.NumberFormat("vi-VN", {
@@ -63,6 +60,10 @@ function TourItem({ item }) {
           </p>
           <p>
             {" "}
+            <CalendarOutlined /> <span> Quantity </span> : {item.quantity}
+          </p>
+          <p>
+            {" "}
             <span>Gía 1 Người</span> :{" "}
             {new Intl.NumberFormat("vi-EN", {
               style: "currency",
@@ -74,7 +75,7 @@ function TourItem({ item }) {
         <Button
           variant="success"
           className="addToCart"
-          onClick={handleAddToCart}
+          onClick={handleToDetails}
         >
           Chi Tiết
         </Button>

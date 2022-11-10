@@ -14,16 +14,14 @@ const Navbars = () => {
   };
 
   const handleToChangeList = () => {
-    navigate("/search");
+    navigate("/tour");
   };
 
   const handleToLogin = () => {
     navigate("/login");
   };
 
-  const handleToSearch = () => {
-    navigate("/search");
-  };
+  
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);

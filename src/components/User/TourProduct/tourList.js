@@ -6,7 +6,8 @@ import "./styles.scss";
 function TourList() {
   const [items, setItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
-
+  const [sortValue, setSortValue] = useState("");
+  
   const limit = 5;
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function TourList() {
     getTour();
   }, []);
 
-  console.log(items);
+  
 
   const getTours = async (currentPage) => {
     const res = await fetch(
@@ -33,22 +34,46 @@ function TourList() {
   };
 
   const handlePageClick = async (data) => {
-    console.log("clicked", data.selected);
     let currentPage = data.selected + 1;
     const tourFromServer = await getTours(currentPage);
     setItems(tourFromServer);
   };
 
   const newTourArr = items?.filter(
-    (item) => new Date(item.startDate).getTime() > new Date().getTime()
+    (item) => new Date(item.startDate).getTime() > (new Date().getTime() - 21600000) && item.quantity > 0
   );
 
-  const newArr = newTourArr?.filter((item) => item.quantity > 0);
+
+  const sortOptions = ["priceAdult", "quantity", "numberDay"];
+  const languages = {
+    priceAdult: "Gía Người Lớn",
+    quantity: "Sô Chỗ Còn",
+    numberDay: "Thời Gian Đi",
+  };
+
+  const hanldeSort = async (e) => {
+    let value = e.target.value;
+    setSortValue(value);
+    items.sort((a, b) => a[value] - b[value]);
+  };
+
+  
 
   return (
     <div className="container__TourList">
+      <div className="sortBy">
+            <h5>Sort By : </h5>
+            <select onChange={hanldeSort} value={sortValue}>
+              <option>Lọc</option>
+              {sortOptions.map((item, index) => (
+                <option value={item} key={index}>
+                  {languages[item]}
+                </option>
+              ))}
+            </select>
+      </div>
       <div className="TourList">
-        {newArr?.map((item) => (
+        {newTourArr?.map((item) => (
           <TourItem key={item.id} item={item} />
         ))}
       </div>

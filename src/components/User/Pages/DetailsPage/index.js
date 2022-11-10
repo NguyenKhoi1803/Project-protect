@@ -1,33 +1,51 @@
 import { AimOutlined, CalendarOutlined, CarOutlined } from "@ant-design/icons";
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import { Accordion, Button, Table } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 import { generatePath, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
+import tourApis from "../../../../apis/tourApis";
 import { checkLogin } from "../../../../Auth";
-import { fetchTour } from "../../../../store/user/fetchTour";
-
+import { STATUS_CODE } from "../../../../constants/indexs";
 import "./styles.scss";
 
 function DetailsPage() {
   const { id } = useParams();
-
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const newTourArr = useSelector((state) => state.fetchTourReducer.tours);
+
+
+  const [tourList, setTourList] = useState([])
+  const [isLoadData , setIsLoadData] = useState(true)
+
+  const fetchData = async () => { 
+    setIsLoadData(true)
+
+    const response = await tourApis.getAll()
+
+    if ( response.status === STATUS_CODE.OK) { 
+      setTourList(response.data)
+    } else {
+      console.log("Get list failed" ,response.status )
+    }
+  }
+
+ 
 
   useEffect(() => {
-    dispatch(fetchTour());
-  }, [dispatch]);
+    fetchData()
+  },[isLoadData])
 
-  const arr = newTourArr?.filter((item) => item.id == id);
+  const newArr123 = tourList?.filter(
+    (item) => new Date(item.startDate).getTime() > (new Date().getTime() -21600000) && item.quantity > 0
+  );
+  
 
+  const arr = newArr123?.filter((item) => item.id == id);
   const ids = arr?.map((item) => item.id);
 
   const handlePayments = () => {
     if (checkLogin()) {
       navigate(
-        generatePath("/products/details/payments/:id", {
+        generatePath("/tour/payments/:id", {
           id: ids,
         })
       );
