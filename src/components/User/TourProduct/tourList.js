@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
 import "./styles.scss";
+import axios from "axios";
 
 function TourList() {
   const [items, setItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
   const [sortValue, setSortValue] = useState("");
-  
+
   const limit = 5;
 
   useEffect(() => {
@@ -23,8 +25,6 @@ function TourList() {
     getTour();
   }, []);
 
-  
-
   const getTours = async (currentPage) => {
     const res = await fetch(
       `http://localhost:3011/tour?_page=${currentPage}limit=${limit}`
@@ -39,10 +39,21 @@ function TourList() {
     setItems(tourFromServer);
   };
 
-  const newTourArr = items?.filter(
-    (item) => new Date(item.startDate).getTime() > (new Date().getTime() - 21600000) && item.quantity > 0
-  );
+  const handleSearch = async (e) => {
+    console.log("seasr");
+    e.preventDefault();
+    return await axios
+      .get(`http://localhost:3011/tour?q=${searchValue}`)
+      .then((response) => {
+        setItems(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
+  const handleReset = () => {
+    setSearchValue("");
+    setSortValue("");
+  };
 
   const sortOptions = ["priceAdult", "quantity", "numberDay"];
   const languages = {
@@ -57,20 +68,46 @@ function TourList() {
     items.sort((a, b) => a[value] - b[value]);
   };
 
-  
+  // const pt = new RegExp(searchValue.trim(), "i");
+
+  const newTourArr = items?.filter(
+    (item) =>
+      new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
+      item.quantity > 0 
+  );
 
   return (
     <div className="container__TourList">
+      <div className="SearchForm__wrap">
+        <form className="SearchForm">
+          <input
+            type="text"
+            name=""
+            value={searchValue}
+            placeholder="Nhập Nơi đi hoặc Đến "
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+
+          <button type="submit" className="btn-1" onClick={handleSearch}>
+            {" "}
+            Search{" "}
+          </button>
+          <button onClick={handleReset} className="btn-2">
+            {" "}
+            Reset{" "}
+          </button>
+        </form>
+      </div>
       <div className="sortBy">
-            <h5>Sort By : </h5>
-            <select onChange={hanldeSort} value={sortValue}>
-              <option>Lọc</option>
-              {sortOptions.map((item, index) => (
-                <option value={item} key={index}>
-                  {languages[item]}
-                </option>
-              ))}
-            </select>
+        <h5>Sort By : </h5>
+        <select onChange={hanldeSort} value={sortValue}>
+          <option>Lọc</option>
+          {sortOptions.map((item, index) => (
+            <option value={item} key={index}>
+              {languages[item]}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="TourList">
         {newTourArr?.map((item) => (

@@ -86,6 +86,44 @@
       "infos": [],
       "totalPeople": 6,
       "id": 2
+    },
+    {
+      "account": {
+        "fullname": "Nguyên Khôi",
+        "email": "admin123a@gmail.com",
+        "phone": "0779950318",
+        "prefix": "84",
+        "password": "admin123",
+        "connfirm": "admin123",
+        "isAdmin": true,
+        "id": 1
+      },
+      "tour": {
+        "codeTour": "DN-1667925463708",
+        "from": "Đà Nẵng",
+        "to": "Hà Nội",
+        "numberDay": 3,
+        "startDate": "2022-11-13",
+        "endDate": "2022-11-20",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg/1920px-Han_River_Bridge_in_Vietnam_Night_View.jpg",
+        "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+        "priceAdult": 1000000,
+        "priceChildren": 2000000,
+        "priceBaby": 0,
+        "vehicle": "máy bay",
+        "quantity": 70,
+        "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
+        "id": 5
+      },
+      "numberAdult": "2",
+      "numberChildren": "2",
+      "numberBaby": "3",
+      "total": 6000000,
+      "codeOrder": 1668140723836,
+      "status": 0,
+      "infos": [],
+      "totalPeople": 7,
+      "id": 3
     }
   ],
   "tour": [
@@ -105,6 +143,40 @@
       "quantity": 58,
       "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
       "id": 1
+    },
+    {
+      "codeTour": "DN-1667925463708",
+      "from": "Hà Nội",
+      "to": "Hồ Chí Minh",
+      "numberDay": 3,
+      "startDate": "2022-11-13",
+      "endDate": "2022-11-20",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg/1920px-Han_River_Bridge_in_Vietnam_Night_View.jpg",
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "priceAdult": 9000000,
+      "priceChildren": 2000000,
+      "priceBaby": 0,
+      "vehicle": "máy bay",
+      "quantity": 100,
+      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
+      "id": 3
+    },
+    {
+      "codeTour": "DN-1667925463708",
+      "from": "Đà Nẵng",
+      "to": "Hà Nội",
+      "numberDay": 3,
+      "startDate": "2022-11-13",
+      "endDate": "2022-11-20",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg/1920px-Han_River_Bridge_in_Vietnam_Night_View.jpg",
+      "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
+      "priceAdult": 1000000,
+      "priceChildren": 2000000,
+      "priceBaby": 0,
+      "vehicle": "máy bay",
+      "quantity": 63,
+      "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
+      "id": 5
     }
   ]
 }
