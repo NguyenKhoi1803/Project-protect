@@ -22,7 +22,7 @@ function SucceedPage() {
         <div className="container__succeed--details" key={item.id} item={item}>
           <div className="container__succeed--notice">
             <img src={tickBlue} alt="" />
-            <h3>Mua Tour thành công</h3>
+            <h3>THANH TOÁN THÀNH CÔNG</h3>
             <p>
               Đơn hàng của <span>{item.account.fullname}</span> đã thanh toán
               thành công. Chúng tối sẽ gọi lại để xác nhận và đơn hàng của bạn.

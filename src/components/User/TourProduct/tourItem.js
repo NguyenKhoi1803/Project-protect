@@ -16,13 +16,9 @@ function TourItem({ item }) {
 
   const handleToDetails = () => {
     navigate(`/tour/${item.id}`)
-
   };
 
-  new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-  }).format(item.price);
+
 
   return (
     <div className="container__tourItem">

@@ -63,8 +63,7 @@ function TourList() {
     setSortValue(value);
     items.sort((a, b) => a[value] - b[value]);
   };
-
-  // const pt = new RegExp(searchValue.trim(), "i");
+ 
 
   const newTourArr = items?.filter(
     (item) =>

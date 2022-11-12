@@ -39,7 +39,10 @@ function BodyItem({ item }) {
           </p>
           <p>
             {" "}
-            <CalendarOutlined /> Giá người lớn: {item.priceAdult}{" "}
+            <CalendarOutlined /> Giá người lớn: {new Intl.NumberFormat("vi-VN", {
+              style: "currency",
+              currency: "VND",
+            }).format(item.priceAdult)}
           </p>
         </div>
       </div>
