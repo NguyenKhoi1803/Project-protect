@@ -10,48 +10,41 @@ import cartApis from "../../../../apis/cartApis";
 import axiosCLient from "../../../../apis/axiosClient";
 
 function Payments() {
-  const location = useLocation()
+  const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
-  const [tourList, setTourList] = useState([])
-  const [isLoadData , setIsLoadData] = useState(true)
- 
+  const [tourList, setTourList] = useState([]);
+  const [isLoadData, setIsLoadData] = useState(true);
 
-  console.log("location" , location.pathname)
+  console.log("location", location.pathname);
 
-  
+  const fetchData = async () => {
+    setIsLoadData(true);
 
+    const response = await tourApis.getAll();
 
-  const fetchData = async () => { 
-    setIsLoadData(true)
-
-    const response = await tourApis.getAll()
-
-    if ( response.status === STATUS_CODE.OK) { 
-      setTourList(response.data)
+    if (response.status === STATUS_CODE.OK) {
+      setTourList(response.data);
     } else {
-      console.log("Get list failed" ,response.status )
+      console.log("Get list failed", response.status);
     }
-  }
-
+  };
 
   useEffect(() => {
-    fetchData()
-  },[isLoadData])
-
+    fetchData();
+  }, [isLoadData]);
 
   const newArr = tourList?.filter(
-    (item) => new Date(item.startDate).getTime() > (new Date().getTime() -21600000) && item.quantity > 0
+    (item) =>
+      new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
+      item.quantity > 0
   );
-
 
   const arrr = newArr?.filter((item) => item.id == id);
   const account = getAccountInfo();
   const adultsTour = arrr?.map((item) => item.priceAdult);
   const childrenTour = arrr?.map((item) => item.priceChildren);
   const babyTour = arrr?.map((item) => item.priceBaby);
-
-  
 
   const [numberAdult, setNumberAdult] = useState("0");
   const [numberChildren, setNumberChildren] = useState("0");
@@ -87,10 +80,10 @@ function Payments() {
   };
 
   const handleSubmit = async (value) => {
-    
     const totalPeople =
       parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
-    if (totalPeople <= value) {
+
+    if (totalPeople > 0 && totalPeople <= value) {
       const ids = new Date().getTime();
       const cart = {
         account: account,
@@ -102,34 +95,27 @@ function Payments() {
         codeOrder: ids,
         status: 0,
         infos: list,
-        totalPeople
+        totalPeople,
       };
 
-      const response = await cartApis.add(cart)
-      if (response.status === STATUS_CODE.CREATED) { 
-        console.log("Congratulations !")
-      } else { 
-        console.log("Do Again!")
-
+      const response = await cartApis.add(cart);
+      if (response.status === STATUS_CODE.CREATED) {
+        console.log("Congratulations !");
+      } else {
+        console.log("Do Again!");
       }
 
-      const newQuantity = value - totalPeople
-
-      const updateQuantity = { id , quantity:newQuantity}
-
-      try { 
-        const res = await axiosCLient.patch(`/tour/${id}`, updateQuantity)
+      const newQuantity = value - totalPeople;
+      const updateQuantity = { id, quantity: newQuantity };
+      try {
+        const res = await axiosCLient.patch(`/tour/${id}`, updateQuantity);
+      } catch (error) {
+        console.log("loi roi");
       }
-      catch(error) { 
-        console.log("loi roi")
-      }
-     
 
-      navigate(
-        `/tour/payments/succeed/${ids}`
-      );
+      navigate(`/tour/payments/succeed/${ids}`);
     } else {
-      setMessErr("Quá số chỗ còn nhận !");
+      setMessErr(" * Chưa nhập số khách hoặc quá số chỗ còn nhận!");
     }
   };
 
@@ -204,7 +190,7 @@ function Payments() {
                       style: "currency",
                       currency: "VND",
                     }).format(item.priceChildren)}
-                  </td> 
+                  </td>
                   <td>
                     {new Intl.NumberFormat("vi-VN", {
                       style: "currency",
@@ -275,7 +261,7 @@ function Payments() {
             </div>
           </div>
 
-          <span>{messErr}</span>
+          <span className="errorMess">{messErr}</span>
 
           <div className="totalPrice">
             <p>Tổng</p>

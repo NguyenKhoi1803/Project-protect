@@ -40,6 +40,7 @@ function TourList() {
   };
 
   const handleSearch = async (e) => {
+    setSortValue("");
     console.log("seasr");
     e.preventDefault();
     return await axios
@@ -48,11 +49,6 @@ function TourList() {
         setItems(response.data);
       })
       .catch((err) => console.log(err));
-  };
-
-  const handleReset = () => {
-    setSearchValue("");
-    setSortValue("");
   };
 
   const sortOptions = ["priceAdult", "quantity", "numberDay"];
@@ -73,7 +69,7 @@ function TourList() {
   const newTourArr = items?.filter(
     (item) =>
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
-      item.quantity > 0 
+      item.quantity > 0
   );
 
   return (
@@ -91,10 +87,6 @@ function TourList() {
           <button type="submit" className="btn-1" onClick={handleSearch}>
             {" "}
             Search{" "}
-          </button>
-          <button onClick={handleReset} className="btn-2">
-            {" "}
-            Reset{" "}
           </button>
         </form>
       </div>
