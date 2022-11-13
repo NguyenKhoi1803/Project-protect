@@ -11,44 +11,29 @@ function TourList() {
   const [sortValue, setSortValue] = useState("");
 
   const limit = 5;
-
-  useEffect(() => {
-    const getTour = async () => {
-      const res = await fetch(
-        `http://localhost:3011/tour?_page=1&_limit=${limit}`
-      );
-      const data = await res.json();
-      const total = res.headers.get("x-total-count");
-      setPageCount(Math.ceil(total / 10));
-      setItems(data);
-    };
-    getTour();
-  }, []);
-
-  const getTours = async (currentPage) => {
+  const getTour = async (page = 1, s = "") => {
     const res = await fetch(
-      `http://localhost:3011/tour?_page=${currentPage}limit=${limit}`
+      `http://localhost:3011/tour?_page=${page}&_limit=${limit}&q=${s}`
     );
     const data = await res.json();
-    return data;
+    const total = res.headers.get("x-total-count");
+    setPageCount(Math.ceil(total / limit));
+    setItems(data);
   };
+  useEffect(() => {
+    getTour(1);
+  }, []);
 
   const handlePageClick = async (data) => {
     let currentPage = data.selected + 1;
-    const tourFromServer = await getTours(currentPage);
-    setItems(tourFromServer);
+    await getTour(currentPage, searchValue);
+    window.scrollTo({ top: 500 });
   };
 
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     setSortValue("");
-    console.log("seasr");
     e.preventDefault();
-    return await axios
-      .get(`http://localhost:3011/tour?q=${searchValue}`)
-      .then((response) => {
-        setItems(response.data);
-      })
-      .catch((err) => console.log(err));
+    getTour(1, searchValue);
   };
 
   const sortOptions = ["priceAdult", "quantity", "numberDay"];
@@ -63,14 +48,12 @@ function TourList() {
     setSortValue(value);
     items.sort((a, b) => a[value] - b[value]);
   };
- 
 
   const newTourArr = items?.filter(
     (item) =>
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
       item.quantity > 0
   );
-
   return (
     <div className="container__TourList">
       <div className="SearchForm__wrap">
