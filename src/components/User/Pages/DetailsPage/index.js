@@ -45,7 +45,7 @@ function DetailsPage() {
   const toTour = arr?.map((item) => item.to)
 
 
-  const aboutTourArr = newArr123?.filter((item) => item.to == toTour)
+  const aboutTourArr = newArr123?.filter((item) => item.to == toTour && item.id != ids)
 
 
   console.log("aboutTourArr :", aboutTourArr)

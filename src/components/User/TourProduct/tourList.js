@@ -84,9 +84,15 @@ function TourList() {
         </select>
       </div>
       <div className="TourList">
-        {newTourArr?.map((item) => (
-          <TourItem key={item.id} item={item} />
-        ))}
+        {newTourArr.length === 0 ? (
+          <div className="error">
+            <h3>Không có kết quả bạn tìm kiếm !</h3>
+          </div>
+        ) : (
+          newTourArr?.map((item) => (
+            <TourItem key={item.id} item={item} />
+          ))
+        )}
       </div>
       <ReactPaginate
         style="margin-bottom: 0;padding: 20px;"

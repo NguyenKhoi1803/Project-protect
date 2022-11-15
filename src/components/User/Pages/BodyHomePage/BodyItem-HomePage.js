@@ -20,30 +20,32 @@ function BodyItem({ item }) {
         </a>
 
         <div className="card-bottom">
-          <h3 onClick={handleToItem}>{item.nameTour}</h3>
-          <p>
-            {" "}
-            <BarcodeOutlined /> Mã Tour : {item.codeTour}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> Ngày Khời Hành : {item.startDate}{" "}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> Số Chỗ Còn Nhận: {item.quantity}{" "}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> Giá người lớn: {new Intl.NumberFormat("vi-VN", {
-              style: "currency",
-              currency: "VND",
-            }).format(item.priceAdult)}
-          </p>
+          <div>
+            <h3 onClick={handleToItem}>{item.nameTour}</h3>
+            <p>
+              {" "}
+              <BarcodeOutlined /> Mã Tour : {item.codeTour}
+            </p>
+            <p>
+              {" "}
+              <CalendarOutlined /> Ngày Khời Hành : {item.startDate}{" "}
+            </p>
+            <p>
+              {" "}
+              <CalendarOutlined /> Ngày Về : {item.endDate}{" "}
+            </p>
+            <p>
+              {" "}
+              <CalendarOutlined /> Số Chỗ Còn Nhận: {item.quantity}{" "}
+            </p>
+            <p>
+              {" "}
+              <CalendarOutlined /> Giá người lớn: {new Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND",
+              }).format(item.priceAdult)}
+            </p>
+          </div>
         </div>
       </div>
     </div>

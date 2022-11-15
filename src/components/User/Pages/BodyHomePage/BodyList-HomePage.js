@@ -11,17 +11,17 @@ import tourApis from "../../../../apis/tourApis";
 import { STATUS_CODE } from "../../../../constants/indexs";
 function BodyList() {
   const [tourList, setTourList] = useState([])
-  const [isLoadData , setIsLoadData] = useState(true)
+  const [isLoadData, setIsLoadData] = useState(true)
 
-  const fetchData = async () => { 
+  const fetchData = async () => {
     setIsLoadData(true)
 
     const response = await tourApis.getAll()
 
-    if ( response.status === STATUS_CODE.OK) { 
+    if (response.status === STATUS_CODE.OK) {
       setTourList(response.data)
     } else {
-      console.log("Get list failed" ,response.status )
+      console.log("Get list failed", response.status)
     }
   }
   const newArr123 = tourList?.filter(
@@ -29,36 +29,16 @@ function BodyList() {
   );
   useEffect(() => {
     fetchData()
-  },[isLoadData])
+  }, [isLoadData])
 
 
   const startDay = new Date("2023-01-01").getTime();
   const endDay = new Date("2023-04-29").getTime();
 
-  
+  const newTourArrTo = newArr123?.filter((item) => item.to == "Đà Nẵng")
 
-  const renderItem = (value) => {
-    switch (value) {
-      case 1:
-        return newArr123
-          ?.filter((item) => item.to === "Đà Nẵng")
-          ?.map((item) => (
-            <BodyItem item={item}  key={item?.id}/>
-          ));
-      case 2:
-        return newArr123
-          ?.filter(
-            (item) =>
-              new Date(item.startDate).getTime() >= startDay &&
-              new Date(item.startDate).getTime() <= endDay
-          )
-          ?.map((item) => (
-            <BodyItem item={item} key={item?.id} />
-          ));
-
-      default:
-    }
-  };
+  const newTourArrSeason = newArr123?.filter((item) => new Date(item.startDate).getTime() >= startDay &&
+    new Date(item.startDate).getTime() <= endDay)
 
   const settings = {
     dots: false,
@@ -89,25 +69,45 @@ function BodyList() {
       },
     ],
   };
- 
+
 
   return (
     <div className="container__body">
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h2> * Đà Nẵng</h2>
+            {newTourArrTo.length === 0 ? (
+              <div className="error">
+                <h3>Chưa có dữ liệu !</h3>
+              </div>
+            ) : (
+              <div>
+                <h2 >  *Đà Nẵng</h2>
+                <Slider autoplay {...settings}>{newTourArrTo?.map((item) => (
+                  <BodyItem item={item} key={item?.id} />
+                ))}</Slider>
+              </div>
+            )}
           </div>
-          <Slider {...settings}>{renderItem(1)}</Slider>
         </div>
       </div>
       <Special />
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            <h2 >  *Tour Mùa Thu</h2>
+            {newTourArrSeason.length === 0 ? (
+              <div className="error">
+                <h3>Chưa có dữ liệu !</h3>
+              </div>
+            ) : (
+              <div>
+                <h2 >  *Tour Mùa Thu</h2>
+                <Slider autoplay {...settings}>{newTourArrSeason?.map((item) => (
+                  <BodyItem item={item} key={item?.id} />
+                ))}</Slider>
+              </div>
+            )}
           </div>
-          <Slider {...settings}>{renderItem(2)}</Slider>
         </div>
       </div>
       <Food />
