@@ -11,6 +11,8 @@ const Navbars = () => {
 
   const handleToChangeHome = () => {
     navigate("/");
+    window.scrollTo({ top: 500 });
+
   };
 
   const handleToChangeList = () => {
@@ -21,7 +23,7 @@ const Navbars = () => {
     navigate("/login");
   };
 
-  
+
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -37,7 +39,7 @@ const Navbars = () => {
 
   window.addEventListener("scroll", changeColor);
 
-  const closeMenu = () => setClick(false);
+  // const closeMenu = () => setClick(false);
 
   return (
     <div className={color ? "header header-bg" : "header"}>

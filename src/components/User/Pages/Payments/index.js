@@ -204,7 +204,7 @@ function Payments() {
         ))}
       </div>
       <div className="container__payments--wrap1">
-        <div className="accountInfo">
+        <div className="form--1">
           <h3>Thông Tin Khách Hàng</h3>
           <div className="accountInfo--form">
             <label>Mã Khách Hàng : </label>
@@ -222,47 +222,38 @@ function Payments() {
             <label>Phone : </label>
             <input value={account.phone} />
           </div>
-          <div className="accountInfo--formValue">
-            <div>
-              <label>Người Lớn</label>
-              <div>
-                <input
-                  type="number"
-                  name="number"
-                  onChange={(e) => handleChangeFieldsAdult(e)}
-                />
-              </div>
-            </div>
-            <div>
-              <label>Trẻ Em</label>
-              <div>
-                <input
-                  type="number"
-                  name="number"
-                  onChange={(e) => handleChangeFieldsChildren(e)}
-                />
-              </div>
-            </div>
-            <div>
-              <label>Em Bé</label>
-              <div>
-                <input
-                  type="number"
-                  name="number"
-                  onChange={(e) => handleChangeFieldsBaby(e)}
-                />
-              </div>
-            </div>
-            <div>
-              <label>Tổng Số Khách</label>
-              <div>
-                <input type="number" name="number" value={totalPeople} />
-              </div>
-            </div>
+        </div>
+        <div className="form--2">
+          <h3>Nhập Số Khách</h3>
+          <div className="accountInfo--form">
+            <label>Người Lớn :</label>
+            <input
+              type="number"
+              name="number"
+              onChange={(e) => handleChangeFieldsAdult(e)}
+            />
           </div>
-
+          <div className="accountInfo--form">
+            <label>Trẻ Em :</label>
+            <input
+              type="number"
+              name="number"
+              onChange={(e) => handleChangeFieldsChildren(e)}
+            />
+          </div>
+          <div className="accountInfo--form">
+            <label>Em Bé :</label>
+            <input
+              type="number"
+              name="number"
+              onChange={(e) => handleChangeFieldsBaby(e)}
+            />
+          </div>
+          <div className="accountInfo--form">
+            <label>Tổng Số Khách :</label>
+            <input type="number" name="number" value={totalPeople} />
+          </div>
           <span className="errorMess">{messErr}</span>
-
           <div className="totalPrice">
             <p>Tổng</p>
             <p>
@@ -273,7 +264,6 @@ function Payments() {
               }).format(total)}
             </p>
           </div>
-
           <div className="button__submit">
             {arrr.map((item) => (
               <Button
@@ -287,66 +277,6 @@ function Payments() {
             ))}
           </div>
         </div>
-        {/* <div className="paymentsMethod">
-          <div className="byCash">
-            <input type="checkbox" />
-            <div>
-              <h3>Thanh Toán Tiền Mặt</h3>
-              <div className="checkbox__info">
-                <p>
-                  "Quý khách hàng vui lòng liên hệ sales để được hỗ trợ thủ tục
-                  thanh toán trực tiếp."
-                </p>
-                <strong>Địa điềm thanh toán:</strong>
-                <p>
-                  Trụ sở thanh toán : <span>126 Xuân Thủy</span>{" "}
-                </p>
-                <p>
-                  Điện Thoại : <span>0779950318</span>{" "}
-                </p>
-                <p>
-                  FanPage : <span>0779950318</span>{" "}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="byCash">
-            <input type="checkbox" />
-            <div>
-              <h3>Thanh Toán Chuyển Khoản</h3>
-              <div className="checkbox__info">
-                <p>
-                  Quý khách vui lòng lựa chọn chuyển vào một trong các tài khoản
-                  dưới đây :
-                </p>
-                <div className="backing1">
-                  <p>
-                    <strong>Ngân hàng Vietcombank</strong>
-                  </p>
-                  <p>
-                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
-                  </p>
-                  <p>
-                    Số tài khoản : <span>0041000388783</span>{" "}
-                  </p>
-                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
-                </div>
-                <div>
-                  <p>
-                    <strong>Ngân hàng Tp Bank</strong>
-                  </p>
-                  <p>
-                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
-                  </p>
-                  <p>
-                    Số tài khoản : <span>03954560101</span>{" "}
-                  </p>
-                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       <div className="container__detailInfo">
@@ -483,3 +413,66 @@ function Payments() {
 }
 
 export default Payments;
+
+
+
+{/* <div className="paymentsMethod">
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Tiền Mặt</h3>
+              <div className="checkbox__info">
+                <p>
+                  "Quý khách hàng vui lòng liên hệ sales để được hỗ trợ thủ tục
+                  thanh toán trực tiếp."
+                </p>
+                <strong>Địa điềm thanh toán:</strong>
+                <p>
+                  Trụ sở thanh toán : <span>126 Xuân Thủy</span>{" "}
+                </p>
+                <p>
+                  Điện Thoại : <span>0779950318</span>{" "}
+                </p>
+                <p>
+                  FanPage : <span>0779950318</span>{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Chuyển Khoản</h3>
+              <div className="checkbox__info">
+                <p>
+                  Quý khách vui lòng lựa chọn chuyển vào một trong các tài khoản
+                  dưới đây :
+                </p>
+                <div className="backing1">
+                  <p>
+                    <strong>Ngân hàng Vietcombank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>0041000388783</span>{" "}
+                  </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Ngân hàng Tp Bank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>03954560101</span>{" "}
+                  </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}

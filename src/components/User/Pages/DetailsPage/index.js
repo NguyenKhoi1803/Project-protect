@@ -9,6 +9,7 @@ import { checkLogin } from "../../../../Auth";
 import { STATUS_CODE } from "../../../../constants/indexs";
 import TourItem from "../../TourProduct/tourItem";
 import BodyItem from "../BodyHomePage/BodyItem-HomePage";
+import Carousel from 'react-bootstrap/Carousel';
 import "./styles.scss";
 
 function DetailsPage() {
@@ -97,9 +98,28 @@ function DetailsPage() {
     <div className="container__detailsPage">
       {arr?.map((item) => (
         <div className="container__DetailsCard" key={item.id} item={item}>
+
           <div className="container__DetailsCard--all">
             <div className="container__detail">
-              <img className="container__detail--img" src={item.img} alt="" />
+
+
+
+              <Carousel  className="container__detail--img">
+                <Carousel.Item>
+                  <img src={item.img.img1} alt="" />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={item.img.img2} alt="" />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={item.img.img3} alt="" />
+
+                </Carousel.Item>
+              </Carousel>
+
+
               <div className="container__detail-details">
                 <h4>{item.nameTour}</h4>
 
@@ -299,7 +319,7 @@ function DetailsPage() {
         </div>
       ))}
       <div className="aboutTOur">
-        <h4>Tour Liên Quan</h4>
+        <h4>Tour Tương Tự</h4>
         <Slider {...settings}>
           {aboutTourArr?.map((item) => (
             <BodyItem item={item} key={item?.id} />

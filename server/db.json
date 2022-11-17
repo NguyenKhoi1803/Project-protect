@@ -59,7 +59,11 @@
       "numberDay": 3,
       "startDate": "2022-12-06",
       "endDate": "2022-12-09",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/My_Khe_Beach_2.jpg/1280px-My_Khe_Beach_2.jpg",
+      "img": {
+        "img1": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dragon_Bridge_%28Danang%29_20190919.jpg/1920px-Dragon_Bridge_%28Danang%29_20190919.jpg",
+        "img2": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg/1920px-Han_River_Bridge_in_Vietnam_Night_View.jpg",
+        "img3": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Da_Nang_Marble_Mountains_2020_IMG_4008.jpg/1920px-Da_Nang_Marble_Mountains_2020_IMG_4008.jpg"
+      },
       "nameTour": "Tour Du Lịch Đà Nẵng - Hội An - Huế",
       "priceAdult": 1000,
       "priceChildren": 700,
@@ -85,6 +89,40 @@
       "quantity": 80,
       "descriptions": "Thành phố Đà Nẵng là thành phố tổng hợp đa ngành, đa lĩnh vực; trung tâm chính trị - kinh tế - xã hội với vai trò là trung tâm công nghiệp, tài chính, du lịch, dịch vụ, văn hóa, giáo dục - đào tạo, y tế chất lượng cao, khoa học - công nghệ, khởi nghiệp, đổi mới sáng tạo của khu vực Miền Trung - Tây Nguyên và cả nước; trung tâm tổ chức các sự kiện tầm khu vực và quốc tế. Thành phố Đà Nẵng đóng vai trò hạt nhân, quan trọng trong Vùng kinh tế trọng điểm miền Trung, đồng thời cũng là một trong 5 thành phố trực thuộc Trung ương ở Việt Nam, đô thị loại I, trung tâm cấp quốc gia, cùng với Hải Phòng và Cần Thơ.",
       "id": 2
+    },
+    {
+      "codeTour": "DN-1668677550062",
+      "from": "Hồ Chí Minh",
+      "to": "Đà Nẵng",
+      "numberDay": 3,
+      "startDate": "2023-01-11",
+      "endDate": "2023-01-14",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg/1920px-Han_River_Bridge_in_Vietnam_Night_View.jpg",
+      "nameTour": "Đà Nẵng - Biển Mỹ Khê - Bà Nà núi chúa",
+      "priceAdult": 5000,
+      "priceChildren": 4000,
+      "priceBaby": 3000,
+      "vehicle": "xe-bus",
+      "quantity": 57,
+      "descriptions": "Nhận nhiệm vụ, Đại úy Debay phải mất nhiều tháng trời lang thang khắp Việt Nam để tìm cho ra một Đà Lạt thứ hai. Tháng 4/1901, ông phát hiện ra “Núi Chúa” (tức Bà Nà), một ngọn núi cao với địa hình tương đối bằng phẳng, khí hậu bán ôn đới dễ chịu mát mẻ, tương tự như Đà Lạt và chỉ cách thành phố Đà Nẵng về phía Tây chừng 46km.\n\nNhận định đây là vùng đất lý tưởng có thể xây dựng khu nghỉ dưỡng theo ý muốn, ngày 30/11/1911, Quan toàn quyền Paul Doumer đã ra nghị định biến Bà Nà thành một khu bảo tồn lâm nghiệp để tiện cho việc nghiên cứu về Bà Nà được kỹ lưỡng hơn.[2]\n\n",
+      "id": 3
+    },
+    {
+      "codeTour": "DN-1668677674631",
+      "from": "Hà Nội",
+      "to": "Đà Nẵng",
+      "numberDay": 4,
+      "startDate": "2022-12-24",
+      "endDate": "2022-12-28",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Da_Nang_Marble_Mountains_2020_IMG_4008.jpg/1920px-Da_Nang_Marble_Mountains_2020_IMG_4008.jpg",
+      "nameTour": "Đà Nẵng - thành phố đáng sống ",
+      "priceAdult": 6000000,
+      "priceChildren": 4000000,
+      "priceBaby": 2000000,
+      "vehicle": "máy bay",
+      "quantity": 40,
+      "descriptions": "Đà Nẵng là một tên dịch theo kiểu dịch âm kiêm dịch ý một phần, nếu phiên âm Hán-Việt thì đọc thành Đà Nhương, địa danh cần dịch đã được dịch bằng chữ Hán có âm đọc (âm Hán Việt) tương cận, ý nghĩa của chữ Hán dùng để dịch có liên quan nhất định với ý nghĩa của tên gọi được dịch. Phần lớn các ý kiến đều cho rằng tên gọi Đà Nẵng xuất phát từ vị trí nằm ở cửa sông Hàn của thành phố. Đó là một biến dạng của từ Chăm cổ \"Da nak\", được dịch là \"cửa sông lớn\".[15][16]",
+      "id": 4
     }
   ]
 }
