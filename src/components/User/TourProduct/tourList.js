@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
 import "./styles.scss";
-import axios from "axios";
+
 
 function TourList() {
   const [items, setItems] = useState([]);

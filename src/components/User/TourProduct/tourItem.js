@@ -15,66 +15,74 @@ function TourItem({ item }) {
   const navigate = useNavigate();
 
   const handleToDetails = () => {
-    navigate(`/tour/${item.id}`)
+    navigate(`/tour/${item.id}`);
   };
-
-
 
   return (
     <div className="container__tourItem">
-      <img className="container__tourItem--img" src={item.img} alt="" />
+      <div className="container__tourItem--wrap">
+        <div className="container__tourItem--img">
+          <img src={item.img} alt="" />
+        </div>
 
-      <div className="container__tourItem-details">
-        <div className="container__tourItem--info" >
-          <h4>{item.nameTour}</h4>
+        <div className="container__tourItem--details">
+          <div className="container__tourItem--info">
+            <h4>{item.nameTour}</h4>
 
-          <p>
-            {" "}
-            <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
-          </p>
-          <p>
-            <ClockCircleOutlined /> <span> Thời Gian </span> : {item.numberDay}{" "}
-            Ngày
-          </p>
-          <p>
-            {" "}
-            <AimOutlined /> <span>Nơi Đến</span> : {item.to}
-          </p>
+            <div className="container__tourItem--allInfo">
+              <div className="tourItem__Info--1">
+                <p>
+                  {" "}
+                  <AimOutlined /> <span> Nơi Khởi Hành</span> : {item.from}
+                </p>
 
-          <p>
-            {" "}
-            <CarOutlined /> <span>Phương tiện di chuyển</span> : {item.vehicle}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> <span>Ngày Khởi Hành</span> : {item.startDate}
-          </p>
+                <p>
+                  {" "}
+                  <AimOutlined /> <span>Nơi Đến</span> : {item.to}
+                </p>
 
-          <p>
-            {" "}
-            <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
-          </p>
-          <p>
-            {" "}
-            <CalendarOutlined /> <span> Quantity </span> : {item.quantity}
-          </p>
-          <p>
-            {" "}
-            <span>Gía 1 Người</span> :{" "}
+                <p>
+                  {" "}
+                  <CarOutlined /> <span>Phương tiện di chuyển</span> :{" "}
+                  {item.vehicle}
+                </p>
+                <p>
+                  {" "}
+                  <CalendarOutlined /> <span> Quantity </span> : {item.quantity}
+                </p>
+              </div>
+              <div className="tourItem__Info--2">
+                <p>
+                  {" "}
+                  <CalendarOutlined /> <span>Ngày Khởi Hành</span> :{" "}
+                  {item.startDate}
+                </p>
+
+                <p>
+                  {" "}
+                  <CalendarOutlined /> <span>Ngày Về</span> : {item.endDate}
+                </p>
+
+                <p>
+                  <ClockCircleOutlined /> <span> Thời Gian </span> :{" "}
+                  {item.numberDay} Ngày
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <Button
+            variant="success"
+            className="addToCart"
+            onClick={handleToDetails}
+          >
+            <span>Giá Chỉ Từ</span> :{" "}
             {new Intl.NumberFormat("vi-EN", {
               style: "currency",
               currency: "VND",
             }).format(item.priceAdult)}
-          </p>
+          </Button>
         </div>
-
-        <Button
-          variant="success"
-          className="addToCart"
-          onClick={handleToDetails}
-        >
-          Chi Tiết
-        </Button>
       </div>
     </div>
   );
