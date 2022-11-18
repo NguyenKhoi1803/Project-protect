@@ -17,7 +17,6 @@ import { addTour } from "../../../store/user/fetchTour";
 const { RangePicker } = DatePicker;
 
 const disabledDate = (current) => {
-  // Can not select days before today and today
   return current && current < moment().endOf("day");
 };
 
@@ -70,7 +69,9 @@ const AddTour = () => {
       numberDay: numberDate,
       startDate: rangepicker.startDate,
       endDate: rangepicker.endDate,
-      img: fieldsValue.img,
+      img1: fieldsValue.img1,
+      img2: fieldsValue.img2,
+      img3: fieldsValue.img3,
       nameTour: fieldsValue.nameTour,
       priceAdult: fieldsValue.gia1,
       priceChildren: fieldsValue.gia2,
@@ -89,8 +90,30 @@ const AddTour = () => {
       <div className="container__addProduct--form">
         <Form name="validate_other" {...formItemLayout} onFinish={onFinish}>
           <Form.Item
-            name="img"
-            label="Upload Hình ảnh"
+            name="img1"
+            label="Upload Hình ảnh 1"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="img2"
+            label="Upload Hình ảnh 2"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="img3"
+            label="Upload Hình ảnh 3"
             rules={[
               {
                 required: true,

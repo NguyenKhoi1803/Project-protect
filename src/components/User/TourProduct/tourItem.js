@@ -22,7 +22,7 @@ function TourItem({ item }) {
     <div className="container__tourItem">
       <div className="container__tourItem--wrap">
         <div className="container__tourItem--img">
-          <img src={item.img.img1} alt="" />
+          <img src={item.img1} alt="" />
         </div>
 
         <div className="container__tourItem--details">

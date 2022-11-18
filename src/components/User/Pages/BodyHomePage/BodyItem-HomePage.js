@@ -16,7 +16,7 @@ function BodyItem({ item }) {
     <div className="CardItem">
       <div className="card">
         <a className="card-top">
-          <img src={item.img} alt="" onClick={handleToItem} />
+          <img src={item.img1} alt="" onClick={handleToItem} />
         </a>
 
         <div className="card-bottom">

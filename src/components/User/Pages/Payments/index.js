@@ -125,7 +125,7 @@ function Payments() {
         {arrr.map((item) => (
           <div className="productItem" key={item.id}>
             <div className="productItem__img">
-              <img src={item.img} alt="" />
+              <img src={item.img1} alt="" />
             </div>
             <div className="productItem__details">
               <div className="productItem__details--name">
@@ -204,82 +204,144 @@ function Payments() {
         ))}
       </div>
       <div className="container__payments--wrap1">
-        <div className="form--1">
-          <h3>Thông Tin Khách Hàng</h3>
-          <div className="accountInfo--form">
-            <label>Mã Khách Hàng : </label>
-            <input value={account.id} />
+        <div className="infoForm">
+          <div className="form--1">
+            <h3>Thông Tin Khách Hàng</h3>
+            <div className="accountInfo--form">
+              <label>Mã Khách Hàng : </label>
+              <input value={account.id} />
+            </div>
+            <div className="accountInfo--form">
+              <label>Họ Và Tên : </label>
+              <input value={account.fullname} />
+            </div>
+            <div className="accountInfo--form">
+              <label>Email : </label>
+              <input value={account.email} />
+            </div>
+            <div className="accountInfo--form">
+              <label>Phone : </label>
+              <input value={account.phone} />
+            </div>
           </div>
-          <div className="accountInfo--form">
-            <label>Họ Và Tên : </label>
-            <input value={account.fullname} />
-          </div>
-          <div className="accountInfo--form">
-            <label>Email : </label>
-            <input value={account.email} />
-          </div>
-          <div className="accountInfo--form">
-            <label>Phone : </label>
-            <input value={account.phone} />
+          <div className="form--2">
+            <h3>Nhập Số Khách</h3>
+            <div className="accountInfo--form">
+              <label>Người Lớn :</label>
+              <input
+                type="number"
+                name="number"
+                onChange={(e) => handleChangeFieldsAdult(e)}
+              />
+            </div>
+            <div className="accountInfo--form">
+              <label>Trẻ Em :</label>
+              <input
+                type="number"
+                name="number"
+                onChange={(e) => handleChangeFieldsChildren(e)}
+              />
+            </div>
+            <div className="accountInfo--form">
+              <label>Em Bé :</label>
+              <input
+                type="number"
+                name="number"
+                onChange={(e) => handleChangeFieldsBaby(e)}
+              />
+            </div>
+            <div className="accountInfo--form">
+              <label>Tổng Số Khách :</label>
+              <input type="number" name="number" value={totalPeople} />
+            </div>
+            <span className="errorMess">{messErr}</span>
+            <div className="totalPrice">
+              <p>Tổng</p>
+              <p>
+                {" "}
+                {new Intl.NumberFormat("vi-VN", {
+                  style: "currency",
+                  currency: "VND",
+                }).format(total)}
+              </p>
+            </div>
+            <div className="button__submit">
+              {arrr.map((item) => (
+                <Button
+                  key={item.id}
+                  className="btn"
+                  variant="primary"
+                  onClick={() => handleSubmit(item.quantity)}
+                >
+                  Hoàn Thành
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="form--2">
-          <h3>Nhập Số Khách</h3>
-          <div className="accountInfo--form">
-            <label>Người Lớn :</label>
-            <input
-              type="number"
-              name="number"
-              onChange={(e) => handleChangeFieldsAdult(e)}
-            />
+        <div className="paymentsMethod">
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Tiền Mặt</h3>
+              <div className="checkbox__info">
+                <p>
+                  Quý khách hàng vui lòng liên hệ sales để được hỗ trợ thủ tục
+                  thanh toán trực tiếp.
+                </p>
+                <strong>Địa điềm thanh toán:</strong>
+                <p>
+                  Trụ sở thanh toán : <span>126 Xuân Thủy</span>{" "}
+                </p>
+                <p>
+                  Điện Thoại : <span>0779950318</span>{" "}
+                </p>
+                <p>
+                  FanPage : <span>0779950318</span>{" "}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="accountInfo--form">
-            <label>Trẻ Em :</label>
-            <input
-              type="number"
-              name="number"
-              onChange={(e) => handleChangeFieldsChildren(e)}
-            />
-          </div>
-          <div className="accountInfo--form">
-            <label>Em Bé :</label>
-            <input
-              type="number"
-              name="number"
-              onChange={(e) => handleChangeFieldsBaby(e)}
-            />
-          </div>
-          <div className="accountInfo--form">
-            <label>Tổng Số Khách :</label>
-            <input type="number" name="number" value={totalPeople} />
-          </div>
-          <span className="errorMess">{messErr}</span>
-          <div className="totalPrice">
-            <p>Tổng</p>
-            <p>
-              {" "}
-              {new Intl.NumberFormat("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              }).format(total)}
-            </p>
-          </div>
-          <div className="button__submit">
-            {arrr.map((item) => (
-              <Button
-                key={item.id}
-                className="btn"
-                variant="primary"
-                onClick={() => handleSubmit(item.quantity)}
-              >
-                Hoàn Thành
-              </Button>
-            ))}
+          <div className="byCash">
+            <input type="checkbox" />
+            <div>
+              <h3>Thanh Toán Chuyển Khoản</h3>
+              <div className="checkbox__info">
+                <p>
+                  Quý khách vui lòng lựa chọn chuyển vào một trong các tài khoản
+                  dưới đây :
+                </p>
+                <div className="backing1">
+                  <p>
+                    <strong>Ngân hàng Vietcombank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>0041000388783</span>{" "}
+                  </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
+                </div>
+                <div>
+                  <p>
+                    <strong>Ngân hàng Tp Bank</strong>
+                  </p>
+                  <p>
+                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
+                  </p>
+                  <p>
+                    Số tài khoản : <span>03954560101</span>{" "}
+                  </p>
+                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="container__detailInfo">
+      {/* <div className="container__detailInfo">
         <div className="container__adult">
           {[...Array(parseInt(numberAdult)).keys()].map((item) => (
             <div key={item} className="formAdult">
@@ -407,72 +469,9 @@ function Payments() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
 export default Payments;
-
-
-
-{/* <div className="paymentsMethod">
-          <div className="byCash">
-            <input type="checkbox" />
-            <div>
-              <h3>Thanh Toán Tiền Mặt</h3>
-              <div className="checkbox__info">
-                <p>
-                  "Quý khách hàng vui lòng liên hệ sales để được hỗ trợ thủ tục
-                  thanh toán trực tiếp."
-                </p>
-                <strong>Địa điềm thanh toán:</strong>
-                <p>
-                  Trụ sở thanh toán : <span>126 Xuân Thủy</span>{" "}
-                </p>
-                <p>
-                  Điện Thoại : <span>0779950318</span>{" "}
-                </p>
-                <p>
-                  FanPage : <span>0779950318</span>{" "}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="byCash">
-            <input type="checkbox" />
-            <div>
-              <h3>Thanh Toán Chuyển Khoản</h3>
-              <div className="checkbox__info">
-                <p>
-                  Quý khách vui lòng lựa chọn chuyển vào một trong các tài khoản
-                  dưới đây :
-                </p>
-                <div className="backing1">
-                  <p>
-                    <strong>Ngân hàng Vietcombank</strong>
-                  </p>
-                  <p>
-                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
-                  </p>
-                  <p>
-                    Số tài khoản : <span>0041000388783</span>{" "}
-                  </p>
-                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
-                </div>
-                <div>
-                  <p>
-                    <strong>Ngân hàng Tp Bank</strong>
-                  </p>
-                  <p>
-                    Đơn vị thụ hưởng : <span>Công ty MTV Local Tourist</span>{" "}
-                  </p>
-                  <p>
-                    Số tài khoản : <span>03954560101</span>{" "}
-                  </p>
-                  <p>Nội dung chuyển khoản : Tên khách hàng + Mã Đơn Hàng</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}

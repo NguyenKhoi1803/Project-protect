@@ -9,47 +9,47 @@ import { checkLogin } from "../../../../Auth";
 import { STATUS_CODE } from "../../../../constants/indexs";
 import TourItem from "../../TourProduct/tourItem";
 import BodyItem from "../BodyHomePage/BodyItem-HomePage";
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 import "./styles.scss";
 
 function DetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-
-  const [tourList, setTourList] = useState([])
-  const [isLoadData, setIsLoadData] = useState(true)
+  const [tourList, setTourList] = useState([]);
+  const [isLoadData, setIsLoadData] = useState(true);
 
   const fetchData = async () => {
-    setIsLoadData(true)
+    setIsLoadData(true);
 
-    const response = await tourApis.getAll()
+    const response = await tourApis.getAll();
 
     if (response.status === STATUS_CODE.OK) {
-      setTourList(response.data)
+      setTourList(response.data);
     } else {
-      console.log("Get list failed", response.status)
+      console.log("Get list failed", response.status);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [isLoadData])
+    fetchData();
+  }, [isLoadData]);
 
   const newArr123 = tourList?.filter(
-    (item) => new Date(item.startDate).getTime() > (new Date().getTime() - 21600000) && item.quantity > 0
+    (item) =>
+      new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
+      item.quantity > 0
   );
-
 
   const arr = newArr123?.filter((item) => item.id == id);
   const ids = arr?.map((item) => item.id);
-  const toTour = arr?.map((item) => item.to)
+  const toTour = arr?.map((item) => item.to);
 
+  const aboutTourArr = newArr123?.filter(
+    (item) => item.to == toTour && item.id != ids
+  );
 
-  const aboutTourArr = newArr123?.filter((item) => item.to == toTour && item.id != ids)
-
-
-  console.log("aboutTourArr :", aboutTourArr)
+  console.log("aboutTourArr :", aboutTourArr);
 
   const handlePayments = () => {
     if (checkLogin()) {
@@ -62,7 +62,6 @@ function DetailsPage() {
       navigate("/login");
     }
   };
-
 
   const settings = {
     dots: false,
@@ -98,27 +97,19 @@ function DetailsPage() {
     <div className="container__detailsPage">
       {arr?.map((item) => (
         <div className="container__DetailsCard" key={item.id} item={item}>
-
           <div className="container__DetailsCard--all">
             <div className="container__detail">
-
-
-
-              <Carousel  className="container__detail--img">
+              <Carousel className="container__detail--img">
                 <Carousel.Item>
-                  <img src={item.img.img1} alt="" />
-
+                  <img src={item.img1} alt="" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img src={item.img.img2} alt="" />
-
+                  <img src={item.img2} alt="" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img src={item.img.img3} alt="" />
-
+                  <img src={item.img3} alt="" />
                 </Carousel.Item>
               </Carousel>
-
 
               <div className="container__detail-details">
                 <h4>{item.nameTour}</h4>
@@ -259,56 +250,135 @@ function DetailsPage() {
                         <li>Chi phí xe máy lạnh phục vụ theo chương trình</li>
                         <li>Chi phí ăn - uống theo chương trình.</li>
                         <li>Chi phí tham quan, hướng dẫn viên tiếng Việt</li>
-                        <li>Chi phí khách sạn// resort 4 sao tiêu chuẩn 2 -3 khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn tương ứng: + 850.000 đ/ khách.</li>
+                        <li>
+                          Chi phí khách sạn// resort 4 sao tiêu chuẩn 2 -3
+                          khách/phòng. Lẻ khách ngủ giường phụ hoặc chịu chi phí
+                          phụ thu phòng đơn tương ứng: + 850.000 đ/ khách.
+                        </li>
                       </ul>
                     </p>
 
                     <p>
                       <h5>THÔNG TIN HƯỚNG DẪN :</h5>
-                      <span>* Vé trẻ em:   </span>
+                      <span>* Vé trẻ em: </span>
                       <ul>
-                        <li>Trẻ em từ  6 đến 11 tuổi mua một nửa giá vé người lớn, trẻ em trên 11 tuổi mua vé như người lớn.</li>
-                        <li>Đối với trẻ em dưới 6 tuổi, gia đình tự lo cho bé ăn ngủ và tự trả phí tham quan (nếu có). Hai người lớn chỉ được kèm một trẻ em. Từ trẻ thứ 2 trở lên, mỗi em phải 50% giá vé người lớn.</li>
-                        <li>Tiêu chuẩn 50% giá tour bao gồm: Suất ăn, ghế ngồi và ngủ ghép chung với gia đình.</li>
+                        <li>
+                          Trẻ em từ 6 đến 11 tuổi mua một nửa giá vé người lớn,
+                          trẻ em trên 11 tuổi mua vé như người lớn.
+                        </li>
+                        <li>
+                          Đối với trẻ em dưới 6 tuổi, gia đình tự lo cho bé ăn
+                          ngủ và tự trả phí tham quan (nếu có). Hai người lớn
+                          chỉ được kèm một trẻ em. Từ trẻ thứ 2 trở lên, mỗi em
+                          phải 50% giá vé người lớn.
+                        </li>
+                        <li>
+                          Tiêu chuẩn 50% giá tour bao gồm: Suất ăn, ghế ngồi và
+                          ngủ ghép chung với gia đình.
+                        </li>
                       </ul>
-                      <span>* Hành lý và giấy tờ tùy thân:   </span>
+                      <span>* Hành lý và giấy tờ tùy thân: </span>
                       <ul>
-                        <li>Du khách mang theo giấy Chứng Minh Nthân Dân hoặc Hộ chiếu. Đối với du khách là Việt kiều, Quốc tế nhập cảnh Việt Nam bằng visa rời, vui lòng mang theo visa khi đăng ký và đi tour.</li>
-                        <li>Khách lớn tuổi (từ 70 tuổi trở lên), khách tàn tật tham gia tour, phải có thân nhân đi kèm và cam kết đảm bảo đủ sức khỏe khi tham gia tour du lịch.</li>
-                        <li>Trẻ em dưới 14 tuổi khi đi tour phải mang theo Giấy khai sinh hoặc Hộ chiếu. Trẻ em từ 14 tuổi trở lên phải mang theo giấy Chứng Minh Nhân Dân hoặc Hộ chiếu riêng</li>
-                        <li>Tất cả giấy tờ tùy thân mang theo đều phải bản chính</li>
-                        <li>Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản hành lý, tiền bạc, tư trang trong suốt thời gian đi du lịch.</li>
-                        <li>Khách Việt Nam ở cùng phòng với khách Quốc tế  hoặc Việt kiều yêu cầu phải có giấy hôn thú.</li>
+                        <li>
+                          Du khách mang theo giấy Chứng Minh Nthân Dân hoặc Hộ
+                          chiếu. Đối với du khách là Việt kiều, Quốc tế nhập
+                          cảnh Việt Nam bằng visa rời, vui lòng mang theo visa
+                          khi đăng ký và đi tour.
+                        </li>
+                        <li>
+                          Khách lớn tuổi (từ 70 tuổi trở lên), khách tàn tật
+                          tham gia tour, phải có thân nhân đi kèm và cam kết đảm
+                          bảo đủ sức khỏe khi tham gia tour du lịch.
+                        </li>
+                        <li>
+                          Trẻ em dưới 14 tuổi khi đi tour phải mang theo Giấy
+                          khai sinh hoặc Hộ chiếu. Trẻ em từ 14 tuổi trở lên
+                          phải mang theo giấy Chứng Minh Nhân Dân hoặc Hộ chiếu
+                          riêng
+                        </li>
+                        <li>
+                          Tất cả giấy tờ tùy thân mang theo đều phải bản chính
+                        </li>
+                        <li>
+                          Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản
+                          hành lý, tiền bạc, tư trang trong suốt thời gian đi du
+                          lịch.
+                        </li>
+                        <li>
+                          Khách Việt Nam ở cùng phòng với khách Quốc tế hoặc
+                          Việt kiều yêu cầu phải có giấy hôn thú.
+                        </li>
                       </ul>
                     </p>
 
-
                     <p>
-                      <h5>Trường hợp hủy vé tour, du khách vui lòng thanh toán các khoản lệ phí hủy tour như sau:</h5>
-                      <span>* Đối với ngày thường:   </span>
+                      <h5>
+                        Trường hợp hủy vé tour, du khách vui lòng thanh toán các
+                        khoản lệ phí hủy tour như sau:
+                      </h5>
+                      <span>* Đối với ngày thường: </span>
                       <ul>
-                        <li>Du khách chuyển đổi tour sang ngày khác và báo trước ngày khởi hành trước 7 ngày sẽ không chịu phí .</li>
-                        <li>Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành, chịu phạt 90% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành từ 2 - 4 ngày, chịu phạt 50% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành từ 5 - 7 ngày, chịu phạt 30% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành 7 ngày, chịu phạt 10% tiền tour.</li>
+                        <li>
+                          Du khách chuyển đổi tour sang ngày khác và báo trước
+                          ngày khởi hành trước 7 ngày sẽ không chịu phí .
+                        </li>
+                        <li>
+                          Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành,
+                          chịu phạt 90% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành từ 2 - 4 ngày, chịu phạt
+                          50% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành từ 5 - 7 ngày, chịu phạt
+                          30% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành 7 ngày, chịu phạt 10% tiền
+                          tour.
+                        </li>
                       </ul>
-                      <span>* Đối với dịp Lễ, Tết:   </span>
+                      <span>* Đối với dịp Lễ, Tết: </span>
                       <ul>
-                        <li>Du khách chuyển đổi tour sang ngày khác và báo trước ngày khởi hành trước 15 ngày sẽ không chịu phí .</li>
-                        <li>Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành, chịu phạt 100% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành từ 2 - 7 ngày, chịu phạt 80% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành từ 8 - 15 ngày, chịu phạt 50% tiền tour.</li>
-                        <li>Hủy vé trước ngày khởi hành 15 ngày, chịu phạt 20% tiền tour.</li>
+                        <li>
+                          Du khách chuyển đổi tour sang ngày khác và báo trước
+                          ngày khởi hành trước 15 ngày sẽ không chịu phí .
+                        </li>
+                        <li>
+                          Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành,
+                          chịu phạt 100% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành từ 2 - 7 ngày, chịu phạt
+                          80% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành từ 8 - 15 ngày, chịu phạt
+                          50% tiền tour.
+                        </li>
+                        <li>
+                          Hủy vé trước ngày khởi hành 15 ngày, chịu phạt 20%
+                          tiền tour.
+                        </li>
                       </ul>
                     </p>
 
                     <p>
                       <span>* Ghi chú khác: </span>
                       <ul>
-                        <li>Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).</li>
-                        <li>Du khách có mặt tại điểm đón trước 15 phút. Du khách đến trễ khi xe đã khởi hành hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành’.</li>
-
+                        <li>
+                          Công ty xuất hóa đơn cho du khách có nhu cầu (Trong
+                          thời hạn 7 ngày sau khi kết thúc chương trình du
+                          lịch). Du khách được chọn một trong những chương trình
+                          khuyến mãi dành cho khách lẻ định kỳ (Nếu có).
+                        </li>
+                        <li>
+                          Du khách có mặt tại điểm đón trước 15 phút. Du khách
+                          đến trễ khi xe đã khởi hành hoặc hủy tour không báo
+                          trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi
+                          hành’.
+                        </li>
                       </ul>
                     </p>
                   </Accordion.Body>
@@ -319,15 +389,16 @@ function DetailsPage() {
         </div>
       ))}
       <div className="aboutTOur">
-        <h4>Tour Tương Tự</h4>
         <Slider {...settings}>
           {aboutTourArr?.map((item) => (
-            <BodyItem item={item} key={item?.id} />
+            <div>
+              <h4>Tour Tương Tự</h4>
+              <BodyItem item={item} key={item?.id} />
+            </div>
           ))}
         </Slider>
       </div>
-
-    </div >
+    </div>
   );
 }
 

@@ -124,6 +124,7 @@
 .container__payments--wrap {
     margin-top: 50px;
 }
+
 .container__payments--wrap1 {
     width: 70%;
     margin: auto;
@@ -131,39 +132,12 @@
     justify-content: space-between;
     margin-bottom: 30px;
 
-    & .form--1 {
-        width: 40%;
-        background: #f5f4ef;
-        padding: 20px;
-        height: 100%;
-
-        & .accountInfo--form {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-    }
-
-    & .form--2 {
+    & .infoForm {
         width: 50%;
-        background: #f5f4ef;
-        padding: 20px;
-        & .accountInfo--form {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        width: 80%;
-        display: block;
 
         & .form--1 {
-            width: 100%;
             background: #f5f4ef;
             padding: 20px;
-            height: 100%;
 
             & .accountInfo--form {
                 display: flex;
@@ -173,10 +147,9 @@
         }
 
         & .form--2 {
-            width: 100%;
             background: #f5f4ef;
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 30px;
 
             & .accountInfo--form {
                 display: flex;
@@ -184,18 +157,61 @@
                 margin-top: 10px;
             }
         }
+
+    }
+
+    & .paymentsMethod {
+        width: 40%;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 80%;
+        display: block;
+
+        & .infoForm {
+            width: 100%;
+
+            & .form--1 {
+                background: #f5f4ef;
+                padding: 20px;
+
+                & .accountInfo--form {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                }
+            }
+
+            & .form--2 {
+                background: #f5f4ef;
+                padding: 20px;
+                margin-top: 30px;
+
+                & .accountInfo--form {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                }
+            }
+
+        }
+
+        & .paymentsMethod {
+            margin-top: 50px;
+            width: 100%;
+        }
+
     }
 }
 
 .byCash {
     display: flex;
     justify-content: center;
-    padding: 20px;
     align-items: center;
-    // border-bottom: 1px solid black;
+    margin-bottom: 30px;
 
     & input {
-        width: 100px;
+        width: 20%;
     }
 
     .backing1 {
