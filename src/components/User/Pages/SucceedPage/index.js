@@ -57,6 +57,11 @@ function SucceedPage() {
                 </p>
                 <p>
                   {" "}
+                  <span className="spn-at">Hình Thức Thanh Toán :</span>{" "}
+                  <span className="spn-as">{item.paymentMethod}</span>{" "}
+                </p>
+                <p>
+                  {" "}
                   <span className="spn-at">Tổng Tiền :</span>{" "}
                   <span className="spn-as">
                     {new Intl.NumberFormat("vi-VN", {

@@ -16,8 +16,6 @@ function Payments() {
   const [tourList, setTourList] = useState([]);
   const [isLoadData, setIsLoadData] = useState(true);
 
-  console.log("location", location.pathname);
-
   const fetchData = async () => {
     setIsLoadData(true);
 
@@ -50,7 +48,7 @@ function Payments() {
   const [numberChildren, setNumberChildren] = useState("0");
   const [numberBaby, setNumberBaby] = useState("0");
   const [messErr, setMessErr] = useState("");
-
+  const [paymentsMethod, setPaymentsMethod] = useState("");
   const handleChangeFieldsAdult = (e) => {
     setNumberAdult(e.target.value || 0);
     setMessErr("");
@@ -96,6 +94,7 @@ function Payments() {
         status: 0,
         infos: list,
         totalPeople,
+        paymentMethod: paymentsMethod,
       };
 
       const response = await cartApis.add(cart);
@@ -281,7 +280,12 @@ function Payments() {
         </div>
         <div className="paymentsMethod">
           <div className="byCash">
-            <input type="checkbox" />
+            <input
+              type="radio"
+              value="Trực Tiếp"
+              name="payment_method"
+              onChange={(e) => setPaymentsMethod(e.target.value)}
+            />
             <div>
               <h3>Thanh Toán Tiền Mặt</h3>
               <div className="checkbox__info">
@@ -303,7 +307,12 @@ function Payments() {
             </div>
           </div>
           <div className="byCash">
-            <input type="checkbox" />
+            <input
+              type="radio"
+              value="Chuyển Khoản"
+              name="payment_method"
+              onChange={(e) => setPaymentsMethod(e.target.value)}
+            />
             <div>
               <h3>Thanh Toán Chuyển Khoản</h3>
               <div className="checkbox__info">
