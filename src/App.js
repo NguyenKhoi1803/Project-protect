@@ -21,19 +21,22 @@ import Payments from "./components/User/Pages/Payments";
 import Search from "./components/User/SearchForm/Search";
 import TourList from "./components/User/TourProduct/tourList";
 import ScrollTop from "./components/ScrollTop";
+import CheckOrder from "./components/User/Pages/CheckOrder";
 
 function App() {
+
   return (
     <Provider store={store}>
       <BrowserRouter>
-      <Header />
-      <ScrollTop/>
+        <Header />
+        <ScrollTop />
         <Routes>
           <Route path="/addtour" element={<AddTour />}></Route>
           <Route path="/admin" element={<ChartPages />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/" element={<BodyList />}></Route>
+          <Route path="/checkOrder" element={<CheckOrder />}></Route>
           <Route path="/tour" element={<TourList />}></Route>
           <Route path="/tour/:id" element={<DetailsPage />}></Route>
           <Route
@@ -45,7 +48,7 @@ function App() {
             element={<SucceedPage />}
           ></Route>
         </Routes>
-        <Footer /> 
+        <Footer />
       </BrowserRouter>
     </Provider>
   );
@@ -55,4 +58,3 @@ export default App;
 
 
 
- 

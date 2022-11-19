@@ -24,6 +24,16 @@ const Navbars = () => {
   };
 
 
+  const handleToOrder = () => {
+    if (checkLogin()) {
+      navigate("/checkOrder")
+    } else {
+      alert("chua dang nhap ")
+      navigate("/login"); 
+    }
+  }
+
+
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -56,10 +66,13 @@ const Navbars = () => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <a onClick={handleToChangeHome}>Home</a>
+            <a onClick={handleToChangeHome}>Trang Chủ</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleToChangeList}>All Tour</a>
+            <a onClick={handleToChangeList}>Danh Sách Tour</a>
+          </li>
+          <li className="nav-item">
+            <a onClick={handleToOrder}>Đơn Hàng</a>
           </li>
           <li className="nav-item">
             {checkLogin() ? (

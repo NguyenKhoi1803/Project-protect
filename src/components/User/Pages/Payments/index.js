@@ -91,7 +91,7 @@ function Payments() {
         numberBaby: numberBaby,
         total: total,
         codeOrder: ids,
-        status: 0,
+        status: "Chưa thanh toán",
         infos: list,
         totalPeople,
         paymentMethod: paymentsMethod,
