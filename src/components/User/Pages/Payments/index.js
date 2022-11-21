@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+
+import { useNavigate, useParams } from "react-router-dom";
 import { getAccountInfo } from "../../../../Auth";
 import "./styles.scss";
 import tourApis from "../../../../apis/tourApis";
@@ -10,7 +10,6 @@ import cartApis from "../../../../apis/cartApis";
 import axiosCLient from "../../../../apis/axiosClient";
 
 function Payments() {
-  const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
   const [tourList, setTourList] = useState([]);
@@ -64,6 +63,12 @@ function Payments() {
     setMessErr("");
   };
 
+  const handlePayments = (e) => {
+    setPaymentsMethod(e.target.value);
+  };
+
+  console.log("paymentsMethod", typeof paymentsMethod);
+
   const totalPeople =
     parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
 
@@ -81,7 +86,7 @@ function Payments() {
     const totalPeople =
       parseInt(numberAdult) + parseInt(numberChildren) + parseInt(numberBaby);
 
-    if (totalPeople > 0 && totalPeople <= value) {
+    if (totalPeople > 0 && totalPeople <= value && paymentsMethod != "") {
       const ids = new Date().getTime();
       const cart = {
         account: account,
@@ -114,7 +119,9 @@ function Payments() {
 
       navigate(`/tour/payments/succeed/${ids}`);
     } else {
-      setMessErr(" * Chưa nhập số khách hoặc quá số chỗ còn nhận!");
+      setMessErr(
+        " *Chưa nhập số khách hoặc quá số chỗ còn nhận, chưa chọn hình thức thanh toán !"
+      );
     }
   };
 
@@ -253,7 +260,6 @@ function Payments() {
               <label>Tổng Số Khách :</label>
               <input type="number" name="number" value={totalPeople} />
             </div>
-            <span className="errorMess">{messErr}</span>
             <div className="totalPrice">
               <p>Tổng</p>
               <p>
@@ -265,6 +271,8 @@ function Payments() {
               </p>
             </div>
             <div className="button__submit">
+              <span className="errorMess">{messErr}</span>
+
               {arrr.map((item) => (
                 <Button
                   key={item.id}
@@ -284,7 +292,7 @@ function Payments() {
               type="radio"
               value="Trực Tiếp"
               name="payment_method"
-              onChange={(e) => setPaymentsMethod(e.target.value)}
+              onChange={(e) => handlePayments(e)}
             />
             <div>
               <h3>Thanh Toán Tiền Mặt</h3>

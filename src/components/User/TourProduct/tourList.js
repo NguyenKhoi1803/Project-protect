@@ -3,12 +3,12 @@ import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
 import "./styles.scss";
 
-
 function TourList() {
   const [items, setItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [searchValue, setSearchValue] = useState("");
-  const [sortValue, setSortValue] = useState("");
+  const [sortValue, setSortValue] = useState("id");
+  const [sortDirect, setSortDirect] = useState(-1);
 
   const limit = 5;
   const getTour = async (page = 1, s = "") => {
@@ -31,22 +31,35 @@ function TourList() {
   };
 
   const handleSearch = (e) => {
-    setSortValue("");
+    setSortValue("id");
     e.preventDefault();
     getTour(1, searchValue);
   };
 
-  const sortOptions = ["priceAdult", "quantity", "numberDay"];
+  const sortOptions = ["priceAdult", "quantity", "numberDay", "id"];
   const languages = {
     priceAdult: "Gía Người Lớn",
     quantity: "Sô Chỗ Còn",
     numberDay: "Thời Gian Đi",
+    id: "Mới Nhất",
   };
 
   const hanldeSort = async (e) => {
     let value = e.target.value;
     setSortValue(value);
-    items.sort((a, b) => a[value] - b[value]);
+    sortList();
+  };
+
+  const hanldeDirect = (e) => {
+    const value = e.target.checked ? 1 : -1;
+    setSortDirect(value);
+    console.log("value", value);
+    sortList();
+  };
+
+  const sortList = () => {
+    items.sort((a, b) => (a[sortValue] - b[sortValue]) * sortDirect);
+    console.log("sortList", sortValue, sortDirect);
   };
 
   const newTourArr = items?.filter(
@@ -54,6 +67,7 @@ function TourList() {
       new Date(item.startDate).getTime() > new Date().getTime() - 21600000 &&
       item.quantity > 0
   );
+  sortList();
   return (
     <div className="container__TourList">
       <div className="SearchForm__wrap">
@@ -75,13 +89,21 @@ function TourList() {
       <div className="sortBy">
         <h5>Sort By : </h5>
         <select onChange={hanldeSort} value={sortValue}>
-          <option>Lọc</option>
           {sortOptions.map((item, index) => (
             <option value={item} key={index}>
               {languages[item]}
             </option>
           ))}
         </select>
+        <label>
+          <input
+            type="checkbox"
+            name="sortdirect"
+            onChange={hanldeDirect}
+            value={sortDirect}
+          />
+          <span></span>
+        </label>
       </div>
       <div className="TourList">
         {newTourArr.length === 0 ? (
@@ -89,9 +111,7 @@ function TourList() {
             <h3>Không có kết quả bạn tìm kiếm !</h3>
           </div>
         ) : (
-          newTourArr?.map((item) => (
-            <TourItem key={item.id} item={item} />
-          ))
+          newTourArr?.map((item) => <TourItem key={item.id} item={item} />)
         )}
       </div>
       <ReactPaginate
