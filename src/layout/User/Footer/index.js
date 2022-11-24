@@ -68,7 +68,7 @@ function Footer(props) {
           </div>
         </div>
 
-        <div className="footer__contact">
+        {/* <div className="footer__contact">
           <h1> LOCAL TOURIST </h1>
           <p>
             <span> ĐỊA CHỈ : </span> 126 Xuân Thủy{" "}
@@ -81,7 +81,7 @@ function Footer(props) {
           <p>
             <span> EMAIL LIÊN HỆ : </span> nguyenkhoi180397@gmail.com{" "}
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

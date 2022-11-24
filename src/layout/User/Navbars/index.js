@@ -1,4 +1,4 @@
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,6 @@ const Navbars = () => {
   const handleToChangeHome = () => {
     navigate("/");
     window.scrollTo({ top: 500 });
-
   };
 
   const handleToChangeList = () => {
@@ -23,17 +22,14 @@ const Navbars = () => {
     navigate("/login");
   };
 
-
   const handleToOrder = () => {
     if (checkLogin()) {
-      navigate("/checkOrder")
+      navigate("/checkOrder");
     } else {
-      alert("chua dang nhap ")
-      navigate("/login"); 
+      alert("Chưa đăng nhập ! ");
+      navigate("/login");
     }
-  }
-
-
+  };
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -57,6 +53,8 @@ const Navbars = () => {
         <a className="logo" onClick={handleToChangeHome}>
           Local Tourist
         </a>
+
+        <img src="../../asset/img/logo.png" alt="" />
         <div className="hamburger" onClick={handleClick}>
           {click ? (
             <FaTimes size={30} style={{ color: "#ffffff" }} />
@@ -75,16 +73,25 @@ const Navbars = () => {
             <a onClick={handleToOrder}>Đơn Hàng</a>
           </li>
           <li className="nav-item">
+            <a onClick={handleToOrder}>Liên Hệ</a>
+          </li>
+          <li className="nav-item">
             {checkLogin() ? (
-              <button
-                variant="light"
+              // <button
+              //   variant="light"
+              //   onClick={() => {
+              //     logout();
+              //     navigate("/");
+              //   }}
+              // >
+              //   Logout
+              // </button>
+              <UserOutlined
                 onClick={() => {
                   logout();
                   navigate("/");
                 }}
-              >
-                Logout
-              </button>
+              />
             ) : (
               <a onClick={handleToLogin}>Login</a>
             )}

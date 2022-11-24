@@ -5,6 +5,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #f5f5f5;
 }
 
 .TourList {
@@ -55,6 +56,7 @@ input[name="sortdirect"] {
   display: flex;
   justify-content: space-between;
   height: 100%;
+  background-color: white;
 
   @media screen and (max-width: 767px) {
     display: block;
@@ -67,6 +69,19 @@ input[name="sortdirect"] {
   & img {
     width: 100%;
     height: 100%;
+  }
+
+  & img:hover {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.1);
+    -webkit-box-shadow: 3px 3px 5px #000;
+    -moz-box-shadow: 3px 3px 5px #000;
+    box-shadow: 3px 3px 5px #000;
+    -webkit-backface-visibility: hidden;
   }
 
   @media screen and (max-width: 767px) {
@@ -147,8 +162,10 @@ input[name="sortdirect"] {
   }
 
   & .btn-1 {
+    width: 100px;
     border: none;
     background-color: #198754;
+    color: white;
   }
 
   & .btn-2 {

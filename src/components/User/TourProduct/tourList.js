@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TourItem from "../TourProduct/tourItem";
 import ReactPaginate from "react-paginate";
 import "./styles.scss";
+import Search from "antd/lib/transfer/search";
 
 function TourList() {
   const [items, setItems] = useState([]);

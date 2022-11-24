@@ -389,10 +389,10 @@ function DetailsPage() {
         </div>
       ))}
       <div className="aboutTOur">
+        <h4>Tour Tương Tự</h4>
         <Slider {...settings}>
           {aboutTourArr?.map((item) => (
             <div>
-              <h4>Tour Tương Tự</h4>
               <BodyItem item={item} key={item?.id} />
             </div>
           ))}

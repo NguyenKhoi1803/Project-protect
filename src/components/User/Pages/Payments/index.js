@@ -8,6 +8,8 @@ import tourApis from "../../../../apis/tourApis";
 import { STATUS_CODE } from "../../../../constants/indexs";
 import cartApis from "../../../../apis/cartApis";
 import axiosCLient from "../../../../apis/axiosClient";
+import { Input } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 function Payments() {
   const navigate = useNavigate();
@@ -76,6 +78,7 @@ function Payments() {
   const children = numberChildren * childrenTour;
   const baby = numberBaby * babyTour;
   const total = adults + children + baby;
+
   let list = [];
   const handleListForm = (e, index, name) => {
     list[index] = list[index] || {};
@@ -215,7 +218,11 @@ function Payments() {
             <h3>Thông Tin Khách Hàng</h3>
             <div className="accountInfo--form">
               <label>Mã Khách Hàng : </label>
-              <input value={account.id} />
+              <Input
+                placeholder="default size"
+                value={account.id}
+                prefix={<UserOutlined />}
+              />
             </div>
             <div className="accountInfo--form">
               <label>Họ Và Tên : </label>
@@ -234,31 +241,45 @@ function Payments() {
             <h3>Nhập Số Khách</h3>
             <div className="accountInfo--form">
               <label>Người Lớn :</label>
-              <input
+
+              <Input
+                size="large"
                 type="number"
                 name="number"
                 onChange={(e) => handleChangeFieldsAdult(e)}
+                prefix={<UserOutlined />}
               />
             </div>
             <div className="accountInfo--form">
               <label>Trẻ Em :</label>
-              <input
+
+              <Input
+                size="large"
                 type="number"
                 name="number"
                 onChange={(e) => handleChangeFieldsChildren(e)}
+                prefix={<UserOutlined />}
               />
             </div>
             <div className="accountInfo--form">
               <label>Em Bé :</label>
-              <input
+
+              <Input
+                size="large"
                 type="number"
                 name="number"
                 onChange={(e) => handleChangeFieldsBaby(e)}
+                prefix={<UserOutlined />}
               />
             </div>
             <div className="accountInfo--form">
               <label>Tổng Số Khách :</label>
-              <input type="number" name="number" value={totalPeople} />
+
+              <Input
+                size="large"
+                value={totalPeople}
+                prefix={<UserOutlined />}
+              />
             </div>
             <div className="totalPrice">
               <p>Tổng</p>
