@@ -1,0 +1,52 @@
+.container__contactPage {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.container__contactPage--wrap {
+    width: 60%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    & h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+.container__contactPage--details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.infor {
+    width: 30%;
+
+    & p {
+        display: flex;
+        justify-content: space-between;
+
+        .spn-at {
+            width: 30%;
+            height: 70px;
+            display: flex;
+            background: #f0883c;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spn-as {
+            width: 60%;
+        }
+    }
+}
+
+.input {
+    width: 60%;
+    line-height: 80px;
+
+    .ip {
+        height: 50px;
+    }
+}

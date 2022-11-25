@@ -22,6 +22,7 @@ import Search from "./components/User/SearchForm/Search";
 import TourList from "./components/User/TourProduct/tourList";
 import ScrollTop from "./components/ScrollTop";
 import CheckOrder from "./components/User/Pages/CheckOrder";
+import ContactPage from "./components/User/Pages/ContactPage";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/checkOrder" element={<CheckOrder />}></Route>
           <Route path="/tour" element={<TourList />}></Route>
           <Route path="/tour/:id" element={<DetailsPage />}></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
           <Route
             path="/tour/payments/:id"
             element={<Payments />}

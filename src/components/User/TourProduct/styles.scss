@@ -20,9 +20,10 @@
 }
 
 .container__tourItem {
-  border: 1px solid black;
+  border: 1px solid #00000014;
   margin-bottom: 30px;
   margin-top: 30px;
+  height: 300px;
 
   @media screen and (max-width: 767px) {
     height: 650px;
@@ -97,8 +98,8 @@ input[name="sortdirect"] {
 }
 
 .container__tourItem--details {
-  width: 50%;
-  padding: 20px;
+  width: 60%;
+  padding: 30px;
 
   & .container__tourItem--allInfo {
     display: flex;
@@ -106,6 +107,10 @@ input[name="sortdirect"] {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  & .spn-btn {
+    color: white;
   }
 
   @media screen and (max-width: 767px) {
@@ -198,4 +203,8 @@ input[name="sortdirect"] {
 .pagination {
   margin-bottom: 0;
   padding: 20px;
+}
+
+.spn-btn {
+  color: white;
 }

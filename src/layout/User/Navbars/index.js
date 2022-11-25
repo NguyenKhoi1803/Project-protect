@@ -22,6 +22,10 @@ const Navbars = () => {
     navigate("/login");
   };
 
+  const handleToContact = () => {
+    navigate("/contact")
+  }
+
   const handleToOrder = () => {
     if (checkLogin()) {
       navigate("/checkOrder");
@@ -51,10 +55,10 @@ const Navbars = () => {
     <div className={color ? "header header-bg" : "header"}>
       <nav className="navbar">
         <a className="logo" onClick={handleToChangeHome}>
-          Local Tourist
+          <img src={require('../../../asset/img/logo.png')} alt=""/>
         </a>
 
-        <img src="../../asset/img/logo.png" alt="" />
+
         <div className="hamburger" onClick={handleClick}>
           {click ? (
             <FaTimes size={30} style={{ color: "#ffffff" }} />
@@ -70,28 +74,18 @@ const Navbars = () => {
             <a onClick={handleToChangeList}>Danh Sách Tour</a>
           </li>
           <li className="nav-item">
+            <a onClick={handleToContact}>Liên Hệ</a>
+          </li>
+          <li className="nav-item">
             <a onClick={handleToOrder}>Đơn Hàng</a>
           </li>
-          <li className="nav-item">
-            <a onClick={handleToOrder}>Liên Hệ</a>
-          </li>
+
           <li className="nav-item">
             {checkLogin() ? (
-              // <button
-              //   variant="light"
-              //   onClick={() => {
-              //     logout();
-              //     navigate("/");
-              //   }}
-              // >
-              //   Logout
-              // </button>
-              <UserOutlined
-                onClick={() => {
-                  logout();
-                  navigate("/");
-                }}
-              />
+              <a onClick={() => {
+                logout();
+                navigate("/");
+              }}>Đăng Xuất</a>
             ) : (
               <a onClick={handleToLogin}>Login</a>
             )}

@@ -48,7 +48,7 @@ function TourItem({ item }) {
                 </p>
                 <p>
                   {" "}
-                  <CalendarOutlined /> <span> Quantity </span> : {item.quantity}
+                  <CalendarOutlined /> <span> Số Chỗ Còn Nhận  </span> : {item.quantity}
                 </p>
               </div>
               <div className="tourItem__Info--2">
@@ -67,21 +67,22 @@ function TourItem({ item }) {
                   <ClockCircleOutlined /> <span> Thời Gian </span> :{" "}
                   {item.numberDay} Ngày
                 </p>
+                <Button
+                  variant="success"
+                  className="addToCart"
+                  onClick={handleToDetails}
+                >
+                  <span className="spn-btn">Giá Chỉ Từ</span> :{" "}
+                  {new Intl.NumberFormat("vi-EN", {
+                    style: "currency",
+                    currency: "VND",
+                  }).format(item.priceAdult)}
+                </Button>
               </div>
             </div>
           </div>
 
-          <Button
-            variant="success"
-            className="addToCart"
-            onClick={handleToDetails}
-          >
-            <span>Giá Chỉ Từ</span> :{" "}
-            {new Intl.NumberFormat("vi-EN", {
-              style: "currency",
-              currency: "VND",
-            }).format(item.priceAdult)}
-          </Button>
+
         </div>
       </div>
     </div>

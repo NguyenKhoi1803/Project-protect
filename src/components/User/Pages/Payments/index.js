@@ -226,15 +226,29 @@ function Payments() {
             </div>
             <div className="accountInfo--form">
               <label>Họ Và Tên : </label>
-              <input value={account.fullname} />
+              <Input
+                placeholder="default size"
+                value={account.fullname}
+                prefix={<UserOutlined />}
+              />
             </div>
             <div className="accountInfo--form">
               <label>Email : </label>
-              <input value={account.email} />
+
+              <Input
+                placeholder="default size"
+                value={account.email}
+                prefix={<UserOutlined />}
+              />
             </div>
             <div className="accountInfo--form">
               <label>Phone : </label>
-              <input value={account.phone} />
+
+              <Input
+                placeholder="default size"
+                value={account.phone}
+                prefix={<UserOutlined />}
+              />
             </div>
           </div>
           <div className="form--2">

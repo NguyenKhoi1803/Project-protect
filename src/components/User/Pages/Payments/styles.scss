@@ -143,6 +143,9 @@
         display: flex;
         justify-content: space-between;
         margin-top: 10px;
+        & .ant-input-affix-wrapper {
+          width: 50%;
+        }
       }
     }
 
