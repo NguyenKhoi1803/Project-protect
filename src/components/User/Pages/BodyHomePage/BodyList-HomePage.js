@@ -35,7 +35,7 @@ function BodyList() {
   const startDay = new Date("2023-01-01").getTime();
   const endDay = new Date("2023-04-29").getTime();
 
-  const newTourArrTo = newArr123?.filter((item) => item.to == "Đà Nẵng")
+  const newTourArrTo = newArr123?.filter((item) => item.from == "Đà Nẵng")
 
   const newTourArrSeason = newArr123?.filter((item) => new Date(item.startDate).getTime() >= startDay &&
     new Date(item.startDate).getTime() <= endDay)
@@ -52,8 +52,8 @@ function BodyList() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -76,13 +76,13 @@ function BodyList() {
       <div className="container__body--List">
         <div className="container__body--Card">
           <div className="container__body--Header">
-            {newTourArrTo.length === 0 ? (
+            {newTourArrTo.length == 0 ? (
               <div className="error">
                 <h3>Chưa có dữ liệu !</h3>
               </div>
             ) : (
               <div>
-                <h2 >  *Đà Nẵng</h2>
+                <h2 >*Đà Nẵng</h2>
                 <Slider autoplay {...settings}>{newTourArrTo?.map((item) => (
                   <BodyItem item={item} key={item?.id} />
                 ))}</Slider>

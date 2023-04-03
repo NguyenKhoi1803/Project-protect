@@ -29,23 +29,28 @@
     height: 650px;
   }
 }
+
 input[name="sortdirect"] {
   visibility: hidden;
   position: absolute;
-  & + span {
+
+  &+span {
     display: block;
     padding: 5px 20px;
     background-color: green;
     color: #fff;
     font-weight: 700;
     border-radius: 8px;
+
     &:before {
       content: "Giảm Dần";
     }
   }
+
   &:checked {
-    & + span {
+    &+span {
       background-color: red;
+
       &:before {
         content: "Tăng Dần";
       }
@@ -142,6 +147,7 @@ input[name="sortdirect"] {
     width: 50%;
     margin-top: 20px;
   }
+
 }
 
 .container__search--wrap {
