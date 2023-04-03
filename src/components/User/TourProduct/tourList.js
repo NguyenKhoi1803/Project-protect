@@ -32,17 +32,17 @@ function TourList() {
   };
 
   const handleSearch = (e) => {
-    setSortValue("id");
+    setSortValue("newTour");
     e.preventDefault();
     getTour(1, searchValue);
   };
 
-  const sortOptions = ["priceAdult", "quantity", "numberDay", "id"];
+  const sortOptions = ["priceAdult", "quantity", "numberDay", "newTour"];
   const languages = {
     priceAdult: "Gía Người Lớn",
     quantity: "Sô Chỗ Còn",
     numberDay: "Thời Gian Đi",
-    id: "Mới Nhất",
+    newTour: "Mới Nhất",
   };
 
   const hanldeSort = async (e) => {

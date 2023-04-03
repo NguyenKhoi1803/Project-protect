@@ -101,7 +101,7 @@ function BodyList() {
               </div>
             ) : (
               <div>
-                <h2 >  *Tour Mùa Thu</h2>
+                <h2 >  *Tour Mùa Xuân</h2>
                 <Slider autoplay {...settings}>{newTourArrSeason?.map((item) => (
                   <BodyItem item={item} key={item?.id} />
                 ))}</Slider>

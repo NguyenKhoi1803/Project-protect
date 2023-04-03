@@ -79,6 +79,7 @@ const AddTour = () => {
       vehicle: fieldsValue.vehicle[0],
       quantity: fieldsValue.quantity,
       descriptions: fieldsValue.details,
+      newTour: idTour,
     };
 
     dispatch(addTour(dataSubmit));
